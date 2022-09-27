@@ -1,0 +1,55 @@
+.packageCard {
+    background-color: rgb(244, 244, 229);
+    border: solid;
+    border-color: rgb(174, 195, 213);
+    border-width: 1px;
+    width: 350px;
+    height: 500px;
+    text-align: center;
+    margin: 50px;
+}
+
+.packageData {
+    margin-top: 200px;
+    border-top: solid;
+}
+
+.packageCategory {
+    text-align: left;
+    margin: 20px;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.packagePrice {
+    text-align: right;
+    margin: 20px;
+    margin-top: -45px;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.packageDuration {
+    text-align: center;
+    margin: 20px;
+    margin-top: -40px;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.packageTitle {
+    text-align: left;
+    margin: 40px;
+}
+
+.packageDescription {
+    font-size: medium;
+    font-weight: 300;
+    height: 80px;
+}
+
+.packageButton {
+    position: flex;
+    background-color: aquamarine;
+    border-radius: 5px;
+}
