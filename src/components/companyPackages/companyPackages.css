@@ -1,0 +1,26 @@
+.companyPackages {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.allPAckages {
+    height: 600px;
+    text-align: center;
+}
+
+.acceptedPackages {
+    height: 600px;
+    text-align: center;
+}
+
+.rejectPackages {
+    height: 600px;
+    text-align: center;
+}
+
+.companyPackageButton {
+    background-color: rgb(160, 46, 46);
+    color: white;
+    font-size: large;
+    border-radius: 10px;
+}

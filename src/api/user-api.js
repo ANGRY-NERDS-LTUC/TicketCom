@@ -14,8 +14,8 @@ export const getPackage = () => {
         )
 }
 
-export const getSpecialOffer = () => {
-    axios.get(`${link}/home/specialOffers`)
+export const getSpecialOffer = async () => {
+    await (await axios.get(`${link}/home/specialOffers`)).data
     .then(
         res => {
             return res.data;

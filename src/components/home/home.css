@@ -1,18 +1,31 @@
+.specialOfferDiv {
+    height: 600px;
+    text-align: center;
+}
+
+.homePackagesDiv {
+    height: 600px;
+    text-align: center;
+}
+
 .packageCard {
-    background-color: rgb(244, 244, 229);
+    box-sizing: border-box;
+    background-color: rgb(247, 247, 232);
     border: solid;
     border-color: rgb(174, 195, 213);
     border-width: 1px;
     width: 350px;
     height: 500px;
     text-align: center;
-    margin: 50px;
+    margin-left: 50px;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
 }
 
-.packageData {
-    margin-top: 200px;
+/* .packageData {
     border-top: solid;
-}
+} */
 
 .packageCategory {
     text-align: left;

@@ -1,0 +1,24 @@
+.adminPackages {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.allPAckages {
+    height: 600px;
+    text-align: center;
+}
+
+.publishedPackages {
+    height: 600px;
+    text-align: center;
+}
+
+.rejectPackages {
+    height: 600px;
+    text-align: center;
+}
+
+.notPublishedPackages {
+    height: 600px;
+    text-align: center;
+}
