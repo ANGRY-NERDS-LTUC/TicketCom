@@ -8,12 +8,17 @@ function CreatePackage() {
     
     const createCompanyPackage = async(data) => {
         try {
-            const res = await axios.post(`http://localhost:3001/company/create?type=company`, data, {
+            const res = await axios.post(
+              `http://localhost:5000/company/create?type=company`,
+              data,
+              {
                 headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjQxOTMxMjJ9.EG_OxJwBVvXtr95lyM-rev5Fk6TUx7aazzPTNIHmR9I'
-                }
-            });
+                  Accept: 'application/json',
+                  Authorization:
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6Im1hbGVrIiwiaWF0IjoxNjY0NTU0MzUxfQ._IRCspjjhK-iIUSBBxptsGMO5OLLsGCXec38R7zds74',
+                },
+              },
+            );
             console.log(res.data)
         }
         catch(err) {
