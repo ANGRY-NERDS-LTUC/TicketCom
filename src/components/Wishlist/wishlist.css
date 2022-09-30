@@ -1,3 +1,33 @@
 .wishlist {
     margin-top: 5%;
 }
+
+.AddCart {
+    display: none;
+}
+
+.Card:hover > .Data > .AddCart {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 102px;
+    margin-top: 60px;
+}
+
+.RemoveWishlist {
+    display: none;
+}
+
+.Card:hover > .Data > .RemoveWishlist {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 198px;
+    margin-top: -39.5px;
+}

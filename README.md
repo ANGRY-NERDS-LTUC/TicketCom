@@ -17,3 +17,7 @@ Plan for project:
 Ahmad Tayseer & Mohammad Haimour: rendering the data we got from databases as components.
 Bahaa Nimer & Ahmad Helwa: rendering chat & notification systems.
 Saleh: make the authentication and autorization with signup and signin part, and amke the routing.
+
+note:
+
+about us page with description and image for each member of the group

@@ -43,15 +43,15 @@ function Cart() {
     return (
         <div className="cart">
             <h1>Cart Page</h1>
-            { cartPackages.map( (item) => { return <div className="packageCard">
-                    <img src={ item.image } alt="" width="350px" height="205px"/>
-                    <div className="packageData">
-                        <h3 className="packageCategory">{ item.category }</h3>
-                        <h3 className="packageDuration">{ item.duration } days</h3>
-                        <h3 className="packagePrice">{ item.price } $</h3>
-                        <h2 className="packageTitle">{ item.title }</h2>
-                        <p className="packageDescription">{ item.description }</p>
-                        <button className="packageButton" onClick={ () => removeFromCart(item.id) }>Remove from Cart</button>
+            { cartPackages.map( (item) => { return <div className="Card">
+                    <img src={ item.image } alt="" className="image"/>
+                    <div className="Data">
+                        <h2 className="Title">{ item.title }</h2>   
+                        <h3 className="Category">{ item.createdBy }</h3>
+                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                        <h3 className="Price">{ item.price } $</h3>
+                        <p className="Description">{ item.description }</p>
+                        <p className="RemoveCart" onClick={ () => removeFromCart(item.id) }>Remove from Cart</p>
                     </div>
                 </div> } )}
         </div>

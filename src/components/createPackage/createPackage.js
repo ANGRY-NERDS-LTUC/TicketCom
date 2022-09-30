@@ -45,26 +45,22 @@ function CreatePackage() {
     }
 
     return (
-        <div className="formDiv">
-            <h1>form</h1>
-            <form onSubmit={ submitHandeler }>
-                <label>Title</label><br/>
-                <input type="text" className="formInput" name="title" placeholder="Input package title"></input><br/>
-                <label>Description</label><br/>
-                <input type="text" className="formInput" name="description" placeholder="Input a description"></input><br/>
-                <label>Price</label><br/>
-                <input type="text" className="formInput" name="price" placeholder="Input the price of package"></input><br/>
-                <label>Category</label><br/>
-                <input type="text" className="formInput" name="category" placeholder="Input package category"></input><br/>
-                <label>Duration</label><br/>
-                <input type="text" className="formInput" name="duration" placeholder="Input package duration"></input><br/>
-                <label>Image</label><br/>
-                <input type="text" className="formInput" name="image" placeholder="Input image url"></input><br/>
-                <input type="checkbox" className="formCheck" name="specialOffer" value={ checkBox } onChange={ checkBoxHandeler }></input>
-                <label>Special Offer</label><br/>
+        <div className="createPage">
+            <div className="formDiv">
+                <h1>form</h1>
+                <form onSubmit={ submitHandeler }>
+                    <input type="text" className="formInput" name="title" placeholder="Package Title"></input><br/>
+                    <input type="text" className="descriptionInput" name="description" placeholder="Description"></input><br/>
+                    <input type="text" className="numberInput" name="price" placeholder="Price"></input>
+                    <input type="text" className="numberInput" name="duration" placeholder="Duration"></input><br/>
+                    <input type="text" className="formInput" name="category" placeholder="Category"></input><br/>
+                    <input type="text" className="formInput" name="image" placeholder="Image URL"></input><br/>
+                    <input type="checkbox" className="formCheck" name="specialOffer" value={ checkBox } onChange={ checkBoxHandeler }></input>
+                    <label>Special Offer</label><br/>
 
-                <input type="Submit" value="Create Package" className="formSubmit"></input>
-            </form>
+                    <input type="Submit" value="Create Package" className="formSubmit"></input>
+                </form>
+            </div>
         </div>
     )
 }

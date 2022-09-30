@@ -6,11 +6,19 @@
     top: 0px;
     font-size: xx-large;
     text-align: left;
-    
+    z-index: 1;
 }
 
 .link {
     margin-right: 20px;
     margin-left: 20px;
     color: black;
+}
+
+#homePage {
+    background: url("../1386012.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

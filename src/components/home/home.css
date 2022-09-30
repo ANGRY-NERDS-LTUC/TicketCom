@@ -1,68 +1,169 @@
+.homePage {
+    background: url("../6662014.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 .specialOfferDiv {
-    height: 600px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .homePackagesDiv {
-    height: 600px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.packageCard {
+.Card {
     box-sizing: border-box;
-    background-color: rgb(247, 247, 232);
+    display: block;
+    flex-direction: column;
+    background-color: rgb(250, 247, 247);
     border: solid;
     border-color: rgb(174, 195, 213);
     border-width: 1px;
-    width: 350px;
-    height: 500px;
+    width: 400px;
+    height: 450px;
     text-align: center;
-    margin-left: 50px;
     float: left;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    
+    cursor: pointer ;
+    margin: 50px;
 }
 
-/* .packageData {
-    border-top: solid;
-} */
+.image {
+    display: block;
+    width: 400px;
+    height: 300px;
+}
 
-.packageCategory {
+
+.Title {
     text-align: left;
-    margin: 20px;
-    font-size: medium;
-    font-weight: 500;
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
 }
 
-.packagePrice {
+.Card:hover > .Data > .Title {
+    padding-top: 200px;
+    color: rgb(255, 255, 255);
+    transition-duration: 500ms;
+}
+
+.Category {
+    text-align: left;
+    padding-left: 10px;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.Card:hover > .Data > .Category {
+    margin-top: -220px;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    transition-duration: 500ms;
+}
+
+.Price {
     text-align: right;
-    margin: 20px;
-    margin-top: -45px;
+    margin-top: -80px;
+    margin-right: 10px;
     font-size: medium;
     font-weight: 500;
 }
 
-.packageDuration {
+.Card:hover > .Data > .Price {
+    padding-top: 40px;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+    font-weight: bold;
+    transition-duration: 500ms;
+}
+
+/* .Duration {
     text-align: center;
     margin: 20px;
     margin-top: -40px;
     font-size: medium;
     font-weight: 500;
-}
+} */
 
-.packageTitle {
-    text-align: left;
-    margin: 40px;
-}
-
-.packageDescription {
+.Description {
     font-size: medium;
     font-weight: 300;
     height: 80px;
+    margin-top: 55px;
+    display: none;
 }
 
-.packageButton {
+.Card:hover > .Data > .Description {
+    display: flex;
+    padding-top: 150px;
+    color: rgb(255, 255, 255);
+    font-size: large;
+    transition-duration: 500ms;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.Card:hover > .Data {
+    margin-top: -450px;
+    background-color: rgba(26, 40, 92, 0.6);
+    display: block;
+    width: 400px;
+    height: 450px;
+    transform: translateY(0);
+    transition-duration: 500ms;
+}
+
+.Card:hover > img {
+    display: block;
+    width: 400px;
+    height: 450px;
+    object-fit: cover;
+    object-position: center;
+    transition-duration: 500ms;
+}
+
+.Wishlist {
+    display: none;
+}
+
+.Card:hover > .Data > .Wishlist {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 90px;
+    margin-top: 60px;
+}
+
+.Cart {
+    display: none;
+}
+
+.Card:hover > .Data > .Cart {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 210px;
+    margin-top: -39.5px;
+}
+
+/* .packageButton {
     position: flex;
     background-color: aquamarine;
     border-radius: 5px;
-}
+} */

@@ -58,43 +58,45 @@ function Home() {
 
     function addToCart(id) {
         createCart(id);
+        // alert("Card added to Cart!");
     }
 
     function addToWishlist(id) {
         createWishlist(id);
+        // alert("Card added to Wishlist!")
     }
 
     
     return (
-        <div>
+        <div className="homePage">
             <h1>Home</h1>
+            <h2>Special Offer packages</h2><br/>
             <div className="specialOfferDiv">
-                <h2>Special Offer packages</h2><br/>
-                { specialOfferPackages.map( (item) => { return <div className="packageCard">
-                    <img src={ item.image } alt="" width="350px" height="205px"/>
-                    <div className="packageData">
-                        <h3 className="packageCategory">{ item.createdBy }</h3>
-                        <h3 className="packageDuration">{ item.duration } days</h3>
-                        <h3 className="packagePrice">{ item.price } $</h3>
-                        <h2 className="packageTitle">{ item.title }</h2>
-                        <p className="packageDescription">{ item.description }</p>
-                        <button className="packageButton" onClick={ () => addToCart(item.id) }>Add to Cart</button>
-                        <button className="packageButton" onClick={ () => addToWishlist(item.id) }>Add to Wishlist</button>
+                { specialOfferPackages.map( (item) => { return <div className="Card">
+                    <img src={ item.image } alt="" className="image"/>
+                    <div className="Data">
+                        <h2 className="Title">{ item.title }</h2>   
+                        <h3 className="Category">{ item.createdBy }</h3>
+                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                        <h3 className="Price">{ item.price } $</h3>
+                        <p className="Description">{ item.description }</p>
+                        <p className="Wishlist" onClick={ () => addToWishlist(item.id) }>Add to Wishlist</p>
+                        <p className="Cart" onClick={ () => addToCart(item.id) }>Add to Cart</p>
                     </div>
                 </div> } )}
             </div>
+            <h2>Home packages</h2><br/>
             <div className="homePackagesDiv">
-                <h2>Home packages</h2><br/>
-                { homePackages.map( (item) => { return <div className="packageCard">
-                    <img src={ item.image } alt="" width="350px" height="205px"/>
-                    <div className="packageData">
-                        <h3 className="packageCategory">{ item.createdBy }</h3>
-                        <h3 className="packageDuration">{ item.duration } days</h3>
-                        <h3 className="packagePrice">{ item.price } $</h3>
-                        <h2 className="packageTitle">{ item.title }</h2>
-                        <p className="packageDescription">{ item.description }</p>
-                        <button className="packageButton" onClick={ () => addToCart(item.id) }>Add to Cart</button>
-                        <button className="packageButton" onClick={ () => addToWishlist(item.id) }>Add to Wishlist</button>
+                { homePackages.map( (item) => { return <div className="Card">
+                    <img src={ item.image } alt="" className="image"/>
+                    <div className="Data">
+                        <h2 className="Title">{ item.title }</h2>   
+                        <h3 className="Category">{ item.createdBy }</h3>
+                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                        <h3 className="Price">{ item.price } $</h3>
+                        <p className="Description">{ item.description }</p>
+                        <p className="Wishlist" onClick={ () => addToWishlist(item.id) }>Add to Wishlist</p>
+                        <p className="Cart" onClick={ () => addToCart(item.id) }>Add to Cart</p>
                     </div>
                 </div> } )}
             </div>

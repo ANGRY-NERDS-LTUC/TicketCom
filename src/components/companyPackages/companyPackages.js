@@ -68,45 +68,45 @@ function CompanyPackages() {
         <div className="companyPackages">
             <div className="allPAckages">
                 <h2>All Packages</h2>
-                { companyPackages.map( (item) => { return <div className="packageCard">
-                    <img src={ item.image } alt="" width="350px" height="205px"/>
-                    <div className="packageData">
-                        <h3 className="packageCategory">{ item.createdBy }</h3>
-                        <h3 className="packageDuration">{ item.duration } days</h3>
-                        <h3 className="packagePrice">{ item.price } $</h3>
-                        <h2 className="packageTitle">{ item.title }</h2>
-                        <p className="packageDescription">{ item.description }</p>
-                        <button className="companyPackageButton" onClick={ () => deletePackage(item.id) }>Delete Package</button>
+                { companyPackages.map( (item) => { return <div className="Card">
+                    <img src={ item.image } alt="" className="image"/>
+                    <div className="Data">
+                        <h2 className="Title">{ item.title }</h2>   
+                        <h3 className="Category">{ item.createdBy }</h3>
+                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                        <h3 className="Price">{ item.price } $</h3>
+                        <p className="Description">{ item.description }</p>
+                        <p className="DeletePackage" onClick={ () => deletePackage(item.id) }>Delete Package</p>
                     </div>
                 </div> } )} 
             </div>
             <div className="acceptedPackages">
                 <h2>Accepted Packages</h2><br/>
-                { acceptedCompanyPackages.map( (item) => { return <div className="packageCard">
-                    <img src={ item.image } alt="" width="350px" height="205px"/>
-                    <div className="packageData">
-                        <h3 className="packageCategory">{ item.createdBy }</h3>
-                        <h3 className="packageDuration">{ item.duration } days</h3>
-                        <h3 className="packagePrice">{ item.price } $</h3>
-                        <h2 className="packageTitle">{ item.title }</h2>
-                        <p className="packageDescription">{ item.description }</p>
-                        <button className="companyPackageButton" onClick={ () => deletePackage(item.id) }>Delete Package</button>
+                { acceptedCompanyPackages.map( (item) => { return <div className="Card">
+                    <img src={ item.image } alt="" className="image"/>
+                    <div className="Data">
+                        <h2 className="Title">{ item.title }</h2>   
+                        <h3 className="Category">{ item.createdBy }</h3>
+                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                        <h3 className="Price">{ item.price } $</h3>
+                        <p className="Description">{ item.description }</p>
+                        <p className="DeletePackage" onClick={ () => deletePackage(item.id) }>Delete Package</p>
                     </div>
                 </div> } )}
             </div>
             <div className="rejectPackages">
                 <h2>Rejected Packages</h2><br/>
-                { rejectedCompanyPackages.map( (item) => { return <div className="packageCard">
-                    <img src={ item.image } alt="" width="350px" height="205px"/>
-                    <div className="packageData">
-                        <h3 className="packageCategory">{ item.createdBy }</h3>
-                        <h3 className="packageDuration">{ item.duration } days</h3>
-                        <h3 className="packagePrice">{ item.price } $</h3>
-                        <h2 className="packageTitle">{ item.title }</h2>
-                        <p className="packageDescription">{ item.description }</p>
-                        <button className="companyPackageButton" onClick={ () => deletePackage(item.id) }>Delete Package</button>
+                { rejectedCompanyPackages.map( (item) => { return <div className="Card">
+                    <img src={ item.image } alt="" className="image"/>
+                    <div className="Data">
+                        <h2 className="Title">{ item.title }</h2>   
+                        <h3 className="Category">{ item.createdBy }</h3>
+                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                        <h3 className="Price">{ item.price } $</h3>
+                        <p className="Description">{ item.description }</p>
+                        <p className="DeletePackage" onClick={ () => deletePackage(item.id) }>Delete Package</p>
                     </div>
-                </div> } )}
+                </div> } )} 
             </div>
         </div>
     );

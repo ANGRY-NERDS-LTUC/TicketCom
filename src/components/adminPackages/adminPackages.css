@@ -22,3 +22,48 @@
     height: 600px;
     text-align: center;
 }
+
+.AcceptThePackage {
+    display: none;
+}
+
+.Card:hover > .Data > .AcceptThePackage {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 20px;
+    margin-top: 60px;
+}
+
+.RejectThePackage {
+    display: none;
+}
+
+.Card:hover > .Data > .RejectThePackage {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 148px;
+    margin-top: -40px;
+}
+
+.DeleteThePackage {
+    display: none;
+}
+
+.Card:hover > .Data > .DeleteThePackage {
+    display: block;
+    color: rgb(255, 255, 255);
+    border-bottom: solid;
+    border-color: rgb(252, 2, 2);
+    border-width: 2px;
+    width: fit-content;
+    margin-left: 270px;
+    margin-top: -39px;
+}
