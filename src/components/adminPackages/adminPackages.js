@@ -1,182 +1,270 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import './adminPackages.css';
-import axios from "axios";
+import axios from 'axios';
 
 function AdminPackages() {
+  const [allPackages, setAllPackages] = useState([]);
+  const [publishedPackages, setPublishedPackages] = useState([]);
+  const [rejectedPackages, setRejectedPackages] = useState([]);
+  const [notPublishedPackages, setNotPublishedPackages] = useState([]);
 
-    const [allPackages, setAllPackages] = useState([]);
-    const [publishedPackages, setPublishedPackages] = useState([]);
-    const [rejectedPackages, setRejectedPackages] = useState([]);
-    const [notPublishedPackages, setNotPublishedPackages] = useState([]);
+  const getAllPackages = async () => {
+    const data = await (
+      await axios.get(`http://localhost:5000/admin/package?type=client`, {
+        headers: {
+          Accept: 'application/json',
+          Authorization:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+        },
+      })
+    ).data;
+    setAllPackages(data);
+  };
 
-    const getAllPackages = async() => {
-            const data = await (await axios.get(`http://localhost:3001/admin/package?type=client`, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0'
-                }
-            })).data;
-            setAllPackages(data);
-        }
-
-    const deletePackage = async(id) => {
-        try {
-            const res = await axios.delete(`http://localhost:3001/admin/package/delete?type=client&id=${id}`, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0'
-                }
-            });
-            console.log(res.data)
-        }
-        catch(err) {
-            console.log(err);
-        } 
+  const deletePackage = async (id) => {
+    try {
+      const res = await axios.delete(
+        `http://localhost:5000/admin/package/delete?type=client&id=${id}`,
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+          },
+        },
+      );
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-    const getPublishedPackages = async() => {
-            const data = await (await axios.get(`http://localhost:3001/admin/package/published?type=client`, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0'
-                }
-            })).data;
-            setPublishedPackages(data);
-        }
+  const getPublishedPackages = async () => {
+    const data = await (
+      await axios.get(
+        `http://localhost:5000/admin/package/published?type=client`,
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+          },
+        },
+      )
+    ).data;
+    setPublishedPackages(data);
+  };
 
-    const getRejectedPackages = async() => {
-            const data = await (await axios.get(`http://localhost:3001/admin/package/reject?type=client`, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0'
-                }
-            })).data;
-            setRejectedPackages(data);
+  const getRejectedPackages = async () => {
+    const data = await (
+      await axios.get(
+        `http://localhost:5000/admin/package/reject?type=client`,
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+          },
+        },
+      )
+    ).data;
+    setRejectedPackages(data);
+  };
+
+  const getNotPublishedPackages = async () => {
+    const data = await (
+      await axios.get(
+        `http://localhost:5000/admin/package/notpublished?type=client`,
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+          },
+        },
+      )
+    ).data;
+    setNotPublishedPackages(data);
+  };
+
+  const acceptPackage = async (id) => {
+    try {
+      const res = await axios.get(
+        `http://localhost:5000/admin/package/accept?type=client&id=${id}`,
+        {
+          headers: {
+            Accept: 'application/json',
+            Authorization:
+              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+          },
+        },
+      );
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-    const getNotPublishedPackages = async() => {
-            const data = await (await axios.get(`http://localhost:3001/admin/package/notpublished?type=client`, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0'
-                }
-            })).data;
-            setNotPublishedPackages(data);
-    }
+  const rejectPackage = (id) => {
+    return fetch(
+      `http://localhost:5000/admin/package/reject?type=client&id=${id}`,
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0`,
+        },
+      },
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-    const acceptPackage = async(id) => {
-        try {
-            const res = await axios.get(`http://localhost:3001/admin/package/accept?type=client&id=${id}`, {
-                headers: {
-                    Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0'
-                }
-            });
-            console.log(res.data)
-        }
-        catch(err) {
-            console.log(err);
-        } 
-    }
+  useEffect(() => {
+    getAllPackages();
+    getPublishedPackages();
+    getRejectedPackages();
+    getNotPublishedPackages();
+  }, [allPackages]);
 
-    const rejectPackage = (id) => {
-        return fetch(`http://localhost:3001/admin/package/reject?type=client&id=${id}`, {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0`
-            }
-        })
-            .then(response => {
-                return response.json();
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    };
+  function deleteThePackage(id) {
+    deletePackage(id);
+  }
 
-    useEffect(() => {
-        getAllPackages();
-        getPublishedPackages();
-        getRejectedPackages();
-        getNotPublishedPackages();
-    }, [allPackages]);
+  function acceptThePackage(id) {
+    acceptPackage(id);
+  }
 
-    function deleteThePackage(id) {
-        deletePackage(id);
-    }
+  function rejectThePackage(id) {
+    rejectPackage(id);
+  }
 
-    function acceptThePackage(id) {
-        acceptPackage(id);
-    }
-
-    function rejectThePackage(id) {
-        rejectPackage(id);
-    }
-
-    return (
-        <div className="adminPackages">
-            <div className="allPAckages">
-                <h2>All Packages</h2>
-                { allPackages.map( (item) => { return <div className="Card">
-                    <img src={ item.image } alt="" className="image"/>
-                    <div className="Data">
-                        <h2 className="Title">{ item.title }</h2>   
-                        <h3 className="Category">{ item.createdBy }</h3>
-                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                        <h3 className="Price">{ item.price } $</h3>
-                        <p className="Description">{ item.description }</p>
-                        <p className="AcceptThePackage" onClick={ () => acceptThePackage(item.id) }>Accept Package</p>
-                        <p className="RejectThePackage" onClick={ () => rejectThePackage(item.id) }>Reject Package</p>
-                        <p className="DeleteThePackage" onClick={ () => deleteThePackage(item.id) }>Delete Package</p>
-                    </div>
-                </div>} )} 
+  return (
+    <div className='adminPackages'>
+      <div className='allPAckages'>
+        <h2>All Packages</h2>
+        {allPackages.map((item) => {
+          return (
+            <div className='Card'>
+              <img
+                src={item.image}
+                alt=''
+                className='image'
+              />
+              <div className='Data'>
+                <h2 className='Title'>{item.title}</h2>
+                <h3 className='Category'>{item.createdBy}</h3>
+                {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                <h3 className='Price'>{item.price} $</h3>
+                <p className='Description'>{item.description}</p>
+                <p
+                  className='AcceptThePackage'
+                  onClick={() => acceptThePackage(item.id)}>
+                  Accept Package
+                </p>
+                <p
+                  className='RejectThePackage'
+                  onClick={() => rejectThePackage(item.id)}>
+                  Reject Package
+                </p>
+                <p
+                  className='DeleteThePackage'
+                  onClick={() => deleteThePackage(item.id)}>
+                  Delete Package
+                </p>
+              </div>
             </div>
-            <div className="publishedPackages">
-                <h2>Published Packages</h2><br/>
-                { publishedPackages.map( (item) => { return <div className="Card">
-                    <img src={ item.image } alt="" className="image"/>
-                    <div className="Data">
-                        <h2 className="Title">{ item.title }</h2>   
-                        <h3 className="Category">{ item.createdBy }</h3>
-                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                        <h3 className="Price">{ item.price } $</h3>
-                        <p className="Description">{ item.description }</p>
-                        <p className="DeletePackage" onClick={ () => deleteThePackage(item.id) }>Delete Package</p>
-                    </div>
-                </div> } )}
+          );
+        })}
+      </div>
+      <div className='publishedPackages'>
+        <h2>Published Packages</h2>
+        <br />
+        {publishedPackages.map((item) => {
+          return (
+            <div className='Card'>
+              <img
+                src={item.image}
+                alt=''
+                className='image'
+              />
+              <div className='Data'>
+                <h2 className='Title'>{item.title}</h2>
+                <h3 className='Category'>{item.createdBy}</h3>
+                {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                <h3 className='Price'>{item.price} $</h3>
+                <p className='Description'>{item.description}</p>
+                <p
+                  className='DeletePackage'
+                  onClick={() => deleteThePackage(item.id)}>
+                  Delete Package
+                </p>
+              </div>
             </div>
-            <div className="rejectPackages">
-                <h2>Rejected Packages</h2><br/>
-                { rejectedPackages.map( (item) => { return <div className="Card">
-                    <img src={ item.image } alt="" className="image"/>
-                    <div className="Data">
-                        <h2 className="Title">{ item.title }</h2>   
-                        <h3 className="Category">{ item.createdBy }</h3>
-                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                        <h3 className="Price">{ item.price } $</h3>
-                        <p className="Description">{ item.description }</p>
-                        <p className="DeletePackage" onClick={ () => deleteThePackage(item.id) }>Delete Package</p>
-                    </div>
-                </div> } )}
+          );
+        })}
+      </div>
+      <div className='rejectPackages'>
+        <h2>Rejected Packages</h2>
+        <br />
+        {rejectedPackages.map((item) => {
+          return (
+            <div className='Card'>
+              <img
+                src={item.image}
+                alt=''
+                className='image'
+              />
+              <div className='Data'>
+                <h2 className='Title'>{item.title}</h2>
+                <h3 className='Category'>{item.createdBy}</h3>
+                {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                <h3 className='Price'>{item.price} $</h3>
+                <p className='Description'>{item.description}</p>
+                <p
+                  className='DeletePackage'
+                  onClick={() => deleteThePackage(item.id)}>
+                  Delete Package
+                </p>
+              </div>
             </div>
-            <div className="notPublishedPackages">
-                <h2>Not Published Packages</h2><br/>
-                { notPublishedPackages.map( (item) => { return <div className="Card">
-                    <img src={ item.image } alt="" className="image"/>
-                    <div className="Data">
-                        <h2 className="Title">{ item.title }</h2>   
-                        <h3 className="Category">{ item.createdBy }</h3>
-                        {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                        <h3 className="Price">{ item.price } $</h3>
-                        <p className="Description">{ item.description }</p>
-                        <p className="DeletePackage" onClick={ () => deleteThePackage(item.id) }>Delete Package</p>
-                    </div>
-                </div> } )}
+          );
+        })}
+      </div>
+      <div className='notPublishedPackages'>
+        <h2>Not Published Packages</h2>
+        <br />
+        {notPublishedPackages.map((item) => {
+          return (
+            <div className='Card'>
+              <img
+                src={item.image}
+                alt=''
+                className='image'
+              />
+              <div className='Data'>
+                <h2 className='Title'>{item.title}</h2>
+                <h3 className='Category'>{item.createdBy}</h3>
+                {/* <h3 className="Duration">{ item.duration } days</h3> */}
+                <h3 className='Price'>{item.price} $</h3>
+                <p className='Description'>{item.description}</p>
+                <p
+                  className='DeletePackage'
+                  onClick={() => deleteThePackage(item.id)}>
+                  Delete Package
+                </p>
+              </div>
             </div>
-        </div>
-    );
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default AdminPackages;

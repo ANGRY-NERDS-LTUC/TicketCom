@@ -7,10 +7,10 @@ function Cart() {
     const [cartPackages, setCartPackages] = useState([]);
 
     const cartPackagesHandeler = async() => {
-        const data = await (await axios.get(`http://localhost:3001/client/cart?type=client`, {
+        const data = await (await axios.get(`http://localhost:5000/client/cart?type=client`, {
             headers: {
                 Accept: 'application/json',
-                Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDM2NTA3MH0.tdAqbx5amEvpf64Wk7ZuTsq2zfW5ZxF--ndIQ-cT9F0'
+                Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImJhaGFhIiwiaWF0IjoxNjY0NTUxNTg2fQ.ZiAMO25q7jxXCsufgItTuYg7N43UyNYFMXqlO8oy6Aw'
             }
         })).data.Carts;
         setCartPackages(data);
@@ -19,10 +19,10 @@ function Cart() {
 
     const deleteCart = async(id) => {
         try {
-            const res = await axios.delete(`http://localhost:3001/client/cart/${id}?type=client`, {
+            const res = await axios.delete(`http://localhost:5000/client/cart/${id}?type=client`, {
                 headers: {
                     Accept: 'application/json',
-                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDM2NTA3MH0.tdAqbx5amEvpf64Wk7ZuTsq2zfW5ZxF--ndIQ-cT9F0'
+                    Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImJhaGFhIiwiaWF0IjoxNjY0NTUxNTg2fQ.ZiAMO25q7jxXCsufgItTuYg7N43UyNYFMXqlO8oy6Aw'
                 }
             });
             console.log(res.data)
@@ -33,7 +33,8 @@ function Cart() {
     }
 
     useEffect( () => {
-        cartPackagesHandeler();
+      cartPackagesHandeler();
+      // eslint-disable-next-line
     }, [cartPackages]);
 
     function removeFromCart(id) {
