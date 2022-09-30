@@ -4,18 +4,21 @@
 }
 
 .allPAckages {
-    height: 600px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .acceptedPackages {
-    height: 600px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .rejectPackages {
-    height: 600px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .DeletePackage {

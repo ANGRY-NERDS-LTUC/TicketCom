@@ -7,13 +7,10 @@ import Header from './components/header/header';
 import Home from './components/home/home';
 import Wishlist from './components/Wishlist/wishlist';
 import "./App.css";
-import { useState } from 'react';
 
 function App() {
 
-  const [background, setBackground] = useState("./components/1968420.jpg");
-
-  return <div style={{backgorund: background }}>
+  return <div>
     <BrowserRouter>
       <Header />
       <Routes>

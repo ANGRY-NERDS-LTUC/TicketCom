@@ -66,8 +66,8 @@ function CompanyPackages() {
 
     return (
         <div className="companyPackages">
+            <h2>All Packages</h2><br/>
             <div className="allPAckages">
-                <h2>All Packages</h2>
                 { companyPackages.map( (item) => { return <div className="Card">
                     <img src={ item.image } alt="" className="image"/>
                     <div className="Data">
@@ -80,8 +80,8 @@ function CompanyPackages() {
                     </div>
                 </div> } )} 
             </div>
+            <h2>Accepted Packages</h2><br/>
             <div className="acceptedPackages">
-                <h2>Accepted Packages</h2><br/>
                 { acceptedCompanyPackages.map( (item) => { return <div className="Card">
                     <img src={ item.image } alt="" className="image"/>
                     <div className="Data">
@@ -94,8 +94,8 @@ function CompanyPackages() {
                     </div>
                 </div> } )}
             </div>
+            <h2>Rejected Packages</h2><br/>
             <div className="rejectPackages">
-                <h2>Rejected Packages</h2><br/>
                 { rejectedCompanyPackages.map( (item) => { return <div className="Card">
                     <img src={ item.image } alt="" className="image"/>
                     <div className="Data">
