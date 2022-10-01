@@ -10,7 +10,7 @@ const Chat = () => {
   const { data } = useContext(ChatContext);
 
   return (
-    <div className='chat'>
+    <form className='chat' onSubmit={e => e.preventDefault()}>
       <div className='chatInfo'>
         <span>{data.user?.displayName}</span>
         <div className='chatIcons'>
@@ -30,7 +30,7 @@ const Chat = () => {
       </div>
       <Messages />
       <Input />
-    </div>
+    </form>
   );
 };
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const link = 'http://localhost:3001';
+const getToken = () => document.cookie.replace('token=', '');
 
 export const getPackage = () => {
     axios.get(`${link}/home/packages`)
@@ -11,7 +12,7 @@ export const getPackage = () => {
     )
     .catch(
         err => console.log(err)
-        )
+    )
 }
 
 export const getSpecialOffer = async () => {
@@ -23,7 +24,7 @@ export const getSpecialOffer = async () => {
     )
     .catch(
         err => console.log(err)
-        )
+    )
 }
 
 export const getWishlist = async() => {
@@ -31,7 +32,7 @@ export const getWishlist = async() => {
         const res = await axios.get(`${link}/client/wishlist?type=client`, {
             headers: {
                 Accept: 'application/json',
-                Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVzZXIiLCJpYXQiOjE2NjQxOTI4NDR9.ciJu0YkeWdJICEP5YsgXFeg85YSylWkPVENlNZ2djk8'
+                Authorization: `Bearer ${getToken}`
             }
         });
         console.log(res.data.wishLists)
@@ -47,7 +48,7 @@ export const createWishlist = (id) => {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVzZXIiLCJpYXQiOjE2NjQxOTI4NDR9.ciJu0YkeWdJICEP5YsgXFeg85YSylWkPVENlNZ2djk8`
+            Authorization: `Bearer ${getToken}`
         }
     })
         .then(response => {
@@ -63,7 +64,7 @@ export const deleteWishlist = async(id) => {
         const res = await axios.delete(`${link}/client/wishlist/${id}?type=client`, {
             headers: {
                 Accept: 'application/json',
-                Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVzZXIiLCJpYXQiOjE2NjQxOTI4NDR9.ciJu0YkeWdJICEP5YsgXFeg85YSylWkPVENlNZ2djk8'
+                Authorization: `Bearer ${getToken}`
             }
         });
         console.log(res.data)
@@ -78,7 +79,7 @@ export const getCart = async() => {
         const res = await axios.get(`${link}/client/cart?type=client`, {
             headers: {
                 Accept: 'application/json',
-                Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVzZXIiLCJpYXQiOjE2NjQxOTI4NDR9.ciJu0YkeWdJICEP5YsgXFeg85YSylWkPVENlNZ2djk8'
+                Authorization: `Bearer ${getToken}`
             }
         });
         console.log(res.data.Carts)
@@ -94,7 +95,7 @@ export const createCart = (id) => {
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVzZXIiLCJpYXQiOjE2NjQxOTI4NDR9.ciJu0YkeWdJICEP5YsgXFeg85YSylWkPVENlNZ2djk8`
+            Authorization: `Bearer ${getToken}`
         }
     })
         .then(response => {
@@ -110,7 +111,7 @@ export const deleteCart = async(id) => {
         const res = await axios.delete(`${link}/client/cart/${id}?type=client`, {
             headers: {
                 Accept: 'application/json',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6InVzZXIiLCJpYXQiOjE2NjQxOTI4NDR9.ciJu0YkeWdJICEP5YsgXFeg85YSylWkPVENlNZ2djk8'
+                Authorization: `Bearer ${getToken}`
             }
         });
         console.log(res.data)

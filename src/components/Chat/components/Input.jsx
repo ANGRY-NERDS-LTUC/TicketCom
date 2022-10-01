@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import Img from '../img/img.png';
 import Attach from '../img/attach.png';
-import { AuthContext } from '../context/AuthContext';
 import { ChatContext } from '../context/ChatContext';
 import {
   arrayUnion,
@@ -13,6 +12,7 @@ import {
 import { db, storage } from '../../../firebase';
 import { v4 as uuid } from 'uuid';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import {AuthContext} from "../../../context/AuthContext";
 
 const Input = () => {
   const [text, setText] = useState('');

@@ -8,22 +8,18 @@ import Header from './components/header/header';
 import Home from './components/home/home';
 import Wishlist from './components/Wishlist/wishlist';
 import ChatHome from './components/Chat/pages/ChatHome';
-import ChatLogin from './components/Chat/pages/ChatLogin';
-import ChatRegister from './components/Chat/pages/ChatRegister';
-import { AuthContext } from './components/Chat/context/AuthContext';
 import './App.css';
 import './components/Chat/style.scss';
+import SignUp from "./components/auth/SignUp";
+import Guard from "./components/auth/Guard";
+import {AuthContext} from "./context/AuthContext";
+import Verifier from "./components/auth/Verifier";
+import Login from "./components/auth/Login";
+import CompanyGuard from "./components/auth/CompanyGuard";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
 
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to='/chathome/chatlogin' />;
-    }
-
-    return children;
-  };
 
   return (
     <div>
@@ -35,12 +31,36 @@ function App() {
             element={<Home />}
           />
           <Route
+              path='/sign-up'
+              element={<SignUp />}
+          />
+          <Route
+              path='/verifier'
+              element={<Verifier />}
+          />
+          <Route
+              path='/login'
+              element={<Login />}
+          />
+          <Route
             path='/createPackage'
-            element={<CreatePackage />}
+            element={
+            <Guard>
+              <CompanyGuard>
+                <CreatePackage />
+              </CompanyGuard>
+          </Guard>
+          }
           />
           <Route
             path='/companyPackages'
-            element={<CompanyPackages />}
+            element={
+              <Guard>
+                <CompanyGuard>
+                  <CompanyPackages />
+                </CompanyGuard>
+              </Guard>
+            }
           />
           <Route
             path='/adminPackages'
@@ -52,24 +72,18 @@ function App() {
           />
           <Route
             path='/cart'
-            element={<Cart />}
+            element={
+            <Cart />
+          }
           />
           <Route path='/chathome'>
             <Route
               index
               element={
-                <ProtectedRoute>
-                  <ChatHome />
-                </ProtectedRoute>
+                <Guard>
+                  <ChatHome/>
+                </Guard>
               }
-            />
-            <Route
-              path='/chathome/chatlogin'
-              element={<ChatLogin />}
-            />
-            <Route
-              path='/chathome/chatregister'
-              element={<ChatRegister />}
             />
           </Route>
         </Routes>
