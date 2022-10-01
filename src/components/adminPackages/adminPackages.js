@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './adminPackages.css';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import "./adminPackages.css";
+import axios from "axios";
 
 function AdminPackages() {
   const [allPackages, setAllPackages] = useState([]);
@@ -10,11 +10,11 @@ function AdminPackages() {
 
   const getAllPackages = async () => {
     const data = await (
-      await axios.get(`http://localhost:5000/admin/package?type=client`, {
+      await axios.get(`http://localhost:3001/admin/package?type=client`, {
         headers: {
-          Accept: 'application/json',
+          Accept: "application/json",
           Authorization:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
         },
       })
     ).data;
@@ -24,14 +24,14 @@ function AdminPackages() {
   const deletePackage = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/admin/package/delete?type=client&id=${id}`,
+        `http://localhost:3001/admin/package/delete?type=client&id=${id}`,
         {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
             Authorization:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
           },
-        },
+        }
       );
       console.log(res.data);
     } catch (err) {
@@ -42,14 +42,14 @@ function AdminPackages() {
   const getPublishedPackages = async () => {
     const data = await (
       await axios.get(
-        `http://localhost:5000/admin/package/published?type=client`,
+        `http://localhost:3001/admin/package/published?type=client`,
         {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
             Authorization:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
           },
-        },
+        }
       )
     ).data;
     setPublishedPackages(data);
@@ -58,14 +58,14 @@ function AdminPackages() {
   const getRejectedPackages = async () => {
     const data = await (
       await axios.get(
-        `http://localhost:5000/admin/package/reject?type=client`,
+        `http://localhost:3001/admin/package/reject?type=client`,
         {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
             Authorization:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
           },
-        },
+        }
       )
     ).data;
     setRejectedPackages(data);
@@ -74,14 +74,14 @@ function AdminPackages() {
   const getNotPublishedPackages = async () => {
     const data = await (
       await axios.get(
-        `http://localhost:5000/admin/package/notpublished?type=client`,
+        `http://localhost:3001/admin/package/notpublished?type=client`,
         {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
             Authorization:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
           },
-        },
+        }
       )
     ).data;
     setNotPublishedPackages(data);
@@ -90,14 +90,14 @@ function AdminPackages() {
   const acceptPackage = async (id) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/admin/package/accept?type=client&id=${id}`,
+        `http://localhost:3001/admin/package/accept?type=client&id=${id}`,
         {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
             Authorization:
-              'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0',
+              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
           },
-        },
+        }
       );
       console.log(res.data);
     } catch (err) {
@@ -107,15 +107,15 @@ function AdminPackages() {
 
   const rejectPackage = (id) => {
     return fetch(
-      `http://localhost:5000/admin/package/reject?type=client&id=${id}`,
+      `http://localhost:3001/admin/package/reject?type=client&id=${id}`,
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
           Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0`,
         },
-      },
+      }
     )
       .then((response) => {
         return response.json();
@@ -145,118 +145,108 @@ function AdminPackages() {
   }
 
   return (
-    <div className='adminPackages'>
-      <div className='allPAckages'>
-        <h2>All Packages</h2>
+    <div className="adminPackages">
+      <h2>All Packages</h2>
+      <div className="allPackages">
         {allPackages.map((item) => {
           return (
-            <div className='Card'>
-              <img
-                src={item.image}
-                alt=''
-                className='image'
-              />
-              <div className='Data'>
-                <h2 className='Title'>{item.title}</h2>
-                <h3 className='Category'>{item.createdBy}</h3>
-                {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                <h3 className='Price'>{item.price} $</h3>
-                <p className='Description'>{item.description}</p>
+            <div className="Card">
+              <img src={item.image} alt="" className="image" />
+              <div className="Data">
+                <h2 className="Title">{item.title}</h2>
+                <h3 className="Category">{item.createdBy}</h3>
+                <h3 className="Duration">{item.duration} days</h3>
+                <h3 className="Price">{item.price} $</h3>
+                <p className="Description">{item.description}</p>
                 <p
-                  className='AcceptThePackage'
-                  onClick={() => acceptThePackage(item.id)}>
-                  Accept Package
+                  className="AcceptThePackage"
+                  onClick={() => acceptThePackage(item.id)}
+                >
+                  Accept
                 </p>
                 <p
-                  className='RejectThePackage'
-                  onClick={() => rejectThePackage(item.id)}>
-                  Reject Package
+                  className="RejectThePackage"
+                  onClick={() => rejectThePackage(item.id)}
+                >
+                  Reject
                 </p>
                 <p
-                  className='DeleteThePackage'
-                  onClick={() => deleteThePackage(item.id)}>
-                  Delete Package
+                  className="DeleteThePackage"
+                  onClick={() => deleteThePackage(item.id)}
+                >
+                  Delete
                 </p>
               </div>
             </div>
           );
         })}
       </div>
-      <div className='publishedPackages'>
-        <h2>Published Packages</h2>
+      <h2>Published Packages</h2>
+      <div className="publishedPackages">
         <br />
         {publishedPackages.map((item) => {
           return (
-            <div className='Card'>
-              <img
-                src={item.image}
-                alt=''
-                className='image'
-              />
-              <div className='Data'>
-                <h2 className='Title'>{item.title}</h2>
-                <h3 className='Category'>{item.createdBy}</h3>
-                {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                <h3 className='Price'>{item.price} $</h3>
-                <p className='Description'>{item.description}</p>
+            <div className="Card">
+              <img src={item.image} alt="" className="image" />
+              <div className="Data">
+                <h2 className="Title">{item.title}</h2>
+                <h3 className="Category">{item.createdBy}</h3>
+                <h3 className="Duration">{item.duration} days</h3>
+                <h3 className="Price">{item.price} $</h3>
+                <p className="Description">{item.description}</p>
                 <p
-                  className='DeletePackage'
-                  onClick={() => deleteThePackage(item.id)}>
-                  Delete Package
+                  className="DeletePackage"
+                  onClick={() => deleteThePackage(item.id)}
+                >
+                  Delete
                 </p>
               </div>
             </div>
           );
         })}
       </div>
-      <div className='rejectPackages'>
-        <h2>Rejected Packages</h2>
+      <h2>Rejected Packages</h2>
+      <div className="rejectPackages">
         <br />
         {rejectedPackages.map((item) => {
           return (
-            <div className='Card'>
-              <img
-                src={item.image}
-                alt=''
-                className='image'
-              />
-              <div className='Data'>
-                <h2 className='Title'>{item.title}</h2>
-                <h3 className='Category'>{item.createdBy}</h3>
-                {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                <h3 className='Price'>{item.price} $</h3>
-                <p className='Description'>{item.description}</p>
+            <div className="Card">
+              <img src={item.image} alt="" className="image" />
+              <div className="Data">
+                <h2 className="Title">{item.title}</h2>
+                <h3 className="Category">{item.createdBy}</h3>
+                <h3 className="Duration">{item.duration} days</h3>
+                <h3 className="Price">{item.price} $</h3>
+                <p className="Description">{item.description}</p>
                 <p
-                  className='DeletePackage'
-                  onClick={() => deleteThePackage(item.id)}>
-                  Delete Package
+                  className="DeletePackage"
+                  onClick={() => deleteThePackage(item.id)}
+                >
+                  Delete
                 </p>
               </div>
             </div>
           );
         })}
       </div>
-      <div className='notPublishedPackages'>
-        <h2>Not Published Packages</h2>
+      <h2>Not Published Packages</h2>
+      <div className="notPublishedPackages">
         <br />
         {notPublishedPackages.map((item) => {
           return (
-            <div className='Card'>
-              <img
-                src={item.image}
-                alt=''
-                className='image'
-              />
-              <div className='Data'>
-                <h2 className='Title'>{item.title}</h2>
-                <h3 className='Category'>{item.createdBy}</h3>
-                {/* <h3 className="Duration">{ item.duration } days</h3> */}
-                <h3 className='Price'>{item.price} $</h3>
-                <p className='Description'>{item.description}</p>
+            <div className="Card">
+              <img src={item.image} alt="" className="image" />
+              <div className="Data">
+                <h2 className="Title">{item.title}</h2>
+                <h3 className="Category">{item.createdBy}</h3>
+                <h3 className="Duration">{item.duration} days</h3>
+                <h3 className="Price">{item.price} $</h3>
+                <p className="Description">{item.description}</p>
                 <p
-                  className='DeletePackage'
-                  onClick={() => deleteThePackage(item.id)}>
-                  Delete Package
+                  className="DeletePackage"
+                  onClick={() => deleteThePackage(item.id)}
+                >
+                  Delete
                 </p>
               </div>
             </div>

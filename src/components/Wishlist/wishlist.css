@@ -1,33 +1,38 @@
 .wishlist {
-    margin-top: 5%;
+  margin-top: 10%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .AddCart {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .AddCart {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 102px;
-    margin-top: 60px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 70px;
+  margin-top: 75px;
 }
 
 .RemoveWishlist {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .RemoveWishlist {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 198px;
-    margin-top: -39.5px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 170px;
+  margin-top: -39.5px;
 }

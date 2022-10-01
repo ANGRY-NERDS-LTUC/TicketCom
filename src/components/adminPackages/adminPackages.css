@@ -1,69 +1,83 @@
 .adminPackages {
-    margin-top: 5%;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  text-align: center;
 }
 
-.allPAckages {
-    height: 600px;
-    text-align: center;
+.allPackages {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .publishedPackages {
-    height: 600px;
-    text-align: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .rejectPackages {
-    height: 600px;
-    text-align: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .notPublishedPackages {
-    height: 600px;
-    text-align: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .AcceptThePackage {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .AcceptThePackage {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 20px;
-    margin-top: 60px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 70px;
+  margin-top: 75px;
 }
 
 .RejectThePackage {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .RejectThePackage {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 148px;
-    margin-top: -40px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 133px;
+  margin-top: -40px;
 }
 
 .DeleteThePackage {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .DeleteThePackage {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 270px;
-    margin-top: -39px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 190px;
+  margin-top: -39px;
 }

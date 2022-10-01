@@ -1,89 +1,134 @@
-/* .homePage {
-    background: url("../6662014.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
+.offersDiv {
+  background-color: rgb(206, 180, 231);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 86vh;
+  padding-top: 100px;
+}
+
+.whyusDiv {
+  color: rgb(255, 255, 255);
+  /* background: url("../4864086.jpg") no-repeat center center fixed; */
+  background-color: rgb(206, 180, 231);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 86vh;
+  padding-top: 100px;
+  /* transition-duration: 500ms; */
+}
+
+.homeImage {
+  background-color: black;
+}
+
+.offersTitle {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
 
 .specialOfferDiv {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 .homePackagesDiv {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 
 .Card {
-    box-sizing: border-box;
-    display: block;
-    flex-direction: column;
-    background-color: rgb(250, 247, 247);
-    border: solid;
-    border-color: rgb(174, 195, 213);
-    border-width: 1px;
-    width: 400px;
-    height: 450px;
-    text-align: center;
-    float: left;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    cursor: pointer ;
-    margin: 50px;
+  box-sizing: border-box;
+  display: block;
+  flex-direction: column;
+  background-color: rgb(250, 247, 247);
+  border: solid;
+  border-color: rgb(174, 195, 213);
+  border-width: 1px;
+  border-radius: 20px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .image {
-    display: block;
-    width: 400px;
-    height: 300px;
+  display: block;
+  width: 299px;
+  height: 220px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-
 .Title {
-    text-align: left;
-    margin-top: 0px;
-    padding-top: 10px;
-    padding-left: 10px;
+  text-align: left;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 
 .Card:hover > .Data > .Title {
-    padding-top: 200px;
-    color: rgb(255, 255, 255);
-    transition-duration: 500ms;
+  padding-top: 100px;
+  color: rgb(255, 255, 255);
+  transition-duration: 500ms;
 }
 
 .Category {
-    text-align: left;
-    padding-left: 10px;
-    font-size: medium;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
+  display: none;
+  /* text-align: left;
+  padding-left: 10px;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(0, 0, 0); */
 }
 
 .Card:hover > .Data > .Category {
-    margin-top: -220px;
-    color: rgb(255, 255, 255);
-    font-size: larger;
-    transition-duration: 500ms;
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-top: -140px;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  transition-duration: 500ms;
+}
+
+.Duration {
+  text-align: left;
+  padding-left: 10px;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.Card:hover > .Data > .Duration {
+  display: none;
 }
 
 .Price {
-    text-align: right;
-    margin-top: -80px;
-    margin-right: 10px;
-    font-size: medium;
-    font-weight: 500;
+  text-align: right;
+  margin-top: -80px;
+  margin-right: 10px;
+  font-size: medium;
+  font-weight: 500;
 }
 
 .Card:hover > .Data > .Price {
-    padding-top: 40px;
-    color: rgb(255, 255, 255);
-    font-size: larger;
-    font-weight: bold;
-    transition-duration: 500ms;
+  padding-top: 40px;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+  transition-duration: 500ms;
 }
 
 /* .Duration {
@@ -95,71 +140,73 @@
 } */
 
 .Description {
-    font-size: medium;
-    font-weight: 300;
-    height: 80px;
-    margin-top: 55px;
-    display: none;
+  font-size: medium;
+  font-weight: 300;
+  height: 80px;
+  margin-top: 55px;
+  display: none;
 }
 
 .Card:hover > .Data > .Description {
-    display: flex;
-    padding-top: 150px;
-    color: rgb(255, 255, 255);
-    font-size: large;
-    transition-duration: 500ms;
-    padding-left: 10px;
-    padding-right: 10px;
+  display: flex;
+  padding-top: 50px;
+  color: rgb(255, 255, 255);
+  font-size: large;
+  transition-duration: 500ms;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-
 .Card:hover > .Data {
-    margin-top: -450px;
-    background-color: rgba(26, 40, 92, 0.6);
-    display: block;
-    width: 400px;
-    height: 450px;
-    transform: translateY(0);
-    transition-duration: 500ms;
+  margin-left: -1px;
+  margin-top: -350px;
+  background-color: rgba(26, 40, 92, 0.6);
+  display: block;
+  width: 300px;
+  height: 350px;
+  transform: translateY(0);
+  transition-duration: 500ms;
+  border-radius: 20px;
 }
 
 .Card:hover > img {
-    display: block;
-    width: 400px;
-    height: 450px;
-    object-fit: cover;
-    object-position: center;
-    transition-duration: 500ms;
+  display: block;
+  width: 298px;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  transition-duration: 500ms;
+  border-radius: 20px;
 }
 
 .Wishlist {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .Wishlist {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 90px;
-    margin-top: 60px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 45px;
+  margin-top: 75px;
 }
 
 .Cart {
-    display: none;
+  display: none;
 }
 
 .Card:hover > .Data > .Cart {
-    display: block;
-    color: rgb(255, 255, 255);
-    border-bottom: solid;
-    border-color: rgb(252, 2, 2);
-    border-width: 2px;
-    width: fit-content;
-    margin-left: 210px;
-    margin-top: -39.5px;
+  display: block;
+  color: rgb(255, 255, 255);
+  border-bottom: solid;
+  border-color: rgb(252, 2, 2);
+  border-width: 2px;
+  width: fit-content;
+  margin-left: 165px;
+  margin-top: -39.5px;
 }
 
 /* .packageButton {
