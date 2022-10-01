@@ -1,5 +1,5 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+// import { useContext } from 'react';
 import AdminPackages from './components/adminPackages/adminPackages';
 import Cart from './components/Cart/cart';
 import CompanyPackages from './components/companyPackages/companyPackages';
@@ -12,13 +12,13 @@ import './App.css';
 import './components/Chat/style.scss';
 import SignUp from "./components/auth/SignUp";
 import Guard from "./components/auth/Guard";
-import {AuthContext} from "./context/AuthContext";
+// import {AuthContext} from "./context/AuthContext";
 import Verifier from "./components/auth/Verifier";
 import Login from "./components/auth/Login";
 import CompanyGuard from "./components/auth/CompanyGuard";
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
 
 
   return (
