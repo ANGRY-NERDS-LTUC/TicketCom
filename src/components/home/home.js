@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react";
+// eslint-disable-next-line
 import { AiTwotoneLike } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-// import Card from "../card/card";
+// import "../assets/style.css"
+
+import { Container, Row, UncontrolledCarousel, Spinner } from "reactstrap";
+
+import icon1 from "./category/icon1.png";
+import icon2 from "./category/icon2.png";
+import icon3 from "./category/icon3.png";
+import icon4 from "./category/icon4.png";
+import shape from "./category/shape.svg";
 
 import axios from "axios";
 import "./home.css";
@@ -181,8 +190,112 @@ function Home() {
 
   return (
     <div className="homePage">
-      {/* <Card /> */}
-      <div className="infoDiv">
+      <div className="offersDiv">
+        <div className="offersDivBranch">
+          <h1 className="offersTitle">BEST TOURS</h1>
+          <h3 className="offersTitle">CHECK OUT OUR TOP-RATED TOURS</h3>
+          <br />
+          <div className="specialOfferDiv">
+            {specialOfferPackages.map((item) => {
+              return (
+                <div className="Card">
+                  <img src={item.image} alt="" className="image" />
+                  <div className="Data">
+                    <h2 className="Title">{item.title}</h2>
+                    <h3 className="Category">{item.createdBy}</h3>
+                    <h3 className="Duration">{item.duration} days</h3>
+                    <h3 className="Price">{item.price} $</h3>
+                    <p className="Description">{item.description}</p>
+                    <p
+                      className="Wishlist"
+                      onClick={() => addToWishlist(item.id)}
+                    >
+                      Add to Wishlist
+                    </p>
+                    <p className="Cart" onClick={() => addToCart(item.id)}>
+                      Add to Cart
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <section class="p-5 pt-md-9" id="service">
+        <div class="container">
+          <div class="position-absolute z-index--1 end-0 d-none d-lg-block">
+            <img
+              src={`${shape}`}
+              style={{
+                maxWidth: "200px",
+              }}
+              alt="service"
+            />
+          </div>
+          <div class="mb-7 text-center">
+            <h5 class="text-secondary">CATEGORY </h5>
+            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">
+              We Offer Best Services
+            </h3>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div class="card-body p-xxl-5 p-4">
+                  {" "}
+                  <img src={`${icon1}`} width="75" alt="Service" />
+                  <h4 class="mb-3">Calculated</h4>
+                  <p class="mb-0 fw-medium">
+                    Built Wicket longer admire do barton vanity itself do in it.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div class="card-body p-xxl-5 p-4">
+                  {" "}
+                  <img src={`${icon2}`} width="75" alt="Service" />
+                  <h4 class="mb-3">Best Flights</h4>
+                  <p class="mb-0 fw-medium">
+                    Engrossed listening. Park gate sell they west hard for the.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div class="card-body p-xxl-5 p-4">
+                  {" "}
+                  <img src={`${icon3}`} width="75" alt="Service" />
+                  <h4 class="mb-3">Local Events</h4>
+                  <p class="mb-0 fw-medium">
+                    Barton vanity itself do in it. Preferd to men it engrossed
+                    listening.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-6">
+              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div class="card-body p-xxl-5 p-4">
+                  {" "}
+                  <img src={`${icon4}`} width="75" alt="Service" />
+                  <h4 class="mb-3">Customization</h4>
+                  <p class="mb-0 fw-medium">
+                    We deliver outsourced aviation services for military
+                    customers
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* <div className="infoDiv">
         {background && (
           <div className="infoDivBranch">
             <div className="info">
@@ -294,7 +407,7 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* <h2>Home packages</h2>
       <br />
       <div className="homePackagesDiv">
