@@ -4,13 +4,14 @@ import { GiEarthAmerica } from "react-icons/gi";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import Card from "../card/card";
+// import Card from "../card/card";
 
 import axios from "axios";
 import "./home.css";
 
 function Home() {
   const [specialOfferPackages, setSpecialOfferPackages] = useState([]);
+  // eslint-disable-next-line
   const [homePackages, setHomePackages] = useState([]);
   const [counter, setCounter] = useState(1);
   const [background, setBackground] = useState(true);
@@ -165,6 +166,7 @@ function Home() {
       rightHandeler();
     }, 3000);
     return () => clearTimeout(timer);
+    // eslint-disable-next-line
   }, [counter]);
 
   function addToCart(id) {
