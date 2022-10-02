@@ -4,6 +4,7 @@ import { GiEarthAmerica } from "react-icons/gi";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import Card from "../card/card";
 
 import axios from "axios";
 import "./home.css";
@@ -16,7 +17,7 @@ function Home() {
   const [background2, setBackground2] = useState(false);
   const [background3, setBackground3] = useState(false);
   const [background4, setBackground4] = useState(false);
-  const [squareColor, setSquareColor] = useState("red");
+  const [squareColor, setSquareColor] = useState("white");
   const [squareColor2, setSquareColor2] = useState("none");
   const [squareColor3, setSquareColor3] = useState("none");
   const [squareColor4, setSquareColor4] = useState("none");
@@ -28,7 +29,7 @@ function Home() {
       setBackground3(false);
       setBackground4(false);
       setSquareColor("none");
-      setSquareColor2("red");
+      setSquareColor2("white");
       setSquareColor3("none");
       setSquareColor4("none");
       setCounter(2);
@@ -40,7 +41,7 @@ function Home() {
       setSquareColor("none");
       setSquareColor2("none");
       setSquareColor3("none");
-      setSquareColor4("red");
+      setSquareColor4("white");
       setCounter(3);
     } else if (counter === 3) {
       setBackground(false);
@@ -49,7 +50,7 @@ function Home() {
       setBackground4(true);
       setSquareColor("none");
       setSquareColor2("none");
-      setSquareColor3("red");
+      setSquareColor3("white");
       setSquareColor4("none");
       setCounter(4);
     } else if (counter === 4) {
@@ -57,7 +58,7 @@ function Home() {
       setBackground2(false);
       setBackground3(false);
       setBackground4(false);
-      setSquareColor("red");
+      setSquareColor("white");
       setSquareColor2("none");
       setSquareColor3("none");
       setSquareColor4("none");
@@ -73,7 +74,7 @@ function Home() {
       setBackground4(true);
       setSquareColor("none");
       setSquareColor2("none");
-      setSquareColor3("red");
+      setSquareColor3("white");
       setSquareColor4("none");
       setCounter(4);
     } else if (counter === 4) {
@@ -84,7 +85,7 @@ function Home() {
       setSquareColor("none");
       setSquareColor2("none");
       setSquareColor3("none");
-      setSquareColor4("red");
+      setSquareColor4("white");
       setCounter(3);
     } else if (counter === 3) {
       setBackground(false);
@@ -92,7 +93,7 @@ function Home() {
       setBackground3(false);
       setBackground4(false);
       setSquareColor("none");
-      setSquareColor2("red");
+      setSquareColor2("white");
       setSquareColor3("none");
       setSquareColor4("none");
       setCounter(2);
@@ -101,7 +102,7 @@ function Home() {
       setBackground2(false);
       setBackground3(false);
       setBackground4(false);
-      setSquareColor("red");
+      setSquareColor("white");
       setSquareColor2("none");
       setSquareColor3("none");
       setSquareColor4("none");
@@ -178,6 +179,7 @@ function Home() {
 
   return (
     <div className="homePage">
+      {/* <Card /> */}
       <div className="infoDiv">
         {background && (
           <div className="infoDivBranch">

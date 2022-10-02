@@ -10,7 +10,7 @@ import "./footer.css";
 function Footer() {
   return (
     <>
-      <nav className="footer">
+      {/* <nav className="footer">
         <p className="footerParagraph">
           Copyright <FaRegCopyright />. All rights deserved.
         </p>
@@ -22,7 +22,7 @@ function Footer() {
           <AiFillGooglePlusCircle />
           <AiFillLinkedin />
         </div>
-      </nav>
+      </nav> */}
     </>
   );
 }

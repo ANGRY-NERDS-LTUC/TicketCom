@@ -17,8 +17,8 @@ import Verifier from "./components/auth/Verifier";
 import Login from "./components/auth/Login";
 import CompanyGuard from "./components/auth/CompanyGuard";
 import Footer from "./components/footer/footer";
-import ChatLogin from "./components/Chat/pages/ChatLogin";
-import ChatRegister from "./components/Chat/pages/ChatRegister";
+// import ChatLogin from "./components/Chat/pages/ChatLogin";
+// import ChatRegister from "./components/Chat/pages/ChatRegister";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -72,8 +72,8 @@ function App() {
                 </Guard>
               }
             />
-            <Route path="/chathome/chatlogin" element={<ChatLogin />} />
-            <Route path="/chathome/chatregister" element={<ChatRegister />} />
+            {/* <Route path="/chathome/chatlogin" element={<ChatLogin />} />
+            <Route path="/chathome/chatregister" element={<ChatRegister />} /> */}
           </Route>
         </Routes>
         <Footer />
