@@ -61,7 +61,7 @@ const SignUp = () => {
           }
         });
       });
-      navigate('/verifier');
+      navigate('/login', {replace: true});
     } catch (err) {
       setErr(true);
       setLoading(false);
@@ -104,7 +104,6 @@ const SignUp = () => {
           </label>
           <label htmlFor='company'>Sign up as company</label>
           <input
-            // style={{ display: 'none' }}
             type='checkbox'
             id='company'
           />

@@ -34,10 +34,10 @@ function App() {
               path='/sign-up'
               element={<SignUp />}
           />
-          <Route
+          {/* <Route
               path='/verifier'
               element={<Verifier />}
-          />
+          /> */}
           <Route
               path='/login'
               element={<Login />}

@@ -1,14 +1,14 @@
-import React, {useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase';
 // import axios from "axios";
-import {AuthContext} from "../../context/AuthContext";
+import { AuthContext } from '../../context/AuthContext';
 
 const Login = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
-  const context = useContext(AuthContext)
+  const context = useContext(AuthContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const displayName = e.target[0].value;
@@ -19,12 +19,12 @@ const Login = () => {
       await context.login({
         email,
         password,
-        displayName
-      })
+        displayName,
+      });
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/', { replace: true });
     } catch (err) {
-      navigate('/verifier', { replace: true });
+      navigate('/sign-up', { replace: true });
       setErr(true);
     }
   };
@@ -39,8 +39,8 @@ const Login = () => {
             placeholder='Name'
           />
           <input
-              type='email'
-              placeholder='email'
+            type='email'
+            placeholder='email'
           />
           <input
             type='password'
@@ -50,8 +50,7 @@ const Login = () => {
           {err && <span>Something went wrong</span>}
         </form>
         <p>
-          You don't have an account?{' '}
-          <Link to='/sign-up'>Register</Link>
+          You don't have an account? <Link to='/sign-up'>Register</Link>
         </p>
       </div>
     </div>
