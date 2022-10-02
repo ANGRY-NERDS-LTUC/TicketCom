@@ -1,23 +1,23 @@
-import { createContext, useEffect, useState } from 'react';
-import { auth } from '../firebase';
-import { onAuthStateChanged } from 'firebase/auth';
-import axios from 'axios';
-import { encode } from 'js-base64';
-import { useCookies } from 'react-cookie';
+import { createContext, useEffect, useState } from "react";
+import { auth } from "../firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import axios from "axios";
+import { encode } from "js-base64";
+import { useCookies } from "react-cookie";
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
   // eslint-disable-next-line
-  const [cookies, setCookie, removeCookie] = useCookies(['token']);
+  const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
   const signUp = ({ displayName, email, password, file }, company = false) => {
-    let route = '/auth/user/signup';
+    let route = "/auth/user/signup";
     if (company) {
-      route = '/auth/companies/signup';
+      route = "/auth/companies/signup";
     }
-    return axios.post(`http://localhost:5000${route}`, {
+    return axios.post(`http://localhost:3001${route}`, {
       displayName,
       email,
       password,
@@ -29,23 +29,23 @@ export const AuthContextProvider = ({ children }) => {
   const login = async ({ password, displayName }) => {
     const userInfo64 = encode(`${displayName}:${password}`, true);
     const user = await axios.post(
-      'http://localhost:5000/auth/login',
+      "http://localhost:3001/auth/login",
       {},
       {
         headers: {
           Authorization: `Basic ${userInfo64}`,
         },
-      },
+      }
     );
-    if (user.data === 'email did not verified please check your email') {
+    if (user.data === "email did not verified please check your email") {
       setUserInfo({ user: { displayName, password } });
-      throw new Error('verified');
+      throw new Error("verified");
     }
-    setCookie('token', user.data.user.token, { path: '/' });
+    setCookie("token", user.data.user.token, { path: "/" });
     setUserInfo(user.data);
   };
   const logout = () => {
-    removeCookie('token');
+    removeCookie("token");
     setCurrentUser({});
   };
   useEffect(() => {
@@ -62,7 +62,8 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ currentUser, signUp, setUserInfo, login, logout }}>
+      value={{ currentUser, signUp, setUserInfo, login, logout }}
+    >
       {children}
     </AuthContext.Provider>
   );
