@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Castoro:ital@1&display=swap%27');
+@import url(https://fonts.googleapis.com/css2?family=Changa:wght@300&display=swap);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+.member{
+    font-family: 'Castoro', serif;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 50px;
+}
+
+
+.memberCard{
+background-color: white;
+margin-top: 100px;
+margin-left: 30px;
+margin-bottom: 30px;
+box-shadow: 5px 5px 5px grey;
+transition: 0.7s;
+height: 400px;
+
+}
+
+.memberCard:hover{
+    background-color: #6E6D6D;
+    color: white;
+box-shadow: 5px 5px 5px rgb(187, 180, 180);
+
+
+}
+
+
+.textName{
+    font-size: 25px;
+    text-align: center;
+    position: relative;
+    bottom: 40px;
+    font-family: 'Francois One', sans-serif;
+}
+
+.textJob{
+    font-family: 'Castoro', serif;
+    position: relative;
+    bottom: 40px;
+    text-align: center;
+}
+
+h1,h2{
+    font-family: "Changa", sans-serif;
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.head{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    font-family: 'Castoro', serif;
+
+}
+
+.description{
+    position: relative;
+    bottom: 30px;
+    text-align: center;
+}
+
+.cardsGroup{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-left: 20px;
+}
+
+.lastTwo{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 70px;
+    margin-left: 400px;
+}
+
+hr{
+    width: 800px;
+}
+
+.parent{
+    margin-top: 10%;
+}
