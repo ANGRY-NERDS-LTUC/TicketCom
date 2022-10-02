@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { useContext } from 'react';
 import AdminPackages from './components/adminPackages/adminPackages';
 import Cart from './components/Cart/cart';
 import CompanyPackages from './components/companyPackages/companyPackages';
@@ -10,17 +9,13 @@ import Wishlist from './components/Wishlist/wishlist';
 import ChatHome from './components/Chat/pages/ChatHome';
 import './App.css';
 import './components/Chat/style.scss';
-import SignUp from "./components/auth/SignUp";
-import Guard from "./components/auth/Guard";
-// import {AuthContext} from "./context/AuthContext";
-import Verifier from "./components/auth/Verifier";
-import Login from "./components/auth/Login";
-import CompanyGuard from "./components/auth/CompanyGuard";
+import SignUp from './components/auth/SignUp';
+import Guard from './components/auth/Guard';
+import Login from './components/auth/Login';
+import CompanyGuard from './components/auth/CompanyGuard';
+import Footer from './components/footer/footer';
 
 function App() {
-  // const { currentUser } = useContext(AuthContext);
-
-
   return (
     <div>
       <BrowserRouter>
@@ -31,26 +26,34 @@ function App() {
             element={<Home />}
           />
           <Route
-              path='/sign-up'
-              element={<SignUp />}
+            path='/sign-up'
+            element={<SignUp />}
           />
-          {/* <Route
-              path='/verifier'
-              element={<Verifier />}
-          /> */}
           <Route
-              path='/login'
-              element={<Login />}
+            path='/login'
+            element={<Login />}
+          />
+          <Route
+            path='/'
+            element={<Home />}
+          />
+          <Route
+            path='/sign-up'
+            element={<SignUp />}
+          />
+          <Route
+            path='/login'
+            element={<Login />}
           />
           <Route
             path='/createPackage'
             element={
-            <Guard>
-              <CompanyGuard>
-                <CreatePackage />
-              </CompanyGuard>
-          </Guard>
-          }
+              <Guard>
+                <CompanyGuard>
+                  <CreatePackage />
+                </CompanyGuard>
+              </Guard>
+            }
           />
           <Route
             path='/companyPackages'
@@ -72,21 +75,20 @@ function App() {
           />
           <Route
             path='/cart'
-            element={
-            <Cart />
-          }
+            element={<Cart />}
           />
           <Route path='/chathome'>
             <Route
               index
               element={
                 <Guard>
-                  <ChatHome/>
+                  <ChatHome />
                 </Guard>
               }
             />
           </Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
