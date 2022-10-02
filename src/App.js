@@ -8,12 +8,17 @@ import Header from "./components/header/header";
 import Home from "./components/home/home";
 import Wishlist from "./components/Wishlist/wishlist";
 import ChatHome from "./components/Chat/pages/ChatHome";
-import ChatLogin from "./components/Chat/pages/ChatLogin";
-import ChatRegister from "./components/Chat/pages/ChatRegister";
-import { AuthContext } from "./components/Chat/context/AuthContext";
 import "./App.css";
 import "./components/Chat/style.scss";
+import SignUp from "./components/auth/SignUp";
+import Guard from "./components/auth/Guard";
+import { AuthContext } from "./context/AuthContext";
+import Verifier from "./components/auth/Verifier";
+import Login from "./components/auth/Login";
+import CompanyGuard from "./components/auth/CompanyGuard";
 import Footer from "./components/footer/footer";
+import ChatLogin from "./components/Chat/pages/ChatLogin";
+import ChatRegister from "./components/Chat/pages/ChatRegister";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -32,8 +37,29 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/createPackage" element={<CreatePackage />} />
-          <Route path="/companyPackages" element={<CompanyPackages />} />
+          <Route path="/sign-up" element={<SignUp />} />
+          <Route path="/verifier" element={<Verifier />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/createPackage"
+            element={
+              <Guard>
+                <CompanyGuard>
+                  <CreatePackage />
+                </CompanyGuard>
+              </Guard>
+            }
+          />
+          <Route
+            path="/companyPackages"
+            element={
+              <Guard>
+                <CompanyGuard>
+                  <CompanyPackages />
+                </CompanyGuard>
+              </Guard>
+            }
+          />
           <Route path="/adminPackages" element={<AdminPackages />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
@@ -41,9 +67,9 @@ function App() {
             <Route
               index
               element={
-                <ProtectedRoute>
+                <Guard>
                   <ChatHome />
-                </ProtectedRoute>
+                </Guard>
               }
             />
             <Route path="/chathome/chatlogin" element={<ChatLogin />} />

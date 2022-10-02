@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../../firebase';
+import { auth } from '../../firebase';
+import axios from "axios";
+import {AuthContext} from "../../context/AuthContext";
 
-const ChatLogin = () => {
+const Login = () => {
   const [err, setErr] = useState(false);
   const navigate = useNavigate();
-
+  const context = useContext(AuthContext)
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const email = e.target[0].value;
-    const password = e.target[1].value;
+    const displayName = e.target[0].value;
+    const email = e.target[1].value;
+    const password = e.target[2].value;
 
     try {
+      await context.login({
+        email,
+        password,
+        displayName
+      })
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/chathome');
+      navigate('/', { replace: true });
     } catch (err) {
+      navigate('/verifier', { replace: true });
       setErr(true);
     }
   };
@@ -26,8 +35,12 @@ const ChatLogin = () => {
         <span className='title'>Enter The Chat page</span>
         <form onSubmit={handleSubmit}>
           <input
-            type='email'
-            placeholder='email'
+            type='text'
+            placeholder='Name'
+          />
+          <input
+              type='email'
+              placeholder='email'
           />
           <input
             type='password'
@@ -38,11 +51,11 @@ const ChatLogin = () => {
         </form>
         <p>
           You don't have an account?{' '}
-          <Link to='/chathome/chatregister'>Register</Link>
+          <Link to='/sign-up'>Register</Link>
         </p>
       </div>
     </div>
   );
 };
 
-export default ChatLogin;
+export default Login;

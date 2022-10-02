@@ -1,8 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {useContext} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import "./header.css";
+import {AuthContext} from "../../context/AuthContext";
 
 function Header() {
+  const context = useContext(AuthContext)
+  const navigate = useNavigate()
+
+
   return (
     <>
       <nav className="nav">
@@ -10,24 +15,34 @@ function Header() {
           <Link to="/" className="link">
             Home
           </Link>
-          <Link to="/createPackage" className="link">
+          {context.currentUser?.user?.type === 'company' && <Link to="/createPackage" className="link">
             Create Package
-          </Link>
-          <Link to="/companyPackages" className="link">
+          </Link>}
+          {context.currentUser?.user?.type === 'company' && <Link to="/companyPackages" className="link">
             Company Packages
-          </Link>
-          <Link to="/adminPackages" className="link">
+          </Link>}
+          {context.currentUser?.user?.type === 'admin' && <Link to="/adminPackages" className="link">
             Admin Packages
-          </Link>
-          <Link to="/wishlist" className="link">
+          </Link>}
+          {context.currentUser?.user?.type === 'client' && <Link to="/wishlist" className="link">
             Wishlist
-          </Link>
-          <Link to="/cart" className="link">
+          </Link>}
+          {context.currentUser?.user?.type === 'client' && <Link to="/cart" className="link">
             Cart
-          </Link>
+          </Link>}
           <Link to="/chathome" className="link">
             Chat
+
           </Link>
+          {context.currentUser?.user && <button onClick={() => {
+            context.logout()
+            navigate('/', {replace: true})
+          }} className="link">
+            Logout
+          </button>}
+          {!context.currentUser?.user && <Link to="/login" className="link">
+            Login
+          </Link>}
         </div>
       </nav>
     </>
