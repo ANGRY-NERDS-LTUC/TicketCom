@@ -17,7 +17,7 @@ export const AuthContextProvider = ({ children }) => {
     if (company) {
       route = '/auth/companies/signup';
     }
-    return axios.post(`http://localhost:5000${route}`, {
+    return axios.post(`http://localhost:3001${route}`, {
       displayName,
       email,
       password,
@@ -29,7 +29,7 @@ export const AuthContextProvider = ({ children }) => {
   const login = async ({ password, displayName }) => {
     const userInfo64 = encode(`${displayName}:${password}`, true);
     const user = await axios.post(
-      'http://localhost:5000/auth/login',
+      'http://localhost:3001/auth/login',
       {},
       {
         headers: {

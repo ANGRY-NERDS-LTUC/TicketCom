@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// eslint-disable-next-line
 import { AiTwotoneLike } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
 import { FaHandHoldingUsd } from "react-icons/fa";
@@ -18,31 +19,8 @@ import axios from "axios";
 import "./home.css";
 
 function Home() {
-<<<<<<< HEAD
-  const [specialOfferPackages, setSpecialOfferPackages] = useState([
-    {
-      image: 'https://images.unsplash.com/photo-1664658147434-06c646231ad2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-      title: 'mmm',
-      createdBy: "mmm",
-      duration: "mm",
-      price: 'mm',
-      description: 'mm'
-
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1664658147434-06c646231ad2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60',
-      title: 'mmm',
-      createdBy: "mmm",
-      duration: "mm",
-      price: 'mm',
-      description: 'mm'
-
-    }
-  ]);
-=======
   const [specialOfferPackages, setSpecialOfferPackages] = useState([]);
   // eslint-disable-next-line
->>>>>>> c8076175cdc40ac830224b55dc2509db218f3c8f
   const [homePackages, setHomePackages] = useState([]);
   const [counter, setCounter] = useState(1);
   const [background, setBackground] = useState(true);
@@ -212,7 +190,6 @@ function Home() {
   }
 
   return (
-<<<<<<< HEAD
     <div className="homePage">
 
       <div className="offersDiv">
@@ -297,10 +274,6 @@ function Home() {
       </section>
 
       {/* <div className="infoDiv">
-=======
-    <div className='homePage'>
-      <div className='infoDiv'>
->>>>>>> c8076175cdc40ac830224b55dc2509db218f3c8f
         {background && (
           <div className='infoDivBranch'>
             <div className='info'>
@@ -359,16 +332,6 @@ function Home() {
             <AiOutlineArrowRight />
           </button>
         </div>
-<<<<<<< HEAD
-      </div> */}
-
-
-
-      {/* <div className="whyusDiv">
-        <div className="whyusDivBranch">
-          <h1 className="whyusTitle">WHY CHOOSE US?</h1>
-          <h3 className="whyusTitle">A BRAND NAME YOU CAN TRUST AND RELY ON</h3>
-=======
       </div>
       <div className='offersDiv'>
         <div className='offersDivBranch'>
@@ -411,7 +374,6 @@ function Home() {
         <div className='whyusDivBranch'>
           <h1 className='whyusTitle'>WHY CHOOSE US?</h1>
           <h3 className='whyusTitle'>A BRAND NAME YOU CAN TRUST AND RELY ON</h3>
->>>>>>> c8076175cdc40ac830224b55dc2509db218f3c8f
           <br />
           <div className='whyusCards'>
             <div className='whyusCard'>
