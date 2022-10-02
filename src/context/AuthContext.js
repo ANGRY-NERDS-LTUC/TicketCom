@@ -2,13 +2,14 @@ import { createContext, useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import axios from 'axios';
-import { encode, decode } from 'js-base64';
+import { encode } from 'js-base64';
 import { useCookies } from 'react-cookie';
 
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
+  // eslint-disable-next-line
   const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
   const signUp = ({ displayName, email, password, file }, company = false) => {
@@ -56,6 +57,7 @@ export const AuthContextProvider = ({ children }) => {
     return () => {
       unsub();
     };
+    // eslint-disable-next-line
   }, []);
 
   return (
