@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./header.css";
 import { AuthContext } from "../../context/AuthContext";
-import { Container, UncontrolledCarousel, Spinner } from "reactstrap";
+// import { Container, UncontrolledCarousel, Spinner } from "reactstrap";
 
 function Header() {
   const context = useContext(AuthContext);
@@ -16,7 +16,7 @@ function Header() {
               TICKET.COM
             </Link>
           </a>
-          <button
+          {/* <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -26,7 +26,7 @@ function Header() {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
+          </button> */}
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">

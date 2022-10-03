@@ -12,7 +12,7 @@ function Wishlist() {
       await axios.get(`http://localhost:3001/client/wishlist?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization: `${getToken}`,
+          Authorization: `${getToken()}`,
         },
       })
     ).data.wishLists;
@@ -27,7 +27,7 @@ function Wishlist() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       );
@@ -43,7 +43,7 @@ function Wishlist() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${getToken}`,
+        Authorization: `${getToken()}`,
       },
     })
       .then((response) => {

@@ -1,19 +1,36 @@
 import React, { useEffect, useState } from "react";
 
 // eslint-disable-next-line
-// import { AiTwotoneLike } from "react-icons/ai";
-// import { GiEarthAmerica } from "react-icons/gi";
-// import { FaHandHoldingUsd } from "react-icons/fa";
+import { AiTwotoneLike } from "react-icons/ai";
+import { GiEarthAmerica } from "react-icons/gi";
+import { FaHandHoldingUsd } from "react-icons/fa";
+import { FaPeopleArrows } from "react-icons/fa";
+
 // import { AiOutlineArrowRight } from "react-icons/ai";
 // import { AiOutlineArrowLeft } from "react-icons/ai";
 // import "../assets/style.css"
 
-import { Container, Row, UncontrolledCarousel, Spinner } from "reactstrap";
+import { UncontrolledCarousel } from "reactstrap";
+import Carousel from "react-bootstrap/Carousel";
 
-import icon1 from "./category/icon1.png";
-import icon2 from "./category/icon2.png";
-import icon3 from "./category/icon3.png";
-import icon4 from "./category/icon4.png";
+import Image1 from "../assets/1.jpg";
+import Image2 from "../assets/2.jpg";
+import Image3 from "../assets/3.jpg";
+import Image4 from "../assets/4.jpg";
+import Image5 from "../assets/5.jpg";
+import Image6 from "../assets/6.jpg";
+import Image7 from "../assets/7.jpg";
+import Image8 from "../assets/8.jpg";
+import Image9 from "../assets/9.jpg";
+import Image10 from "../assets/10.jpg";
+import Image11 from "../assets/11.jpg";
+import Image12 from "../assets/12.jpg";
+import Image13 from "../assets/13.jpg";
+
+// import icon1 from "./category/icon1.png";
+// import icon2 from "./category/icon2.png";
+// import icon3 from "./category/icon3.png";
+// import icon4 from "./category/icon4.png";
 import shape from "./category/shape.svg";
 
 import axios from "axios";
@@ -21,7 +38,6 @@ import "./home.css";
 
 function Home() {
   const getToken = () => document.cookie.replace("token=", "");
-  console.log("00000000000000", getToken);
 
   const [specialOfferPackages, setSpecialOfferPackages] = useState([]);
   // eslint-disable-next-line
@@ -144,7 +160,7 @@ function Home() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${getToken}`,
+        Authorization: `${getToken()}`,
       },
     })
       .then((response) => {
@@ -161,7 +177,7 @@ function Home() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${getToken}`,
+        Authorization: `${getToken()}`,
       },
     })
       .then((response) => {
@@ -193,24 +209,120 @@ function Home() {
   }
 
   return (
-    <div className="homePage">
-      <UncontrolledCarousel
+    <div>
+      <Carousel fade>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Image1} alt="First slide" />
+          <Carousel.Caption>
+            <h3>TRAVEL TIME</h3>
+            <p>DISCOVER THE WORLD IN A NEW WAY</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Image2} alt="Second slide" />
+          <Carousel.Caption>
+            <p>A LOT OF BRILLIANT VIEWS AND SITES ARE</p>
+            <h3>WAITING FOR YOU</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Image3} alt="Third slide" />
+          <Carousel.Caption>
+            <p>LET US TAKE YOU TO YOUR</p>
+            <h3>DREAM DESTINATIONS</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={Image4} alt="Third slide" />
+          <Carousel.Caption>
+            <p>THERE ARE MANY AMAZING RESORTS AND HOTELS</p>
+            <h3>BUILT SPECIALLY FOR YOUR JOY</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      {/* <UncontrolledCarousel
         //   className="w-50"
         items={[
           {
-            altText: "1111",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            altText: "TRAVEL TIME",
+            caption: "DISCOVER THE WORLD IN A NEW WAY",
             key: 1,
-            src: "https://images.unsplash.com/photo-1603058033439-4bf1ba4b9e56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+            src: `${Image1}`,
           },
           {
             altText: "2222",
             caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
             key: 2,
-            src: "https://images.unsplash.com/photo-1664658936499-f26d4ba3f2c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+            src: `${Image2}`,
+          },
+          {
+            altText: "1111",
+            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
+            key: 1,
+            src: `${Image3}`,
+          },
+          {
+            altText: "2222",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 2,
+            src: `${Image4}`,
+          },
+          {
+            altText: "1111",
+            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
+            key: 1,
+            src: `${Image5}`,
+          },
+          {
+            altText: "2222",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 2,
+            src: `${Image6}`,
+          },
+          {
+            altText: "1111",
+            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
+            key: 1,
+            src: `${Image7}`,
+          },
+          {
+            altText: "2222",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 2,
+            src: `${Image8}`,
+          },
+          {
+            altText: "1111",
+            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
+            key: 1,
+            src: `${Image9}`,
+          },
+          {
+            altText: "2222",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 2,
+            src: `${Image10}`,
+          },
+          {
+            altText: "1111",
+            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
+            key: 1,
+            src: `${Image11}`,
+          },
+          {
+            altText: "2222",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 2,
+            src: `${Image12}`,
+          },
+          {
+            altText: "1111",
+            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
+            key: 1,
+            src: `${Image13}`,
           },
         ]}
-      />
+      /> */}
       <div className="offersDiv">
         <div className="offersDivBranch">
           <h1 className="offersTitle">BEST TOURS</h1>
@@ -246,6 +358,15 @@ function Home() {
 
       <section class="p-5 pt-md-9" id="service">
         <div class="container">
+          <div class="position-absolute z-index--1 start-0 d-none d-lg-block">
+            <img
+              src={`${shape}`}
+              style={{
+                maxWidth: "200px",
+              }}
+              alt="service"
+            />
+          </div>
           <div class="position-absolute z-index--1 end-0 d-none d-lg-block">
             <img
               src={`${shape}`}
@@ -256,20 +377,22 @@ function Home() {
             />
           </div>
           <div class="mb-7 text-center">
-            <h5 class="text-secondary">CATEGORY </h5>
             <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">
-              We Offer Best Services
+              WHY CHOOSE US?
             </h3>
+            <h5 class="text-secondary mb-5">
+              A BRAND NAME YOU CAN TRUST AND RELY ON
+            </h5>
           </div>
           <div class="row">
             <div class="col-lg-3 col-sm-6 mb-6">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4">
-                  {" "}
-                  <img src={`${icon1}`} width="75" alt="Service" />
-                  <h4 class="mb-3">Calculated</h4>
+                  {/* <img src={`${icon1}`} width="75" alt="Service" /> */}
+                  <FaHandHoldingUsd class="mb-3 w-50 h-50" />
+                  <h5 class="mt-2 mb-3">SPARE MONEY</h5>
                   <p class="mb-0 fw-medium">
-                    Built Wicket longer admire do barton vanity itself do in it.
+                    AFFORDABLE AND COMETITIVE PRICES GUARANTEE
                   </p>
                 </div>
               </div>
@@ -277,11 +400,11 @@ function Home() {
             <div class="col-lg-3 col-sm-6 mb-6">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4">
-                  {" "}
-                  <img src={`${icon2}`} width="75" alt="Service" />
-                  <h4 class="mb-3">Best Flights</h4>
+                  {/* <img src={`${icon2}`} width="75" alt="Service" /> */}
+                  <AiTwotoneLike class="mb-3 w-50 h-50" />
+                  <h5 class="mt-2 mb-3">BEST SERVICES</h5>
                   <p class="mb-0 fw-medium">
-                    Engrossed listening. Park gate sell they west hard for the.
+                    HIGHLY QUALIFIED SERVICES THROUGHOUT THE JOURNEY
                   </p>
                 </div>
               </div>
@@ -289,12 +412,11 @@ function Home() {
             <div class="col-lg-3 col-sm-6 mb-6">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4">
-                  {" "}
-                  <img src={`${icon3}`} width="75" alt="Service" />
-                  <h4 class="mb-3">Local Events</h4>
+                  {/* <img src={`${icon3}`} width="75" alt="Service" /> */}
+                  <GiEarthAmerica class="mb-3 w-50 h-50" />
+                  <h5 class="mt-2 mb-3">GLOBAL TOURS</h5>
                   <p class="mb-0 fw-medium">
-                    Barton vanity itself do in it. Preferd to men it engrossed
-                    listening.
+                    WIDE VARIETY OF DESTINATIONS AROUND THE WORLD
                   </p>
                 </div>
               </div>
@@ -302,12 +424,12 @@ function Home() {
             <div class="col-lg-3 col-sm-6 mb-6">
               <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
                 <div class="card-body p-xxl-5 p-4">
-                  {" "}
-                  <img src={`${icon4}`} width="75" alt="Service" />
-                  <h4 class="mb-3">Customization</h4>
+                  {/* <img src={`${icon4}`} width="75" alt="Service" /> */}
+                  {/* <i class="fa-sharp fa-solid fa-people-arrows"></i> */}
+                  <FaPeopleArrows class="mb-3 w-50 h-50" />
+                  <h5 class="mt-2 mb-3">EXPERIANCE SHARING</h5>
                   <p class="mb-0 fw-medium">
-                    We deliver outsourced aviation services for military
-                    customers
+                    BEST CONSULTING SERVICES FROM THE MOST EXPERIENCED PEOPLE
                   </p>
                 </div>
               </div>

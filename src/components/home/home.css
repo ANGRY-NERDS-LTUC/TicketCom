@@ -1,3 +1,13 @@
+.carousel-item {
+  height: 100vh;
+  min-height: 350px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .slider {
   display: flex;
   margin-left: 500px;
@@ -57,7 +67,7 @@
 
 .infoDivBranch {
   color: rgb(255, 255, 255);
-  background: url("../assets/1431610.jpg") no-repeat center center fixed;
+  /* background: url("../assets/1431610.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -73,7 +83,7 @@
 
 .infoDivBranch2 {
   color: rgb(0, 0, 0);
-  background: url("../assets/772940.jpg") no-repeat center center fixed;
+  /* background: url("../assets/772940.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -89,7 +99,7 @@
 
 .infoDivBranch3 {
   color: rgb(0, 0, 0);
-  background: url("../assets/87699.jpg") no-repeat center center fixed;
+  /* background: url("../assets/87699.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -105,7 +115,7 @@
 
 .infoDivBranch4 {
   color: rgb(255, 255, 255);
-  background: url("../assets/4157784.jpg") no-repeat center center fixed;
+  /* background: url("../assets/4157784.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -140,7 +150,7 @@
 
 .whyusDiv {
   color: rgb(0, 0, 0);
-  background: url("../assets/6662022.jpg") no-repeat center center fixed;
+  /* background: url("../assets/6662022.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -197,7 +207,7 @@
 }
 
 .offersDiv {
-  background: url("../assets/3916754.jpg") no-repeat center center fixed;
+  /* background: url("../assets/3916754.jpg") no-repeat center center fixed; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -295,7 +305,7 @@
   text-align: left;
   padding-left: 10px;
   font-weight: bold;
-  margin-top: -140px;
+  margin-top: -130px;
   color: rgb(255, 255, 255);
   font-size: larger;
   transition-duration: 500ms;
@@ -322,7 +332,7 @@
 }
 
 .Card:hover > .Data > .Price {
-  padding-top: 40px;
+  padding-top: 50px;
   color: rgb(255, 255, 255);
   font-size: larger;
   font-weight: bold;
@@ -347,7 +357,7 @@
 
 .Card:hover > .Data > .Description {
   display: flex;
-  padding-top: 50px;
+  padding-top: 100px;
   color: rgb(255, 255, 255);
   font-size: large;
   transition-duration: 500ms;

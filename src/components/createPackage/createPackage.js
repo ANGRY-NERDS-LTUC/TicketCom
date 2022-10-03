@@ -15,7 +15,7 @@ function CreatePackage() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       );

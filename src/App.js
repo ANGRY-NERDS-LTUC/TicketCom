@@ -26,9 +26,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/sign-up" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/" element={<Home />} /> */}
+          {/* <Route path="/sign-up" element={<SignUp />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
           <Route
             path="/createPackage"
             element={

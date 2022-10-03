@@ -15,7 +15,7 @@ function AdminPackages() {
       await axios.get(`http://localhost:3001/admin/package?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization: `${getToken}`,
+          Authorization: `${getToken()}`,
         },
       })
     ).data;
@@ -29,7 +29,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       );
@@ -46,7 +46,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       )
@@ -61,7 +61,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       )
@@ -76,7 +76,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       )
@@ -91,7 +91,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken}`,
+            Authorization: `${getToken()}`,
           },
         }
       );
@@ -109,7 +109,7 @@ function AdminPackages() {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: `${getToken}`,
+          Authorization: `${getToken()}`,
         },
       }
     )
