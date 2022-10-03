@@ -7,13 +7,14 @@ function CompanyPackages() {
   const [acceptedCompanyPackages, setAcceptedCompanyPackages] = useState([]);
   const [rejectedCompanyPackages, setRejectedCompanyPackages] = useState([]);
 
+  const getToken = () => document.cookie.replace("token=", "");
+
   const getCompanyPackages = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/company/packages?type=company`, {
         headers: {
           Accept: "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjQxOTMxMjJ9.EG_OxJwBVvXtr95lyM-rev5Fk6TUx7aazzPTNIHmR9I",
+          Authorization: `${getToken()}`,
         },
       })
     ).data;
@@ -27,8 +28,7 @@ function CompanyPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjQxOTMxMjJ9.EG_OxJwBVvXtr95lyM-rev5Fk6TUx7aazzPTNIHmR9I",
+            Authorization: `${getToken()}`,
           },
         }
       );
@@ -45,8 +45,7 @@ function CompanyPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjQxOTMxMjJ9.EG_OxJwBVvXtr95lyM-rev5Fk6TUx7aazzPTNIHmR9I",
+            Authorization: `${getToken()}`,
           },
         }
       )
@@ -61,8 +60,7 @@ function CompanyPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNvbXBhbnkiLCJpYXQiOjE2NjQxOTMxMjJ9.EG_OxJwBVvXtr95lyM-rev5Fk6TUx7aazzPTNIHmR9I",
+            Authorization: `${getToken()}`,
           },
         }
       )

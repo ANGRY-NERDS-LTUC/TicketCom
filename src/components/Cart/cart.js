@@ -5,13 +5,14 @@ import "./cart.css";
 function Cart() {
   const [cartPackages, setCartPackages] = useState([]);
 
+  const getToken = () => document.cookie.replace("token=", "");
+
   const cartPackagesHandeler = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/client/cart?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8",
+          Authorization: `${getToken}`,
         },
       })
     ).data.Carts;
@@ -26,8 +27,7 @@ function Cart() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8",
+            Authorization: `${getToken}`,
           },
         }
       );

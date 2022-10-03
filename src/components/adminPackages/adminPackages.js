@@ -8,13 +8,14 @@ function AdminPackages() {
   const [rejectedPackages, setRejectedPackages] = useState([]);
   const [notPublishedPackages, setNotPublishedPackages] = useState([]);
 
+  const getToken = () => document.cookie.replace("token=", "");
+
   const getAllPackages = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/admin/package?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
+          Authorization: `${getToken}`,
         },
       })
     ).data;
@@ -28,8 +29,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
+            Authorization: `${getToken}`,
           },
         }
       );
@@ -46,8 +46,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
+            Authorization: `${getToken}`,
           },
         }
       )
@@ -62,8 +61,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
+            Authorization: `${getToken}`,
           },
         }
       )
@@ -78,8 +76,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
+            Authorization: `${getToken}`,
           },
         }
       )
@@ -94,8 +91,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0",
+            Authorization: `${getToken}`,
           },
         }
       );
@@ -113,7 +109,7 @@ function AdminPackages() {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImFkbWluIiwiaWF0IjoxNjY0MzY0NzkyfQ.6ByX8uYxDstGVgQ8CiUJMbJ8DhDlzF07mgmIqbPxjo0`,
+          Authorization: `${getToken}`,
         },
       }
     )

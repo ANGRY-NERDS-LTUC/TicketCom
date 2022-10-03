@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../firebase';
-import { AuthContext } from '../../context/AuthContext';
+import React, { useContext, useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
+import { AuthContext } from "../../context/AuthContext";
 
 const Login = () => {
   const [err, setErr] = useState(false);
@@ -21,35 +21,26 @@ const Login = () => {
         displayName,
       });
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/', { replace: true });
+      navigate("/", { replace: true });
     } catch (err) {
-      navigate('/sign-up', { replace: true });
+      navigate("/sign-up", { replace: true });
       setErr(true);
     }
   };
   return (
-    <div className='formContainer'>
-      <div className='formWrapper'>
-        <span className='logo'>TicketCom Chat</span>
-        <span className='title'>Enter The Chat page</span>
+    <div className="formContainer">
+      <div className="formWrapper">
+        <span className="logo">TicketCom Chat</span>
+        <span className="title">Enter The Chat page</span>
         <form onSubmit={handleSubmit}>
-          <input
-            type='text'
-            placeholder='Name'
-          />
-          <input
-            type='email'
-            placeholder='email'
-          />
-          <input
-            type='password'
-            placeholder='password'
-          />
+          <input type="text" placeholder="Name" />
+          <input type="email" placeholder="email" />
+          <input type="password" placeholder="password" />
           <button>Enter</button>
           {err && <span>Something went wrong</span>}
         </form>
         <p>
-          You don't have an account? <Link to='/sign-up'>Register</Link>
+          You don't have an account? <Link to="/sign-up">Register</Link>
         </p>
       </div>
     </div>

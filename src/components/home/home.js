@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+
 // eslint-disable-next-line
-import { AiTwotoneLike } from "react-icons/ai";
-import { GiEarthAmerica } from "react-icons/gi";
-import { FaHandHoldingUsd } from "react-icons/fa";
-import { AiOutlineArrowRight } from "react-icons/ai";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+// import { AiTwotoneLike } from "react-icons/ai";
+// import { GiEarthAmerica } from "react-icons/gi";
+// import { FaHandHoldingUsd } from "react-icons/fa";
+// import { AiOutlineArrowRight } from "react-icons/ai";
+// import { AiOutlineArrowLeft } from "react-icons/ai";
 // import "../assets/style.css"
 
 import { Container, Row, UncontrolledCarousel, Spinner } from "reactstrap";
@@ -19,106 +20,109 @@ import axios from "axios";
 import "./home.css";
 
 function Home() {
+  const getToken = () => document.cookie.replace("token=", "");
+  console.log("00000000000000", getToken);
+
   const [specialOfferPackages, setSpecialOfferPackages] = useState([]);
   // eslint-disable-next-line
   const [homePackages, setHomePackages] = useState([]);
-  const [counter, setCounter] = useState(1);
-  const [background, setBackground] = useState(true);
-  const [background2, setBackground2] = useState(false);
-  const [background3, setBackground3] = useState(false);
-  const [background4, setBackground4] = useState(false);
-  const [squareColor, setSquareColor] = useState("white");
-  const [squareColor2, setSquareColor2] = useState("none");
-  const [squareColor3, setSquareColor3] = useState("none");
-  const [squareColor4, setSquareColor4] = useState("none");
+  // const [counter, setCounter] = useState(1);
+  // const [background, setBackground] = useState(true);
+  // const [background2, setBackground2] = useState(false);
+  // const [background3, setBackground3] = useState(false);
+  // const [background4, setBackground4] = useState(false);
+  // const [squareColor, setSquareColor] = useState("white");
+  // const [squareColor2, setSquareColor2] = useState("none");
+  // const [squareColor3, setSquareColor3] = useState("none");
+  // const [squareColor4, setSquareColor4] = useState("none");
 
-  function rightHandeler() {
-    if (counter === 1) {
-      setBackground(false);
-      setBackground2(true);
-      setBackground3(false);
-      setBackground4(false);
-      setSquareColor("none");
-      setSquareColor2("white");
-      setSquareColor3("none");
-      setSquareColor4("none");
-      setCounter(2);
-    } else if (counter === 2) {
-      setBackground(false);
-      setBackground2(false);
-      setBackground3(true);
-      setBackground4(false);
-      setSquareColor("none");
-      setSquareColor2("none");
-      setSquareColor3("none");
-      setSquareColor4("white");
-      setCounter(3);
-    } else if (counter === 3) {
-      setBackground(false);
-      setBackground2(false);
-      setBackground3(false);
-      setBackground4(true);
-      setSquareColor("none");
-      setSquareColor2("none");
-      setSquareColor3("white");
-      setSquareColor4("none");
-      setCounter(4);
-    } else if (counter === 4) {
-      setBackground(true);
-      setBackground2(false);
-      setBackground3(false);
-      setBackground4(false);
-      setSquareColor("white");
-      setSquareColor2("none");
-      setSquareColor3("none");
-      setSquareColor4("none");
-      setCounter(1);
-    }
-  }
+  // function rightHandeler() {
+  //   if (counter === 1) {
+  //     setBackground(false);
+  //     setBackground2(true);
+  //     setBackground3(false);
+  //     setBackground4(false);
+  //     setSquareColor("none");
+  //     setSquareColor2("white");
+  //     setSquareColor3("none");
+  //     setSquareColor4("none");
+  //     setCounter(2);
+  //   } else if (counter === 2) {
+  //     setBackground(false);
+  //     setBackground2(false);
+  //     setBackground3(true);
+  //     setBackground4(false);
+  //     setSquareColor("none");
+  //     setSquareColor2("none");
+  //     setSquareColor3("none");
+  //     setSquareColor4("white");
+  //     setCounter(3);
+  //   } else if (counter === 3) {
+  //     setBackground(false);
+  //     setBackground2(false);
+  //     setBackground3(false);
+  //     setBackground4(true);
+  //     setSquareColor("none");
+  //     setSquareColor2("none");
+  //     setSquareColor3("white");
+  //     setSquareColor4("none");
+  //     setCounter(4);
+  //   } else if (counter === 4) {
+  //     setBackground(true);
+  //     setBackground2(false);
+  //     setBackground3(false);
+  //     setBackground4(false);
+  //     setSquareColor("white");
+  //     setSquareColor2("none");
+  //     setSquareColor3("none");
+  //     setSquareColor4("none");
+  //     setCounter(1);
+  //   }
+  // }
 
-  function leftHandeler() {
-    if (counter === 1) {
-      setBackground(false);
-      setBackground2(false);
-      setBackground3(false);
-      setBackground4(true);
-      setSquareColor("none");
-      setSquareColor2("none");
-      setSquareColor3("white");
-      setSquareColor4("none");
-      setCounter(4);
-    } else if (counter === 4) {
-      setBackground(false);
-      setBackground2(false);
-      setBackground3(true);
-      setBackground4(false);
-      setSquareColor("none");
-      setSquareColor2("none");
-      setSquareColor3("none");
-      setSquareColor4("white");
-      setCounter(3);
-    } else if (counter === 3) {
-      setBackground(false);
-      setBackground2(true);
-      setBackground3(false);
-      setBackground4(false);
-      setSquareColor("none");
-      setSquareColor2("white");
-      setSquareColor3("none");
-      setSquareColor4("none");
-      setCounter(2);
-    } else if (counter === 2) {
-      setBackground(true);
-      setBackground2(false);
-      setBackground3(false);
-      setBackground4(false);
-      setSquareColor("white");
-      setSquareColor2("none");
-      setSquareColor3("none");
-      setSquareColor4("none");
-      setCounter(1);
-    }
-  }
+  // function leftHandeler() {
+  //   if (counter === 1) {
+  //     setBackground(false);
+  //     setBackground2(false);
+  //     setBackground3(false);
+  //     setBackground4(true);
+  //     setSquareColor("none");
+  //     setSquareColor2("none");
+  //     setSquareColor3("white");
+  //     setSquareColor4("none");
+  //     setCounter(4);
+  //   } else if (counter === 4) {
+  //     setBackground(false);
+  //     setBackground2(false);
+  //     setBackground3(true);
+  //     setBackground4(false);
+  //     setSquareColor("none");
+  //     setSquareColor2("none");
+  //     setSquareColor3("none");
+  //     setSquareColor4("white");
+  //     setCounter(3);
+  //   } else if (counter === 3) {
+  //     setBackground(false);
+  //     setBackground2(true);
+  //     setBackground3(false);
+  //     setBackground4(false);
+  //     setSquareColor("none");
+  //     setSquareColor2("white");
+  //     setSquareColor3("none");
+  //     setSquareColor4("none");
+  //     setCounter(2);
+  //   } else if (counter === 2) {
+  //     setBackground(true);
+  //     setBackground2(false);
+  //     setBackground3(false);
+  //     setBackground4(false);
+  //     setSquareColor("white");
+  //     setSquareColor2("none");
+  //     setSquareColor3("none");
+  //     setSquareColor4("none");
+  //     setCounter(1);
+  //   }
+  // }
 
   const specialOfferPackagesHandeler = async () => {
     const data = await (
@@ -140,7 +144,7 @@ function Home() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8`,
+        Authorization: `${getToken}`,
       },
     })
       .then((response) => {
@@ -157,7 +161,7 @@ function Home() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8`,
+        Authorization: `${getToken}`,
       },
     })
       .then((response) => {
@@ -171,12 +175,12 @@ function Home() {
   useEffect(() => {
     specialOfferPackagesHandeler();
     homePackagesHandeler();
-    const timer = setTimeout(() => {
-      rightHandeler();
-    }, 3000);
-    return () => clearTimeout(timer);
+    // const timer = setTimeout(() => {
+    //   rightHandeler();
+    // }, 3000);
+    // return () => clearTimeout(timer);
     // eslint-disable-next-line
-  }, [counter]);
+  }, []);
 
   function addToCart(id) {
     createCart(id);
@@ -190,6 +194,23 @@ function Home() {
 
   return (
     <div className="homePage">
+      <UncontrolledCarousel
+        //   className="w-50"
+        items={[
+          {
+            altText: "1111",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 1,
+            src: "https://images.unsplash.com/photo-1603058033439-4bf1ba4b9e56?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80",
+          },
+          {
+            altText: "2222",
+            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
+            key: 2,
+            src: "https://images.unsplash.com/photo-1664658936499-f26d4ba3f2c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+          },
+        ]}
+      />
       <div className="offersDiv">
         <div className="offersDivBranch">
           <h1 className="offersTitle">BEST TOURS</h1>

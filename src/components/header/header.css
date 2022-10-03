@@ -36,12 +36,20 @@
   text-decoration: none;
 }
 
+.websiteName {
+  margin-right: 20px;
+  margin-left: 20px;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+/* 
 .link:focus {
   font-weight: 900;
   padding: 15px;
   border-bottom: solid;
   border-color: rgb(255, 0, 0);
-}
+} */
 
 .carousel-item {
   height: 65vh;

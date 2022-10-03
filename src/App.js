@@ -14,12 +14,14 @@ import Guard from "./components/auth/Guard";
 import Login from "./components/auth/Login";
 import CompanyGuard from "./components/auth/CompanyGuard";
 import Footer from "./components/footer/footer";
+import AboutUs from "./components/aboutUs/aboutUs";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Header />
+        <AboutUs />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />

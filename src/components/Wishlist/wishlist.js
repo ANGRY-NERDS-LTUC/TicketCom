@@ -5,13 +5,14 @@ import "./wishlist.css";
 function Wishlist() {
   const [wishlistPackages, setWishlistPackages] = useState([]);
 
+  const getToken = () => document.cookie.replace("token=", "");
+
   const wishlistPackagesHandeler = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/client/wishlist?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization:
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8",
+          Authorization: `${getToken}`,
         },
       })
     ).data.wishLists;
@@ -26,8 +27,7 @@ function Wishlist() {
         {
           headers: {
             Accept: "application/json",
-            Authorization:
-              "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8",
+            Authorization: `${getToken}`,
           },
         }
       );
@@ -43,7 +43,7 @@ function Wishlist() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkaXNwbGF5TmFtZSI6ImNsaWVudCIsImlhdCI6MTY2NDU3NjkxNX0.HhPyg_1wWXFGBXbgNGx4SrqXv6sxf5xSjy_UO9CZ2C8`,
+        Authorization: `${getToken}`,
       },
     })
       .then((response) => {
