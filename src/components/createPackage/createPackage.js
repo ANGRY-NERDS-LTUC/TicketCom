@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./createPackage.css";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+const user = cookies.get("data")
 
 function CreatePackage() {
   const [checkBox, setCheckBox] = useState(false);
 
-  const getToken = () => document.cookie.replace("token=", "");
+  // const getToken = () => document.cookie.replace("token=", "");
 
   const createCompanyPackage = async (data) => {
     try {
@@ -15,7 +18,7 @@ function CreatePackage() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       );

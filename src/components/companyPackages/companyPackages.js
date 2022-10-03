@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import "./companyPackages.css";
 import axios from "axios";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+const user = cookies.get("data")
 
 function CompanyPackages() {
   const [companyPackages, setCompanyPackages] = useState([]);
   const [acceptedCompanyPackages, setAcceptedCompanyPackages] = useState([]);
   const [rejectedCompanyPackages, setRejectedCompanyPackages] = useState([]);
 
-  const getToken = () => document.cookie.replace("token=", "");
+  // const getToken = () => document.cookie.replace("token=", "");
 
   const getCompanyPackages = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/company/packages?type=company`, {
         headers: {
           Accept: "application/json",
-          Authorization: `${getToken()}`,
+          Authorization: `${user.token}`,
         },
       })
     ).data;
@@ -28,7 +31,7 @@ function CompanyPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       );
@@ -45,7 +48,7 @@ function CompanyPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       )
@@ -60,7 +63,7 @@ function CompanyPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       )

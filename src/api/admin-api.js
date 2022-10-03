@@ -5,6 +5,7 @@ const link = 'http://localhost:3001';
 const getToken = () => document.cookie.replace('token=', '');
 
 export const getAllPackages = async() => {
+    console.log('admin',user);
     try {
         const res = await axios.get(`${link}/admin/package?type=client`, {
             headers: {

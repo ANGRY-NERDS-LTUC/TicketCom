@@ -1,23 +1,32 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./cart.css";
+import Cookies from "universal-cookie";
+import Swal from 'sweetalert2'
+
+const cookies = new Cookies();
+const user = cookies.get("data")
 
 function Cart() {
   const [cartPackages, setCartPackages] = useState([]);
-
-  const getToken = () => document.cookie.replace("token=", "");
+  const[price,setPrice]=useState(0)
+// 
+  // const getToken = () => document.cookie.replace("token=", "");
 
   const cartPackagesHandeler = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/client/cart?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization: `${getToken}`,
+          Authorization: `${user.token}`,
         },
       })
     ).data.Carts;
+    data.forEach(e=>{
+      setPrice(price+e.price)
+    })
     setCartPackages(data);
-    console.log(cartPackages);
+    // console.log(cartPackages);
   };
 
   const deleteCart = async (id) => {
@@ -27,7 +36,7 @@ function Cart() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       );
@@ -37,17 +46,33 @@ function Cart() {
     }
   };
 
+  // const calculateTotalPrice=()=>{
+  //   cartPackages.forEach(e=>{
+  //     setPrice(price+e.price)
+  //   })
+  // }
+
+  // console.log(price);
   useEffect(() => {
     cartPackagesHandeler();
+    // calculateTotalPrice()
     //   eslint-disable-next-line
-  }, [cartPackages]);
+  }, []);
 
   function removeFromCart(id) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Removed',
+      showConfirmButton: false,
+      timer: 1500
+    })
     deleteCart(id);
   }
 
   return (
     <div className="cart">
+      {price}
       {cartPackages.map((item) => {
         return (
           <div className="Card">

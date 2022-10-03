@@ -3,9 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import "./header.css";
 import { AuthContext } from "../../context/AuthContext";
 // import { Container, UncontrolledCarousel, Spinner } from "reactstrap";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
 
 function Header() {
   const context = useContext(AuthContext);
+  const user = cookies.get("data");
+  // console.log("user", user);
   const navigate = useNavigate();
   return (
     <>
@@ -47,7 +51,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {context.currentUser?.user?.type === "company" && (
+                  {user?.type === "company" && (
                     <>
                       <i class="fa-solid fa-circle-plus"></i>
                       <Link to="/createPackage" className="link">
@@ -59,7 +63,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {context.currentUser?.user?.type === "company" && (
+                  {user?.type === "company" && (
                     <>
                       <i class="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/companyPackages" className="link">
@@ -71,7 +75,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {context.currentUser?.user?.role === "admin" && (
+                  {user?.role === "admin" && (
                     <>
                       <i class="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/adminPackages" className="link">
@@ -83,7 +87,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {context.currentUser?.user?.type === "client" && (
+                  {user?.type === "client" && (
                     <>
                       <i class="fa-solid fa-star"></i>
                       <Link to="/wishlist" className="link">
@@ -95,7 +99,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {context.currentUser?.user?.type === "client" && (
+                  {user?.type === "client" && (
                     <>
                       <i class="fa-solid fa-cart-shopping"></i>
                       <Link to="/cart" className="link">
@@ -115,7 +119,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {context.currentUser?.user && (
+                  {user && (
                     <button
                       onClick={() => {
                         context.logout();
@@ -130,7 +134,7 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  {!context.currentUser?.user && (
+                  {!user && (
                     <>
                       <i class="fa-solid fa-right-to-bracket"></i>
                       <Link to="/login" className="link">
@@ -181,32 +185,32 @@ function Header() {
           <Link to="/" className="link">
             Home
           </Link>
-          {context.currentUser?.user?.type === 'company' && <Link to="/createPackage" className="link">
+          {user?.type === 'company' && <Link to="/createPackage" className="link">
             Create Package
           </Link>}
-          {context.currentUser?.user?.type === 'company' && <Link to="/companyPackages" className="link">
+          {user?.type === 'company' && <Link to="/companyPackages" className="link">
             Company Packages
           </Link>}
-          {context.currentUser?.user?.type === 'admin' && <Link to="/adminPackages" className="link">
+          {user?.type === 'admin' && <Link to="/adminPackages" className="link">
             Admin Packages
           </Link>}
-          {context.currentUser?.user?.type === 'client' && <Link to="/wishlist" className="link">
+          {user?.type === 'client' && <Link to="/wishlist" className="link">
             Wishlist
           </Link>}
-          {context.currentUser?.user?.type === 'client' && <Link to="/cart" className="link">
+          {user?.type === 'client' && <Link to="/cart" className="link">
             Cart
           </Link>}
           <Link to="/chathome" className="link">
             Chat
 
           </Link>
-          {context.currentUser?.user && <button onClick={() => {
+          {user && <button onClick={() => {
             context.logout()
             navigate('/', {replace: true})
           }} className="link">
             Logout
           </button>}
-          {!context.currentUser?.user && <Link to="/login" className="link">
+          {!user && <Link to="/login" className="link">
             Login
           </Link>}
         </div>
@@ -222,27 +226,27 @@ export default Header;
   Home
 </Link>
 {
-  context.currentUser?.user?.type === 'company' && <Link to="/createPackage" className="link">
+  user?.type === 'company' && <Link to="/createPackage" className="link">
     Create Package
   </Link>
 }
 {
-  context.currentUser?.user?.type === 'company' && <Link to="/companyPackages" className="link">
+  user?.type === 'company' && <Link to="/companyPackages" className="link">
     Company Packages
   </Link>
 }
 {
-  context.currentUser?.user?.type === 'admin' && <Link to="/adminPackages" className="link">
+  user?.type === 'admin' && <Link to="/adminPackages" className="link">
     Admin Packages
   </Link>
 }
 {
-  context.currentUser?.user?.type === 'client' && <Link to="/wishlist" className="link">
+  user?.type === 'client' && <Link to="/wishlist" className="link">
     Wishlist
   </Link>
 }
 {
-  context.currentUser?.user?.type === 'client' && <Link to="/cart" className="link">
+  user?.type === 'client' && <Link to="/cart" className="link">
     Cart
   </Link>
 }
@@ -250,7 +254,7 @@ export default Header;
   Chat
 </Link>
 {
-  context.currentUser?.user && <button onClick={() => {
+  user && <button onClick={() => {
     context.logout()
     navigate('/', { replace: true })
   }} className="link">
@@ -258,7 +262,7 @@ export default Header;
   </button>
 }
 {
-  !context.currentUser?.user && <Link to="/login" className="link">
+  !user && <Link to="/login" className="link">
     Login
   </Link>
 } */

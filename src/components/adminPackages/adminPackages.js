@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./adminPackages.css";
 import axios from "axios";
-
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+const user = cookies.get("data")
 function AdminPackages() {
   const [allPackages, setAllPackages] = useState([]);
   const [publishedPackages, setPublishedPackages] = useState([]);
   const [rejectedPackages, setRejectedPackages] = useState([]);
   const [notPublishedPackages, setNotPublishedPackages] = useState([]);
 
-  const getToken = () => document.cookie.replace("token=", "");
-
+  // const getToken = () => document.cookie.replace("token=", "");
   const getAllPackages = async () => {
+
     const data = await (
       await axios.get(`http://localhost:3001/admin/package?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization: `${getToken()}`,
+          Authorization: `${user.token}`,
         },
       })
     ).data;
@@ -29,7 +31,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       );
@@ -46,7 +48,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       )
@@ -61,7 +63,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       )
@@ -76,7 +78,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       )
@@ -91,7 +93,7 @@ function AdminPackages() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       );
@@ -109,7 +111,7 @@ function AdminPackages() {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: `${getToken()}`,
+          Authorization: `${user.token}`,
         },
       }
     )

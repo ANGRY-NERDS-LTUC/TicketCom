@@ -5,6 +5,7 @@ import { AiTwotoneLike } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaPeopleArrows } from "react-icons/fa";
+import Swal from 'sweetalert2'
 
 // import { AiOutlineArrowRight } from "react-icons/ai";
 // import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -35,9 +36,12 @@ import shape from "./category/shape.svg";
 
 import axios from "axios";
 import "./home.css";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+const user = cookies.get("data")
 
 function Home() {
-  const getToken = () => document.cookie.replace("token=", "");
+  // const getToken = () => document.cookie.replace("token=", "");
 
   const [specialOfferPackages, setSpecialOfferPackages] = useState([]);
   // eslint-disable-next-line
@@ -144,6 +148,7 @@ function Home() {
     const data = await (
       await axios.get(`http://localhost:3001/home/specialOffers`)
     ).data;
+    console.log(data);
     setSpecialOfferPackages(data);
   };
 
@@ -160,7 +165,7 @@ function Home() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${getToken()}`,
+        Authorization: `${user.token}`,
       },
     })
       .then((response) => {
@@ -177,7 +182,7 @@ function Home() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${getToken()}`,
+        Authorization: `${user.token}`,
       },
     })
       .then((response) => {
@@ -199,11 +204,25 @@ function Home() {
   }, []);
 
   function addToCart(id) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your package Added to Cart',
+      showConfirmButton: false,
+      timer: 1500
+    })
     createCart(id);
     // alert("Card added to Cart!");
   }
 
   function addToWishlist(id) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your package Added to Wishlist',
+      showConfirmButton: false,
+      timer: 1500
+    })
     createWishlist(id);
     // alert("Card added to Wishlist!")
   }
@@ -355,6 +374,8 @@ function Home() {
           </div>
         </div>
       </div>
+
+      
 
       <section class="p-5 pt-md-9" id="service">
         <div class="container">

@@ -1,11 +1,12 @@
 import React, {useContext} from 'react';
 import {Navigate} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+const user = cookies.get("data")
 
 const Guard = ({children, type = 'client'}) => {
-    const context = useContext(AuthContext)
-    console.log(context.currentUser)
-    if (!context.currentUser?.user?.isVerify) {
+    if (!user) {
         return <Navigate to="/login" replace/>;
     }
     return children;

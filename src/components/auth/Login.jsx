@@ -21,7 +21,7 @@ const Login = () => {
         displayName,
       });
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/", { replace: true });
+      navigate("/");
     } catch (err) {
       navigate("/sign-up", { replace: true });
       setErr(true);

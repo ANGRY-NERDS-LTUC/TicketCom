@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./wishlist.css";
+import Cookies from "universal-cookie";
+import Swal from 'sweetalert2'
+const cookies = new Cookies();
+const user = cookies.get("data")
+
 
 function Wishlist() {
   const [wishlistPackages, setWishlistPackages] = useState([]);
@@ -12,7 +17,7 @@ function Wishlist() {
       await axios.get(`http://localhost:3001/client/wishlist?type=client`, {
         headers: {
           Accept: "application/json",
-          Authorization: `${getToken()}`,
+          Authorization: `${user.token}`,
         },
       })
     ).data.wishLists;
@@ -27,7 +32,7 @@ function Wishlist() {
         {
           headers: {
             Accept: "application/json",
-            Authorization: `${getToken()}`,
+            Authorization: `${user.token}`,
           },
         }
       );
@@ -43,7 +48,7 @@ function Wishlist() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
-        Authorization: `${getToken()}`,
+        Authorization: `${user.token}`,
       },
     })
       .then((response) => {
@@ -60,10 +65,24 @@ function Wishlist() {
   }, [wishlistPackages]);
 
   function removeFromWishlist(id) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'error',
+      title: 'Removed',
+      showConfirmButton: false,
+      timer: 1500
+    })
     deleteWishlist(id);
   }
 
   function addToCart(id) {
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Your package Added to Cart',
+      showConfirmButton: false,
+      timer: 1500
+    })
     createCart(id);
   }
 
