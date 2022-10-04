@@ -15,11 +15,11 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="">
             <Link to="/" className="websiteName">
+          <a className="navbar-brand" href="">
               TICKET.COM
-            </Link>
           </a>
+            </Link>
           {/* <button
             className="navbar-toggler"
             type="button"
@@ -35,16 +35,16 @@ function Header() {
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">
                 <a className="nav-link" href="">
-                  <i class="fa-solid fa-house"></i>
                   <Link to="/" className="link">
+                  <i class="fa-solid fa-house"></i>
                     Home
                   </Link>
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  <i class="fa-sharp fa-solid fa-circle-info"></i>
                   <Link to="/aboutUs" className="link">
+                  <i class="fa-sharp fa-solid fa-circle-info"></i>
                     About Us
                   </Link>
                 </a>
@@ -53,8 +53,8 @@ function Header() {
                 <a className="nav-link" href="">
                   {user?.type === "company" && (
                     <>
-                      <i class="fa-solid fa-circle-plus"></i>
                       <Link to="/createPackage" className="link">
+                      <i class="fa-solid fa-circle-plus"></i>
                         Create Package
                       </Link>
                     </>
@@ -65,8 +65,8 @@ function Header() {
                 <a className="nav-link" href="">
                   {user?.type === "company" && (
                     <>
-                      <i class="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/companyPackages" className="link">
+                      <i class="fa-solid fa-suitcase-rolling"></i>
                         Company Packages
                       </Link>
                     </>
@@ -77,8 +77,8 @@ function Header() {
                 <a className="nav-link" href="">
                   {user?.role === "admin" && (
                     <>
-                      <i class="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/adminPackages" className="link">
+                      <i class="fa-solid fa-suitcase-rolling"></i>
                         Admin Packages
                       </Link>
                     </>
@@ -89,8 +89,8 @@ function Header() {
                 <a className="nav-link" href="">
                   {user?.type === "client" && (
                     <>
-                      <i class="fa-solid fa-star"></i>
                       <Link to="/wishlist" className="link">
+                      <i class="fa-solid fa-star"></i>
                         Wishlist
                       </Link>
                     </>
@@ -101,8 +101,8 @@ function Header() {
                 <a className="nav-link" href="">
                   {user?.type === "client" && (
                     <>
-                      <i class="fa-solid fa-cart-shopping"></i>
                       <Link to="/cart" className="link">
+                      <i class="fa-solid fa-cart-shopping"></i>
                         Cart
                       </Link>
                     </>
@@ -111,8 +111,8 @@ function Header() {
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="">
-                  <i class="fa-solid fa-comment"></i>
                   <Link to="/chathome" className="link">
+                  <i class="fa-solid fa-comment"></i>
                     Chat
                   </Link>
                 </a>
@@ -136,8 +136,8 @@ function Header() {
                 <a className="nav-link" href="">
                   {!user && (
                     <>
-                      <i class="fa-solid fa-right-to-bracket"></i>
                       <Link to="/login" className="link">
+                      <i class="fa-solid fa-right-to-bracket"></i>
                         Login
                       </Link>
                     </>
