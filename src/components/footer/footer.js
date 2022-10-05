@@ -9,9 +9,11 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 
+import "./footer.css";
+
 export default function Footer() {
   return (
-    <MDBFooter className="text-center" color="white" bgColor="dark">
+    <MDBFooter className="text-center" id="footer" color="white" bgColor="dark">
       <MDBContainer className="p-4">
         <section className="mb-4">
           <MDBBtn
@@ -25,7 +27,7 @@ export default function Footer() {
             <MDBIcon fab icon="facebook-f" />
           </MDBBtn>
 
-          <MDBBtn
+          {/* <MDBBtn
             outline
             color="light"
             floating
@@ -45,7 +47,7 @@ export default function Footer() {
             role="button"
           >
             <MDBIcon fab icon="google" />
-          </MDBBtn>
+          </MDBBtn> */}
 
           <MDBBtn
             outline
@@ -58,7 +60,7 @@ export default function Footer() {
             <MDBIcon fab icon="instagram" />
           </MDBBtn>
 
-          <MDBBtn
+          {/* <MDBBtn
             outline
             color="light"
             floating
@@ -78,7 +80,7 @@ export default function Footer() {
             role="button"
           >
             <MDBIcon fab icon="github" />
-          </MDBBtn>
+          </MDBBtn> */}
         </section>
 
         {/* <section className=''>
@@ -116,9 +118,9 @@ export default function Footer() {
         className="text-center p-3"
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
-        © 2020 Copyright:
-        <a className="text-white" href="https://mdbootstrap.com/">
-          MDBootstrap.com
+        © 2022 Copyright:
+        <a className="text-white" href="">
+          Ticket.Com
         </a>
       </div>
     </MDBFooter>

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./createPackage.css";
+import "./createPackage.scss";
 import Cookies from "universal-cookie";
+import Swal from "sweetalert2";
+import { render } from "react-dom";
+import { useForm } from "react-cool-form";
 const cookies = new Cookies();
-const user = cookies.get("data")
+const user = cookies.get("data");
 
 function CreatePackage() {
   const [checkBox, setCheckBox] = useState(false);
@@ -39,6 +42,13 @@ function CreatePackage() {
       specialOffer: checkBox,
       image: e.target.image.value,
     };
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Package create",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     createCompanyPackage(newPackage);
     e.target.reset();
   }
@@ -54,59 +64,71 @@ function CreatePackage() {
   return (
     <div className="createPage">
       <div className="formDiv">
-        <h1>form</h1>
         <form onSubmit={submitHandeler}>
+          <h1>Create Package</h1>
+          <label>Package Title</label>
           <input
             type="text"
             className="formInput"
             name="title"
             placeholder="Package Title"
+            required
           ></input>
           <br />
-          <input
+          <label>Description</label>
+          <textarea
             type="text"
             className="descriptionInput"
             name="description"
             placeholder="Description"
-          ></input>
+            required
+          ></textarea>
           <br />
+          <label>Price</label>
           <input
-            type="text"
+            type="number"
             className="numberInput"
             name="price"
             placeholder="Price"
+            required
           ></input>
+          <label>Duration</label>
           <input
-            type="text"
+            type="number"
             className="numberInput"
             name="duration"
             placeholder="Duration"
+            required
           ></input>
           <br />
+          <label>Category</label>
           <input
             type="text"
             className="formInput"
             name="category"
             placeholder="Category"
+            required
           ></input>
           <br />
+          <label>Image</label>
           <input
             type="text"
             className="formInput"
             name="image"
             placeholder="Image URL"
+            required
           ></input>
           <br />
           <input
             type="checkbox"
             className="formCheck"
             name="specialOffer"
+            required
             value={checkBox}
             onChange={checkBoxHandeler}
           ></input>
-          <label>Special Offer</label>
+          <label className="checkLabel">Special Offer</label>
           <br />
-
           <input
             type="Submit"
             value="Create Package"

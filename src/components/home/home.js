@@ -5,7 +5,7 @@ import { AiTwotoneLike } from "react-icons/ai";
 import { GiEarthAmerica } from "react-icons/gi";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import { FaPeopleArrows } from "react-icons/fa";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
 // import { AiOutlineArrowRight } from "react-icons/ai";
 // import { AiOutlineArrowLeft } from "react-icons/ai";
@@ -38,7 +38,7 @@ import axios from "axios";
 import "./home.css";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
-const user = cookies.get("data")
+const user = cookies.get("data");
 
 function Home() {
   // const getToken = () => document.cookie.replace("token=", "");
@@ -205,26 +205,24 @@ function Home() {
 
   function addToCart(id) {
     Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your package Added to Cart',
+      position: "top-end",
+      icon: "success",
+      title: "Your package Added to Cart",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
     createCart(id);
-    // alert("Card added to Cart!");
   }
 
   function addToWishlist(id) {
     Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Your package Added to Wishlist',
+      position: "top-end",
+      icon: "success",
+      title: "Your package Added to Wishlist",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
     createWishlist(id);
-    // alert("Card added to Wishlist!")
   }
 
   return (
@@ -259,89 +257,6 @@ function Home() {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      {/* <UncontrolledCarousel
-        //   className="w-50"
-        items={[
-          {
-            altText: "TRAVEL TIME",
-            caption: "DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image1}`,
-          },
-          {
-            altText: "2222",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
-            key: 2,
-            src: `${Image2}`,
-          },
-          {
-            altText: "1111",
-            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image3}`,
-          },
-          {
-            altText: "2222",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
-            key: 2,
-            src: `${Image4}`,
-          },
-          {
-            altText: "1111",
-            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image5}`,
-          },
-          {
-            altText: "2222",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
-            key: 2,
-            src: `${Image6}`,
-          },
-          {
-            altText: "1111",
-            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image7}`,
-          },
-          {
-            altText: "2222",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
-            key: 2,
-            src: `${Image8}`,
-          },
-          {
-            altText: "1111",
-            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image9}`,
-          },
-          {
-            altText: "2222",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
-            key: 2,
-            src: `${Image10}`,
-          },
-          {
-            altText: "1111",
-            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image11}`,
-          },
-          {
-            altText: "2222",
-            caption: "alsjdgbf sadhfiuhasd fhusahdkf hsduhf ",
-            key: 2,
-            src: `${Image12}`,
-          },
-          {
-            altText: "1111",
-            caption: "TRAVEL TIME, DISCOVER THE WORLD IN A NEW WAY",
-            key: 1,
-            src: `${Image13}`,
-          },
-        ]}
-      /> */}
       <div className="offersDiv">
         <div className="offersDivBranch">
           <h1 className="offersTitle">BEST TOURS</h1>
@@ -375,11 +290,9 @@ function Home() {
         </div>
       </div>
 
-      
-
-      <section class="p-5 pt-md-9" id="service">
-        <div class="container">
-          <div class="position-absolute z-index--1 start-0 d-none d-lg-block">
+      <section className="p-5 pt-md-9" id="service">
+        <div className="container">
+          <div className="position-absolute z-index--1 start-0 d-none d-lg-block">
             <img
               src={`${shape}`}
               style={{
@@ -388,7 +301,7 @@ function Home() {
               alt="service"
             />
           </div>
-          <div class="position-absolute z-index--1 end-0 d-none d-lg-block">
+          <div className="position-absolute z-index--1 end-0 d-none d-lg-block">
             <img
               src={`${shape}`}
               style={{
@@ -397,59 +310,59 @@ function Home() {
               alt="service"
             />
           </div>
-          <div class="mb-7 text-center">
-            <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">
+          <div className="mb-7 text-center">
+            <h3 className="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">
               WHY CHOOSE US?
             </h3>
-            <h5 class="text-secondary mb-5">
+            <h5 className="text-secondary mb-5">
               A BRAND NAME YOU CAN TRUST AND RELY ON
             </h5>
           </div>
-          <div class="row">
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div class="card-body p-xxl-5 p-4">
+          <div className="row">
+            <div className="col-lg-3 col-sm-6 mb-6">
+              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div className="card-body p-xxl-5 p-4">
                   {/* <img src={`${icon1}`} width="75" alt="Service" /> */}
-                  <FaHandHoldingUsd class="mb-3 w-50 h-50" />
-                  <h5 class="mt-2 mb-3">SPARE MONEY</h5>
-                  <p class="mb-0 fw-medium">
+                  <FaHandHoldingUsd className="mb-3 w-50 h-50" />
+                  <h5 className="mt-2 mb-3">SPARE MONEY</h5>
+                  <p className="mb-0 fw-medium">
                     AFFORDABLE AND COMETITIVE PRICES GUARANTEE
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div class="card-body p-xxl-5 p-4">
+            <div className="col-lg-3 col-sm-6 mb-6">
+              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div className="card-body p-xxl-5 p-4">
                   {/* <img src={`${icon2}`} width="75" alt="Service" /> */}
-                  <AiTwotoneLike class="mb-3 w-50 h-50" />
-                  <h5 class="mt-2 mb-3">BEST SERVICES</h5>
-                  <p class="mb-0 fw-medium">
+                  <AiTwotoneLike className="mb-3 w-50 h-50" />
+                  <h5 className="mt-2 mb-3">BEST SERVICES</h5>
+                  <p className="mb-0 fw-medium">
                     HIGHLY QUALIFIED SERVICES THROUGHOUT THE JOURNEY
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div class="card-body p-xxl-5 p-4">
+            <div className="col-lg-3 col-sm-6 mb-6">
+              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div className="card-body p-xxl-5 p-4">
                   {/* <img src={`${icon3}`} width="75" alt="Service" /> */}
-                  <GiEarthAmerica class="mb-3 w-50 h-50" />
-                  <h5 class="mt-2 mb-3">GLOBAL TOURS</h5>
-                  <p class="mb-0 fw-medium">
+                  <GiEarthAmerica className="mb-3 w-50 h-50" />
+                  <h5 className="mt-2 mb-3">GLOBAL TOURS</h5>
+                  <p className="mb-0 fw-medium">
                     WIDE VARIETY OF DESTINATIONS AROUND THE WORLD
                   </p>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3 col-sm-6 mb-6">
-              <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div class="card-body p-xxl-5 p-4">
+            <div className="col-lg-3 col-sm-6 mb-6">
+              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
+                <div className="card-body p-xxl-5 p-4">
                   {/* <img src={`${icon4}`} width="75" alt="Service" /> */}
-                  {/* <i class="fa-sharp fa-solid fa-people-arrows"></i> */}
-                  <FaPeopleArrows class="mb-3 w-50 h-50" />
-                  <h5 class="mt-2 mb-3">EXPERIANCE SHARING</h5>
-                  <p class="mb-0 fw-medium">
+                  {/* <i className="fa-sharp fa-solid fa-people-arrows"></i> */}
+                  <FaPeopleArrows className="mb-3 w-50 h-50" />
+                  <h5 className="mt-2 mb-3">EXPERIANCE SHARING</h5>
+                  <p className="mb-0 fw-medium">
                     BEST CONSULTING SERVICES FROM THE MOST EXPERIENCED PEOPLE
                   </p>
                 </div>

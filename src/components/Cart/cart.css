@@ -1,11 +1,35 @@
-.cart {
-  margin-top: 10%;
+.cartPage {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  min-height: 100vh;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
 }
+
+.cartPackagesDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+/* .branchCart {
+  display: grid;
+  grid-template-columns: 100%;
+  padding-top: 7%;
+  padding-bottom: 5%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: fit-content;
+}
+
+.cardsSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+} */
 
 .purchase {
   display: none;
@@ -19,7 +43,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 80px;
-  margin-top: 75px;
+  margin-top: 120px;
 }
 
 .RemoveCart {
@@ -34,9 +58,9 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 160px;
-  margin-top: -39.5px;
+  margin-top: -42px;
 }
 
-.hide{
+.hide {
   display: none;
 }

@@ -325,14 +325,14 @@
 
 .Price {
   text-align: right;
-  margin-top: -80px;
+  margin-top: -60px;
   margin-right: 10px;
   font-size: medium;
   font-weight: 500;
 }
 
 .Card:hover > .Data > .Price {
-  padding-top: 50px;
+  padding-top: 30px;
   color: rgb(255, 255, 255);
   font-size: larger;
   font-weight: bold;
@@ -357,18 +357,19 @@
 
 .Card:hover > .Data > .Description {
   display: flex;
-  padding-top: 100px;
+  padding-top: 80px;
   color: rgb(255, 255, 255);
   font-size: large;
   transition-duration: 500ms;
   padding-left: 10px;
   padding-right: 10px;
+  font-weight: 600;
 }
 
 .Card:hover > .Data {
   margin-left: -1px;
   margin-top: -350px;
-  background-color: rgba(26, 40, 92, 0.6);
+  background-color: rgba(21, 22, 23, 0.7);
   display: block;
   width: 300px;
   height: 350px;
@@ -399,7 +400,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 45px;
-  margin-top: 75px;
+  margin-top: 120px;
 }
 
 .Cart {
@@ -414,7 +415,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 165px;
-  margin-top: -39.5px;
+  margin-top: -41.5px;
 }
 
 /* .packageButton {

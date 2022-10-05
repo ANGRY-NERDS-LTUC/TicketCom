@@ -1,40 +1,40 @@
 .adminPackages {
-  display: flex;
-  flex-direction: column;
-  margin-top: 5%;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  min-height: 100vh;
   text-align: center;
 }
 
 .allPackages {
-  text-align: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
 .publishedPackages {
-  text-align: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
 .rejectPackages {
-  text-align: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
 .notPublishedPackages {
-  text-align: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
 .AcceptThePackage {
@@ -49,7 +49,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 70px;
-  margin-top: 75px;
+  margin-top: 120px;
 }
 
 .RejectThePackage {
@@ -64,7 +64,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 133px;
-  margin-top: -40px;
+  margin-top: -42px;
 }
 
 .DeleteThePackage {
@@ -79,9 +79,9 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 190px;
-  margin-top: -39px;
+  margin-top: -42px;
 }
 
-.btn-success{
+/* .btn-success {
   margin-left: 15px;
-}
+} */

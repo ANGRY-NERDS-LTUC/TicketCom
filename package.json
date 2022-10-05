@@ -21,6 +21,7 @@
     "react-bootstrap": "^2.5.0",
     "react-card-slider-component": "^1.0.9",
     "react-cookie": "^4.1.1",
+    "react-cool-form": "^0.4.1",
     "react-dom": "^18.2.0",
     "react-file-base64": "^1.0.3",
     "react-icons": "^4.4.0",

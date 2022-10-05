@@ -1,12 +1,20 @@
-.wishlist {
-  margin-top: 10%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
+.branchWishlist {
+  display: grid;
+  grid-template-columns: 100%;
+  padding-top: 7%;
+  padding-bottom: 5%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: fit-content;
 }
 
+.wishlistSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
 .AddCart {
   display: none;
 }
@@ -19,7 +27,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 70px;
-  margin-top: 75px;
+  margin-top: 120px;
 }
 
 .RemoveWishlist {
@@ -34,5 +42,5 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 170px;
-  margin-top: -39.5px;
+  margin-top: -41.5px;
 }

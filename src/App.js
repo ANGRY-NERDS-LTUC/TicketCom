@@ -15,6 +15,7 @@ import Login from "./components/auth/Login";
 import CompanyGuard from "./components/auth/CompanyGuard";
 import Footer from "./components/footer/footer";
 import AboutUs from "./components/aboutUs/aboutUs";
+import BookingList from "./components/bookingList/bookingList";
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/" element={<Home />} /> */}
+          <Route path="/bookingList" element={<BookingList />} />
           {/* <Route path="/sign-up" element={<SignUp />} /> */}
           {/* <Route path="/login" element={<Login />} /> */}
           <Route

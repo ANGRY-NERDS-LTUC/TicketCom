@@ -1,0 +1,22 @@
+.bookingList {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.homePackagesDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+form {
+  label {
+    color: black;
+    font-weight: 600;
+    font-size: large;
+  }
+}

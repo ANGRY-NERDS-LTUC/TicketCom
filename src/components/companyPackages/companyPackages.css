@@ -1,33 +1,83 @@
 .companyPackages {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.leftSide {
+  color: rgb(0, 0, 0);
+  padding-top: 25%;
+  min-width: fit-content;
+  border-right: 3px solid lightgray;
   display: flex;
   flex-direction: column;
-  margin-top: 5%;
-  text-align: center;
-  /* gap: 25%; */
+  gap: 30px;
+  align-items: center;
+  /* background-color: rgb(92, 84, 112); */
 }
 
-.allPackages {
+.rightSide {
+  min-width: fit-content;
+  /* background-color: rgb(219, 216, 227); */
+
+  /* background-color: rgb(182, 181, 181); */
+}
+
+.filterButton {
+  width: 80%;
+  height: 50px;
+  min-height: fit-content;
+  min-width: fit-content;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(19, 19, 19);
+  color: white;
+  font-size: larger;
+  /* font-weight: bold; */
+}
+
+.filterButton:hover {
+  background-color: rgb(219, 216, 227);
+  color: rgb(53, 47, 68);
+}
+
+.rightSide {
+  padding-top: 7%;
+  padding-bottom: 2%;
+  min-width: fit-content;
+}
+
+.allCompanyPackages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+/* .allPackages {
   text-align: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 30px;
-}
+} */
 
 .acceptedPackages {
-  text-align: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
 .rejectPackages {
-  text-align: center;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
 }
 
 .DeletePackage {
@@ -42,7 +92,7 @@
   border-width: 2px;
   width: fit-content;
   margin-left: 125px;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 /* .companyPackageButton {

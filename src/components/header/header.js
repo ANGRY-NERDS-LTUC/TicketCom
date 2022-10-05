@@ -15,11 +15,11 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="">
+          <span className="navbar-brand" href="">
             <Link to="/" className="websiteName">
               TICKET.COM
             </Link>
-          </a>
+          </span>
           {/* <button
             className="navbar-toggler"
             type="button"
@@ -34,91 +34,103 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="">
-                  <i class="fa-solid fa-house"></i>
+                <span className="nav-link">
+                  <i className="fa-solid fa-house"></i>
                   <Link to="/" className="link">
                     Home
                   </Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
-                  <i class="fa-sharp fa-solid fa-circle-info"></i>
+                <span className="nav-link">
+                  <i className="fa-sharp fa-solid fa-circle-info"></i>
                   <Link to="/aboutUs" className="link">
                     About Us
                   </Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
+                  {user?.type === "client" && (
+                    <>
+                      <i class="fa-sharp fa-solid fa-plane-departure"></i>
+                      <Link to="/bookingList" className="link">
+                        Booking List
+                      </Link>
+                    </>
+                  )}
+                </span>
+              </li>
+              <li className="nav-item">
+                <span className="nav-link">
                   {user?.type === "company" && (
                     <>
-                      <i class="fa-solid fa-circle-plus"></i>
+                      <i className="fa-solid fa-circle-plus"></i>
                       <Link to="/createPackage" className="link">
                         Create Package
                       </Link>
                     </>
                   )}
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   {user?.type === "company" && (
                     <>
-                      <i class="fa-solid fa-suitcase-rolling"></i>
+                      <i className="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/companyPackages" className="link">
                         Company Packages
                       </Link>
                     </>
                   )}
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   {user?.role === "admin" && (
                     <>
-                      <i class="fa-solid fa-suitcase-rolling"></i>
+                      <i className="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/adminPackages" className="link">
                         Admin Packages
                       </Link>
                     </>
                   )}
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   {user?.type === "client" && (
                     <>
-                      <i class="fa-solid fa-star"></i>
+                      <i className="fa-solid fa-star"></i>
                       <Link to="/wishlist" className="link">
                         Wishlist
                       </Link>
                     </>
                   )}
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   {user?.type === "client" && (
                     <>
-                      <i class="fa-solid fa-cart-shopping"></i>
+                      <i className="fa-solid fa-cart-shopping"></i>
                       <Link to="/cart" className="link">
                         Cart
                       </Link>
                     </>
                   )}
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
-                  <i class="fa-solid fa-comment"></i>
+                <span className="nav-link">
+                  <i className="fa-solid fa-comment"></i>
                   <Link to="/chathome" className="link">
                     Chat
                   </Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   {user && (
                     <button
                       onClick={() => {
@@ -130,19 +142,19 @@ function Header() {
                       Logout
                     </button>
                   )}
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   {!user && (
                     <>
-                      <i class="fa-solid fa-right-to-bracket"></i>
+                      <i className="fa-solid fa-right-to-bracket"></i>
                       <Link to="/login" className="link">
                         Login
                       </Link>
                     </>
                   )}
-                </a>
+                </span>
               </li>
             </ul>
           </div>
