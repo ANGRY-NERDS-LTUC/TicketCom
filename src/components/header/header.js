@@ -15,11 +15,11 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <span className="navbar-brand" href="">
             <Link to="/" className="websiteName">
+          <a className="navbar-brand" href="">
               TICKET.COM
+          </a>
             </Link>
-          </span>
           {/* <button
             className="navbar-toggler"
             type="button"
@@ -34,17 +34,17 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">
-                <span className="nav-link">
-                  <i className="fa-solid fa-house"></i>
+                <a className="nav-link" href="">
                   <Link to="/" className="link">
+                  <i class="fa-solid fa-house"></i>
                     Home
                   </Link>
                 </span>
               </li>
               <li className="nav-item">
-                <span className="nav-link">
-                  <i className="fa-sharp fa-solid fa-circle-info"></i>
+                <a className="nav-link" href="">
                   <Link to="/aboutUs" className="link">
+                  <i class="fa-sharp fa-solid fa-circle-info"></i>
                     About Us
                   </Link>
                 </span>
@@ -65,8 +65,8 @@ function Header() {
                 <span className="nav-link">
                   {user?.type === "company" && (
                     <>
-                      <i className="fa-solid fa-circle-plus"></i>
                       <Link to="/createPackage" className="link">
+                      <i class="fa-solid fa-circle-plus"></i>
                         Create Package
                       </Link>
                     </>
@@ -77,8 +77,8 @@ function Header() {
                 <span className="nav-link">
                   {user?.type === "company" && (
                     <>
-                      <i className="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/companyPackages" className="link">
+                      <i class="fa-solid fa-suitcase-rolling"></i>
                         Company Packages
                       </Link>
                     </>
@@ -89,8 +89,8 @@ function Header() {
                 <span className="nav-link">
                   {user?.role === "admin" && (
                     <>
-                      <i className="fa-solid fa-suitcase-rolling"></i>
                       <Link to="/adminPackages" className="link">
+                      <i class="fa-solid fa-suitcase-rolling"></i>
                         Admin Packages
                       </Link>
                     </>
@@ -101,8 +101,8 @@ function Header() {
                 <span className="nav-link">
                   {user?.type === "client" && (
                     <>
-                      <i className="fa-solid fa-star"></i>
                       <Link to="/wishlist" className="link">
+                      <i class="fa-solid fa-star"></i>
                         Wishlist
                       </Link>
                     </>
@@ -113,8 +113,8 @@ function Header() {
                 <span className="nav-link">
                   {user?.type === "client" && (
                     <>
-                      <i className="fa-solid fa-cart-shopping"></i>
                       <Link to="/cart" className="link">
+                      <i class="fa-solid fa-cart-shopping"></i>
                         Cart
                       </Link>
                     </>
@@ -122,9 +122,9 @@ function Header() {
                 </span>
               </li>
               <li className="nav-item">
-                <span className="nav-link">
-                  <i className="fa-solid fa-comment"></i>
+                <a className="nav-link" href="">
                   <Link to="/chathome" className="link">
+                  <i class="fa-solid fa-comment"></i>
                     Chat
                   </Link>
                 </span>
@@ -148,8 +148,8 @@ function Header() {
                 <span className="nav-link">
                   {!user && (
                     <>
-                      <i className="fa-solid fa-right-to-bracket"></i>
                       <Link to="/login" className="link">
+                      <i class="fa-solid fa-right-to-bracket"></i>
                         Login
                       </Link>
                     </>

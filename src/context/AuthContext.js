@@ -50,6 +50,9 @@ export const AuthContextProvider = ({ children }) => {
     // removeCookie("token");
     cookies.remove('data', {path: '/'})
     setCurrentUser({});
+    window
+    .location
+    .reload();
   };
   const userToken=()=>{
     return cookies.get("data");

@@ -20,10 +20,10 @@ const Login = () => {
         password,
         displayName,
       });
-      await signInWithEmailAndPassword(auth, email, password);
+      console.log('done');
       navigate("/");
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
-      navigate("/sign-up", { replace: true });
       setErr(true);
     }
   };
