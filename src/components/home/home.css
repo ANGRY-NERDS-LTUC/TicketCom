@@ -1,4 +1,4 @@
-.carousel-item {
+/* .carousel-item {
   height: 100vh;
   min-height: 350px;
   background: no-repeat center center scroll;
@@ -6,10 +6,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); */
-}
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+} */
 
-.slider {
+/* .slider {
   display: flex;
   margin-left: 500px;
   margin-top: -250px;
@@ -64,11 +64,11 @@
 .sliderButton:hover {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
-}
+} */
 
-.infoDivBranch {
+/* .infoDivBranch {
   color: rgb(255, 255, 255);
-  /* background: url("../assets/1431610.jpg") no-repeat center center fixed; */
+  background: url("../assets/1431610.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -84,7 +84,7 @@
 
 .infoDivBranch2 {
   color: rgb(0, 0, 0);
-  /* background: url("../assets/772940.jpg") no-repeat center center fixed; */
+  background: url("../assets/772940.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -100,7 +100,7 @@
 
 .infoDivBranch3 {
   color: rgb(0, 0, 0);
-  /* background: url("../assets/87699.jpg") no-repeat center center fixed; */
+  background: url("../assets/87699.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -116,7 +116,7 @@
 
 .infoDivBranch4 {
   color: rgb(255, 255, 255);
-  /* background: url("../assets/4157784.jpg") no-repeat center center fixed; */
+  background: url("../assets/4157784.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -147,7 +147,7 @@
   background-color: rgba(255, 255, 255, 0.3);
   color: black;
   transition-duration: 700ms;
-}
+} */
 
 .whyusDiv {
   color: rgb(0, 0, 0);
@@ -284,6 +284,7 @@
   margin-top: 0px;
   padding-top: 10px;
   padding-left: 10px;
+  font-size: x-large;
 }
 
 .Card:hover > .Data > .Title {
@@ -424,3 +425,71 @@
     background-color: aquamarine;
     border-radius: 5px;
 } */
+
+.row {
+  width: 100%;
+  height: 50vh;
+}
+
+.fontAwesome {
+  /* margin-bottom: 3rem; */
+  width: 10rem;
+  height: 10rem;
+}
+
+#flip-card {
+  /* background-color: transparent;
+  width: 300px;
+  height: 300px; */
+  perspective: 1000px;
+}
+
+#flip-card-inner {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+#flip-card:focus {
+  outline: 0;
+}
+
+#flip-card:hover #flip-card-inner,
+#flip-card:focus #flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+#flip-card-front,
+#flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#flip-card-front {
+  background: rgb(35, 35, 35);
+  border-radius: 10px;
+  color: rgb(240, 240, 240);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#flip-card-back {
+  background: rgb(35, 35, 35);
+  border-radius: 10px;
+  color: rgb(240, 240, 240);
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

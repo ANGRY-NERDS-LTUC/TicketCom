@@ -260,7 +260,7 @@ function Home() {
       <div className="offersDiv">
         <div className="offersDivBranch">
           <h1 className="offersTitle">BEST TOURS</h1>
-          <h3 className="offersTitle">CHECK OUT OUR TOP-RATED TOURS</h3>
+          <h3 className="offersTitle">Check out our top-rated tours</h3>
           <br />
           <div className="specialOfferDiv">
             {specialOfferPackages.map((item) => {
@@ -315,56 +315,88 @@ function Home() {
               WHY CHOOSE US?
             </h3>
             <h5 className="text-secondary mb-5">
-              A BRAND NAME YOU CAN TRUST AND RELY ON
+              A brand name you can trust and rely on
             </h5>
           </div>
           <div className="row">
-            <div className="col-lg-3 col-sm-6 mb-6">
-              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div className="card-body p-xxl-5 p-4">
+            <div id="flip-card" className="col-lg-3 col-sm-6 mb-6">
+              <div
+                id="flip-card-inner"
+                className="service-card shadow-hover rounded-3 text-center align-items-center"
+              >
+                <div
+                  id="flip-card-front"
+                  className="card card-body p-xxl-5 p-4"
+                >
                   {/* <img src={`${icon1}`} width="75" alt="Service" /> */}
-                  <FaHandHoldingUsd className="mb-3 w-50 h-50" />
-                  <h5 className="mt-2 mb-3">SPARE MONEY</h5>
-                  <p className="mb-0 fw-medium">
-                    AFFORDABLE AND COMETITIVE PRICES GUARANTEE
-                  </p>
+                  <FaHandHoldingUsd className="fontAwesome" />
+                </div>
+                <div id="flip-card-back" className="card card-body p-xxl-5 p-4">
+                  <h3 className="mt-2 mb-5 fw-bold">SPARE MONEY</h3>
+                  <h4 className="mb-0 fw-none">
+                    Affordable and competitive prices guarantee
+                  </h4>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 mb-6">
-              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div className="card-body p-xxl-5 p-4">
+            <div id="flip-card" className="col-lg-3 col-sm-6 mb-6">
+              <div
+                id="flip-card-inner"
+                className="service-card shadow-hover rounded-3 text-center align-items-center"
+              >
+                <div
+                  id="flip-card-front"
+                  className="card card-body p-xxl-5 p-4"
+                >
                   {/* <img src={`${icon2}`} width="75" alt="Service" /> */}
-                  <AiTwotoneLike className="mb-3 w-50 h-50" />
-                  <h5 className="mt-2 mb-3">BEST SERVICES</h5>
-                  <p className="mb-0 fw-medium">
-                    HIGHLY QUALIFIED SERVICES THROUGHOUT THE JOURNEY
-                  </p>
+                  <AiTwotoneLike className="fontAwesome" />
+                </div>
+                <div id="flip-card-back" className="card card-body p-xxl-5 p-4">
+                  <h3 className="mt-2 mb-5 fw-bold">BEST SERVICES</h3>
+                  <h4 className="mb-0 fw-none">
+                    Highly qualified services throughout the journey
+                  </h4>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 mb-6">
-              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div className="card-body p-xxl-5 p-4">
+            <div id="flip-card" className="col-lg-3 col-sm-6 mb-6">
+              <div
+                id="flip-card-inner"
+                className="service-card shadow-hover rounded-3 text-center align-items-center"
+              >
+                <div
+                  id="flip-card-front"
+                  className="card card-body p-xxl-5 p-4"
+                >
                   {/* <img src={`${icon3}`} width="75" alt="Service" /> */}
-                  <GiEarthAmerica className="mb-3 w-50 h-50" />
-                  <h5 className="mt-2 mb-3">GLOBAL TOURS</h5>
-                  <p className="mb-0 fw-medium">
-                    WIDE VARIETY OF DESTINATIONS AROUND THE WORLD
-                  </p>
+                  <GiEarthAmerica className="fontAwesome" />
+                </div>
+                <div id="flip-card-back" className="card card-body p-xxl-5 p-4">
+                  <h3 className="mt-2 mb-5 fw-bold">GLOBAL TOURS</h3>
+                  <h4 className="mb-0 fw-none">
+                    Wide variety of destinations around the world
+                  </h4>
                 </div>
               </div>
             </div>
-            <div className="col-lg-3 col-sm-6 mb-6">
-              <div className="card service-card shadow-hover rounded-3 text-center align-items-center">
-                <div className="card-body p-xxl-5 p-4">
+            <div id="flip-card" className="col-lg-3 col-sm-6 mb-6">
+              <div
+                id="flip-card-inner"
+                className="service-card shadow-hover rounded-3 text-center align-items-center"
+              >
+                <div
+                  id="flip-card-front"
+                  className="card card-body p-xxl-5 p-4"
+                >
                   {/* <img src={`${icon4}`} width="75" alt="Service" /> */}
                   {/* <i className="fa-sharp fa-solid fa-people-arrows"></i> */}
-                  <FaPeopleArrows className="mb-3 w-50 h-50" />
-                  <h5 className="mt-2 mb-3">EXPERIANCE SHARING</h5>
-                  <p className="mb-0 fw-medium">
-                    BEST CONSULTING SERVICES FROM THE MOST EXPERIENCED PEOPLE
-                  </p>
+                  <FaPeopleArrows className="fontAwesome" />
+                </div>
+                <div id="flip-card-back" className="card card-body p-xxl-5 p-4">
+                  <h3 className="mt-2 mb-5 fw-bold">EXPERIANCE SHARING</h3>
+                  <h4 className="mb-0 fw-none">
+                    Best consulting services from the most experienced people
+                  </h4>
                 </div>
               </div>
             </div>
