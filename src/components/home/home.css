@@ -6,6 +6,7 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8); */
 }
 
 .slider {
@@ -220,17 +221,17 @@
   background-color: rgba(245, 245, 220, 0.1);
   padding-top: 10px;
   padding-bottom: 30px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
 }
 
-.offersDivBranch:hover {
+/* .offersDivBranch:hover {
   margin-left: 30px;
   margin-right: 30px;
   background-color: rgba(255, 255, 255, 0.4);
   transition-duration: 700ms;
-}
+} */
 
 .offersTitle {
   color: rgb(0, 0, 0);

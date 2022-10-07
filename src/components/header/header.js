@@ -15,11 +15,11 @@ function Header() {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <Link to="/" className="websiteName">
-            <a className="navbar-brand" href="">
+          <span className="nav-brand">
+            <Link to="/" className="websiteName">
               TICKET.COM
-            </a>
-          </Link>
+            </Link>
+          </span>
           {/* <button
             className="navbar-toggler"
             type="button"
@@ -34,20 +34,20 @@ function Header() {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   <Link to="/" className="link">
                     <i class="fa-solid fa-house"></i>
                     Home
                   </Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   <Link to="/aboutUs" className="link">
                     <i class="fa-sharp fa-solid fa-circle-info"></i>
                     About Us
                   </Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
                 <span className="nav-link">
@@ -122,12 +122,12 @@ function Header() {
                 </span>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="">
+                <span className="nav-link">
                   <Link to="/chathome" className="link">
                     <i class="fa-solid fa-comment"></i>
                     Chat
                   </Link>
-                </a>
+                </span>
               </li>
               <li className="nav-item">
                 <span className="nav-link">

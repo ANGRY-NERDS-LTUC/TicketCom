@@ -65,8 +65,8 @@ function CreatePackage() {
     <div className="createPage">
       <div className="formDiv">
         <form onSubmit={submitHandeler}>
-          <h1>Create Package</h1>
-          <label>Package Title</label>
+          <h1 className="createFormHeader">Create Package</h1>
+          <label className="createLabel">Package Title</label>
           <input
             type="text"
             className="formInput"
@@ -75,7 +75,7 @@ function CreatePackage() {
             required
           ></input>
           <br />
-          <label>Description</label>
+          <label className="createLabel">Description</label>
           <textarea
             type="text"
             className="descriptionInput"
@@ -84,24 +84,26 @@ function CreatePackage() {
             required
           ></textarea>
           <br />
-          <label>Price</label>
+          <label className="createLabel">Price</label>
           <input
             type="number"
+            min="0"
             className="numberInput"
             name="price"
             placeholder="Price"
             required
           ></input>
-          <label>Duration</label>
+          <label className="createLabel">Duration</label>
           <input
             type="number"
+            min="0"
             className="numberInput"
             name="duration"
             placeholder="Duration"
             required
           ></input>
           <br />
-          <label>Category</label>
+          <label className="createLabel">Category</label>
           <input
             type="text"
             className="formInput"
@@ -110,7 +112,7 @@ function CreatePackage() {
             required
           ></input>
           <br />
-          <label>Image</label>
+          <label className="createLabel">Image</label>
           <input
             type="text"
             className="formInput"

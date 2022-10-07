@@ -138,13 +138,13 @@
 .createPage {
   display: grid;
   grid-template-columns: 100%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 7%;
+  padding-bottom: 2%;
   width: 100%;
   min-height: 100vh;
   min-width: fit-content;
   font-family: sans-serif;
-  background: url("../assets/12.jpg") no-repeat center center scroll;
+  background: url("../assets/9.jpg") no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -154,30 +154,27 @@
 .formDiv {
   margin-left: 35%;
   width: 35%;
+  height: 48rem;
   min-width: fit-content;
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
 }
 
 form {
   margin: 3rem auto 0;
   width: 24rem;
 
-  h1 {
-    color: #fff;
-    font-weight: 600;
-  }
-
   // div {
   //   width: inherit;
   //   margin-bottom: 1rem;
   // }
 
-  label {
-    display: block;
-    color: #fff;
-    font-size: larger;
-  }
+  // label {
+  //   display: block;
+  //   color: rgb(0, 0, 0);
+  //   font-size: larger;
+  // }
 
   input {
     margin: 0.5rem 0;
@@ -187,7 +184,7 @@ form {
     border: none;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: #1a1a1a;
+    background-color: #ffffff;
   }
 
   input[type="submit"] {
@@ -213,11 +210,28 @@ form {
     border-radius: 4px;
     box-sizing: border-box;
     height: 5rem;
-    background-color: #1a1a1a;
+    background-color: #ffffff;
   }
 }
 
 .checkLabel {
   margin-top: -2rem;
   margin-left: 3rem;
+}
+
+.createFormHeader {
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+}
+
+.createLabel {
+  display: block;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+}
+
+.checkLabel {
+  display: block;
+  color: rgb(255, 255, 255);
+  font-size: larger;
 }
