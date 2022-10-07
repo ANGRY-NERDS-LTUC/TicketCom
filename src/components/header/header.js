@@ -1,22 +1,24 @@
-import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./header.css";
-import { AuthContext } from "../../context/AuthContext";
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './header.css';
+import { AuthContext } from '../../context/AuthContext';
 // import { Container, UncontrolledCarousel, Spinner } from "reactstrap";
-import Cookies from "universal-cookie";
+import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 
 function Header() {
   const context = useContext(AuthContext);
-  const user = cookies.get("data");
+  const user = cookies.get('data');
   // console.log("user", user);
   const navigate = useNavigate();
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div className="container">
-          <span className="nav-brand">
-            <Link to="/" className="websiteName">
+      <nav className='navbar navbar-expand-lg navbar-light bg-light fixed-top'>
+        <div className='container'>
+          <span className='nav-brand'>
+            <Link
+              to='/'
+              className='websiteName'>
               TICKET.COM
             </Link>
           </span>
@@ -31,125 +33,146 @@ function Header() {
           >
             <span className="navbar-toggler-icon"></span>
           </button> */}
-          <div className="collapse navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item active">
-                <span className="nav-link">
-                  <Link to="/" className="link">
-                    <i class="fa-solid fa-house"></i>
+          <div
+            className='collapse navbar-collapse'
+            id='navbarResponsive'>
+            <ul className='navbar-nav ms-auto'>
+              <li className='nav-item active'>
+                <span className='nav-link'>
+                  <Link
+                    to='/'
+                    className='link'>
+                    <i class='fa-solid fa-house'></i>
                     Home
                   </Link>
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  <Link to="/aboutUs" className="link">
-                    <i class="fa-sharp fa-solid fa-circle-info"></i>
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  <Link
+                    to='/aboutUs'
+                    className='link'>
+                    <i class='fa-sharp fa-solid fa-circle-info'></i>
                     About Us
                   </Link>
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  {user?.type === "client" && (
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  {user?.type === 'client' && (
                     <>
-                      <i class="fa-sharp fa-solid fa-plane-departure"></i>
-                      <Link to="/bookingList" className="link">
+                      <i class='fa-sharp fa-solid fa-plane-departure'></i>
+                      <Link
+                        to='/bookingList'
+                        className='link'>
                         Booking List
                       </Link>
                     </>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  {user?.type === "company" && (
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  {user?.type === 'company' && (
                     <>
-                      <Link to="/createPackage" className="link">
-                        <i class="fa-solid fa-circle-plus"></i>
+                      <Link
+                        to='/createPackage'
+                        className='link'>
+                        <i class='fa-solid fa-circle-plus'></i>
                         Create Package
                       </Link>
                     </>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  {user?.type === "company" && (
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  {user?.type === 'company' && (
                     <>
-                      <Link to="/companyPackages" className="link">
-                        <i class="fa-solid fa-suitcase-rolling"></i>
+                      <Link
+                        to='/companyPackages'
+                        className='link'>
+                        <i class='fa-solid fa-suitcase-rolling'></i>
                         Company Packages
                       </Link>
                     </>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  {user?.role === "admin" && (
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  {user?.role === 'admin' && (
                     <>
-                      <Link to="/adminPackages" className="link">
-                        <i class="fa-solid fa-suitcase-rolling"></i>
+                      <Link
+                        to='/adminPackages'
+                        className='link'>
+                        <i class='fa-solid fa-suitcase-rolling'></i>
                         Admin Packages
                       </Link>
                     </>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  {user?.type === "client" && (
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  {user?.type === 'client' && (
                     <>
-                      <Link to="/wishlist" className="link">
-                        <i class="fa-solid fa-star"></i>
+                      <Link
+                        to='/wishlist'
+                        className='link'>
+                        <i class='fa-solid fa-star'></i>
                         Wishlist
                       </Link>
                     </>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  {user?.type === "client" && (
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  {user?.type === 'client' && (
                     <>
-                      <Link to="/cart" className="link">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                      <Link
+                        to='/cart'
+                        className='link'>
+                        <i class='fa-solid fa-cart-shopping'></i>
                         Cart
                       </Link>
                     </>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
-                  <Link to="/chathome" className="link">
-                    <i class="fa-solid fa-comment"></i>
+              <li className='nav-item'>
+                <span className='nav-link'>
+                  <Link
+                    to='/chathome'
+                    className='link'>
+                    <i class='fa-solid fa-comment'></i>
                     Chat
                   </Link>
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
+              <li className='nav-item'>
+                <span className='nav-link'>
                   {user && (
                     <button
                       onClick={() => {
                         context.logout();
-                        navigate("/", { replace: true });
+                        navigate('/', { replace: true });
                       }}
-                      className="link"
-                    >
+                      className='link'>
                       Logout
                     </button>
                   )}
                 </span>
               </li>
-              <li className="nav-item">
-                <span className="nav-link">
+              <li className='nav-item'>
+                <span className='nav-link'>
                   {!user && (
                     <>
-                      <Link to="/login" className="link">
-                        <i class="fa-solid fa-right-to-bracket"></i>
+                      <Link
+                        to='/login'
+                        className='link'>
+                        <i class='fa-solid fa-right-to-bracket'></i>
                         Login
                       </Link>
                     </>
@@ -232,50 +255,3 @@ function Header() {
 }
 
 export default Header;
-
-{
-  /* <Link to="/" className="link">
-  Home
-</Link>
-{
-  user?.type === 'company' && <Link to="/createPackage" className="link">
-    Create Package
-  </Link>
-}
-{
-  user?.type === 'company' && <Link to="/companyPackages" className="link">
-    Company Packages
-  </Link>
-}
-{
-  user?.type === 'admin' && <Link to="/adminPackages" className="link">
-    Admin Packages
-  </Link>
-}
-{
-  user?.type === 'client' && <Link to="/wishlist" className="link">
-    Wishlist
-  </Link>
-}
-{
-  user?.type === 'client' && <Link to="/cart" className="link">
-    Cart
-  </Link>
-}
-<Link to="/chathome" className="link">
-  Chat
-</Link>
-{
-  user && <button onClick={() => {
-    context.logout()
-    navigate('/', { replace: true })
-  }} className="link">
-    Logout
-  </button>
-}
-{
-  !user && <Link to="/login" className="link">
-    Login
-  </Link>
-} */
-}

@@ -144,7 +144,7 @@
   min-height: 100vh;
   min-width: fit-content;
   font-family: sans-serif;
-  background: url("../assets/9.jpg") no-repeat center center scroll;
+  background: url('../assets/9.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -187,7 +187,7 @@ form {
     background-color: #ffffff;
   }
 
-  input[type="submit"] {
+  input[type='submit'] {
     height: 2.5rem;
     font-size: 1rem;
     color: #fff;
@@ -195,7 +195,7 @@ form {
     cursor: pointer;
   }
 
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     height: 1.5rem;
     cursor: pointer;
     margin-left: -11.2rem;
