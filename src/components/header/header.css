@@ -25,8 +25,16 @@
 } */
 
 .link {
+  all: unset;
   color: black;
   text-decoration: none;
+  background: #fff;
+}
+
+.link:hover {
+  background: none;
+  color: rgb(8, 79, 187);
+  cursor: pointer;
 }
 
 .nav-brand {
