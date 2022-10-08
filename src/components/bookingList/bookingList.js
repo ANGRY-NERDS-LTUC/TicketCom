@@ -53,7 +53,7 @@ function BookingList() {
 
   useEffect(() => {
     homePackagesHandeler();
-  }, [homePackages]);
+  }, []);
 
   function addToCart(id) {
     Swal.fire({
@@ -77,16 +77,82 @@ function BookingList() {
     createWishlist(id);
   }
 
+  function durationFilterHandeler(e) {
+    e.preventDefault();
+    let minDuration = e.target.minDuration.value;
+    let maxDuration = e.target.maxDuration.value;
+    if (minDuration && maxDuration !== undefined) {
+      setHomePackages(
+        homePackages.filter((item) => {
+          return item.duration >= minDuration && item.duration <= maxDuration;
+        })
+      );
+    } else {
+      homePackagesHandeler();
+    }
+  }
+
+  function priceFilterHandeler(e) {
+    e.preventDefault();
+    let minPrice = e.target.minPrice.value;
+    let maxPrice = e.target.maxPrice.value;
+    if (minPrice && maxPrice !== undefined) {
+      setHomePackages(
+        homePackages.filter((item) => {
+          return item.price >= minPrice && item.price <= maxPrice;
+        })
+      );
+    } else {
+      homePackagesHandeler();
+    }
+  }
+
   return (
     <div className="bookingList">
       <div className="leftSide">
         <h1>Categories</h1>
-        <form className="filterForm">
-          <label>Duration</label>
-          <input type="number" ></input>
-          <label>Price</label>
-          <input type="range"></input>
-          <input type="submit"></input>
+        <form className="filterForm" onSubmit={durationFilterHandeler}>
+          <label className="filterLabel">Duration</label>
+          <br />
+          <input
+            className="numberInput"
+            type="number"
+            min="0"
+            placeholder="min"
+            name="minDuration"
+          ></input>
+          <input
+            className="numberInput"
+            type="number"
+            min="0"
+            placeholder="max"
+            name="maxDuration"
+          ></input>
+          <br />
+          <input type="submit" className="filterInput"></input>
+        </form>
+        <br />
+        <form className="filterForm" onSubmit={priceFilterHandeler}>
+          <label className="filterLabel">Price</label>
+          <br />
+          <input
+            className="numberInput"
+            type="number"
+            min="0"
+            step="10"
+            placeholder="min"
+            name="minPrice"
+          ></input>
+          <input
+            className="numberInput"
+            type="number"
+            min="0"
+            step="10"
+            placeholder="max"
+            name="maxPrice"
+          ></input>
+          <br />
+          <input type="submit" className="filterInput"></input>
         </form>
       </div>
       <div className="rightSide">
@@ -101,15 +167,15 @@ function BookingList() {
                   <h3 className="Duration">{item.duration} days</h3>
                   <h3 className="Price">{item.price} $</h3>
                   <p className="Description">{item.description}</p>
-                  <p
+                  <button
                     className="Wishlist"
                     onClick={() => addToWishlist(item.id)}
                   >
                     Add to Wishlist
-                  </p>
-                  <p className="Cart" onClick={() => addToCart(item.id)}>
+                  </button>
+                  <button className="Cart" onClick={() => addToCart(item.id)}>
                     Add to Cart
-                  </p>
+                  </button>
                 </div>
               </div>
             );

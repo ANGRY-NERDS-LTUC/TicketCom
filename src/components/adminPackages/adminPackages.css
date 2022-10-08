@@ -43,13 +43,19 @@
 
 .Card:hover > .Data > .AcceptThePackage {
   display: block;
+  background-color: black;
   color: rgb(255, 255, 255);
-  border-bottom: solid;
-  border-color: rgb(252, 2, 2);
+  border: solid;
+  border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
-  margin-left: 70px;
+  margin-left: 50px;
   margin-top: 120px;
+}
+
+.Card:hover > .Data > .AcceptThePackage:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .RejectThePackage {
@@ -58,13 +64,19 @@
 
 .Card:hover > .Data > .RejectThePackage {
   display: block;
+  background-color: black;
   color: rgb(255, 255, 255);
-  border-bottom: solid;
-  border-color: rgb(252, 2, 2);
+  border: solid;
+  border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
-  margin-left: 133px;
-  margin-top: -42px;
+  margin-left: 123px;
+  margin-top: -50px;
+}
+
+.Card:hover > .Data > .RejectThePackage:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .DeleteThePackage {
@@ -73,13 +85,19 @@
 
 .Card:hover > .Data > .DeleteThePackage {
   display: block;
+  background-color: black;
   color: rgb(255, 255, 255);
-  border-bottom: solid;
-  border-color: rgb(252, 2, 2);
+  border: solid;
+  border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
   margin-left: 190px;
-  margin-top: -42px;
+  margin-top: -50px;
+}
+
+.Card:hover > .Data > .DeleteThePackage:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 /* .btn-success {

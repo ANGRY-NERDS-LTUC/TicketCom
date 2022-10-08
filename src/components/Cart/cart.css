@@ -13,6 +13,47 @@
   column-gap: 40px;
 }
 
+.cartTitle {
+  margin: 2rem;
+  font-weight: 700;
+}
+
+.totalDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 7rem;
+  border-bottom: 2px solid lightgrey;
+  padding: 1rem;
+}
+
+.totalLastDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 7rem;
+  padding: 1rem;
+}
+
+.checkOutButton {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+.checkOutButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 3px solid rgb(0, 0, 0);
+}
+
+.totalTitle {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.totalPrice {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
 /* .branchCart {
   display: grid;
   grid-template-columns: 100%;
@@ -37,13 +78,19 @@
 
 .Card:hover > .Data > .purchase {
   display: block;
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  border-bottom: solid;
-  border-color: rgb(252, 2, 2);
+  border: solid;
+  border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
-  margin-left: 80px;
+  margin-left: 65px;
   margin-top: 120px;
+}
+
+.Card:hover > .Data > .purchase:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .RemoveCart {
@@ -52,13 +99,19 @@
 
 .Card:hover > .Data > .RemoveCart {
   display: block;
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  border-bottom: solid;
-  border-color: rgb(252, 2, 2);
+  border: solid;
+  border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
   margin-left: 160px;
-  margin-top: -42px;
+  margin-top: -50px;
+}
+
+.Card:hover > .Data > .RemoveCart:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .hide {

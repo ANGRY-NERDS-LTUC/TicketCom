@@ -9,7 +9,7 @@ const user = cookies.get("data");
 
 function Cart() {
   const [cartPackages, setCartPackages] = useState([]);
-  // const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState(0);
   //
   // const getToken = () => document.cookie.replace("token=", "");
 
@@ -22,9 +22,10 @@ function Cart() {
         },
       })
     ).data.Carts;
-    // data.forEach((e) => {
-    //   setPrice(price + e.price);
-    // });
+    const total = data.reduce((prev, curr) => {
+      return prev + curr.price;
+    }, 0);
+    setPrice(total);
     setCartPackages(data);
     // console.log(cartPackages);
   };
@@ -73,7 +74,22 @@ function Cart() {
   return (
     <div className="cartPage">
       <div className="leftSide">
-        <h1>Categories</h1>
+        <h1 className="cartTitle">CART</h1>
+        <div>
+          <div className="totalDiv">
+            <h5 className="categoryTitle">Subtotal</h5>
+            <h5 className="categoryPrice">${price}</h5>
+          </div>
+          <div className="totalDiv">
+            <h5 className="categoryTitle">Discount</h5>
+            <h5 className="categoryPrice">$0 -</h5>
+          </div>
+          <div className="totalLastDiv">
+            <h5 className="totalTitle">total</h5>
+            <h5 className="totalPrice">${price}</h5>
+          </div>
+        </div>
+        <button className="checkOutButton">Check Out</button>
       </div>
       <div className="rightSide">
         <div className="cartPackagesDiv">
@@ -89,13 +105,13 @@ function Cart() {
                   <h3 className="Duration">{item.duration} days</h3>
                   <h3 className="Price">{item.price} $</h3>
                   <p className="Description">{item.description}</p>
-                  <p className="purchase">Purchase</p>
-                  <p
+                  <button className="purchase">Purchase</button>
+                  <button
                     className="RemoveCart"
                     onClick={() => removeFromCart(item.id)}
                   >
                     Remove
-                  </p>
+                  </button>
                 </div>
               </div>
             );

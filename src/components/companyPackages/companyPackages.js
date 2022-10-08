@@ -169,12 +169,12 @@ function CompanyPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="DeletePackage"
                       onClick={() => deletePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );
@@ -194,12 +194,12 @@ function CompanyPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="DeletePackage"
                       onClick={() => deletePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );
@@ -219,12 +219,12 @@ function CompanyPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="DeletePackage"
                       onClick={() => deletePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );

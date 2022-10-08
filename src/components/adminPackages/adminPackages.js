@@ -257,24 +257,24 @@ function AdminPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="AcceptThePackage"
                       onClick={() => acceptThePackage(item.id)}
                     >
                       Accept
-                    </p>
-                    <p
+                    </button>
+                    <button
                       className="RejectThePackage"
                       onClick={() => rejectThePackage(item.id)}
                     >
                       Reject
-                    </p>
-                    <p
+                    </button>
+                    <button
                       className="DeleteThePackage"
                       onClick={() => deleteThePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );
@@ -294,12 +294,12 @@ function AdminPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="DeletePackage"
                       onClick={() => deleteThePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );
@@ -319,12 +319,12 @@ function AdminPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="DeletePackage"
                       onClick={() => deleteThePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );
@@ -344,12 +344,12 @@ function AdminPackages() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="DeletePackage"
                       onClick={() => deleteThePackage(item.id)}
                     >
                       Delete
-                    </p>
+                    </button>
                   </div>
                 </div>
               );

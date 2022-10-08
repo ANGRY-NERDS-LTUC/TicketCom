@@ -99,18 +99,18 @@ function Wishlist() {
                   <h3 className="Duration">{item.duration} days</h3>
                   <h3 className="Price">{item.price} $</h3>
                   <p className="Description">{item.description}</p>
-                  <p
+                  <button
                     className="AddCart"
                     onClick={() => addToCart(item.package_Id)}
                   >
                     Add to Cart
-                  </p>
-                  <p
+                  </button>
+                  <button
                     className="RemoveWishlist"
                     onClick={() => removeFromWishlist(item.id)}
                   >
                     Remove
-                  </p>
+                  </button>
                 </div>
               </div>
             );

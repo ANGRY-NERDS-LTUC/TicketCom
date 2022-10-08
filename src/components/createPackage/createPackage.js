@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import './createPackage.scss';
-import Cookies from 'universal-cookie';
-import Swal from 'sweetalert2';
+import React, { useState } from "react";
+import axios from "axios";
+import "./createPackage.scss";
+import Cookies from "universal-cookie";
+import Swal from "sweetalert2";
+import video1 from "../assets/v3.mp4";
 const cookies = new Cookies();
-const user = cookies.get('data');
+const user = cookies.get("data");
 
 function CreatePackage() {
   const [checkBox, setCheckBox] = useState(false);
@@ -18,10 +19,10 @@ function CreatePackage() {
         data,
         {
           headers: {
-            Accept: 'application/json',
+            Accept: "application/json",
             Authorization: `${user.token}`,
           },
-        },
+        }
       );
       console.log(res.data);
     } catch (err) {
@@ -41,9 +42,9 @@ function CreatePackage() {
       image: e.target.image.value,
     };
     Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Package create',
+      position: "top-end",
+      icon: "success",
+      title: "Package create",
       showConfirmButton: false,
       timer: 1500,
     });
@@ -52,80 +53,89 @@ function CreatePackage() {
   }
 
   function checkBoxHandeler(e) {
-    if (e.target.value === 'false') {
+    if (e.target.value === "false") {
       setCheckBox(true);
-    } else if (e.target.value === 'true') {
+    } else if (e.target.value === "true") {
       setCheckBox(false);
     }
   }
 
   return (
-    <div className='createPage'>
-      <div className='formDiv'>
-        <form onSubmit={submitHandeler}>
-          <h1 className='createFormHeader'>Create Package</h1>
-          <label className='createLabel'>Package Title</label>
+    <div className="createPage">
+      <div className="videoDiv">
+        <video src={video1} className="video" autoPlay muted loop></video>
+      </div>
+      <div className="formDiv">
+        <form onSubmit={submitHandeler} className="createForm">
+          <h1 className="createFormHeader">Create Package</h1>
+          <label className="createLabel">Package Title</label>
           <input
-            type='text'
-            className='formInput'
-            name='title'
-            placeholder='Package Title'
-            required></input>
+            type="text"
+            className="formInput"
+            name="title"
+            placeholder="Package Title"
+            required
+          ></input>
           <br />
-          <label className='createLabel'>Description</label>
+          <label className="createLabel">Description</label>
           <textarea
-            type='text'
-            className='descriptionInput'
-            name='description'
-            placeholder='Description'
-            required></textarea>
+            type="text"
+            className="descriptionInput"
+            name="description"
+            placeholder="Description"
+            required
+          ></textarea>
           <br />
-          <label className='createLabel'>Price</label>
+          <label className="createLabel">Price</label>
           <input
-            type='number'
-            min='0'
-            className='numberInput'
-            name='price'
-            placeholder='Price'
-            required></input>
-          <label className='createLabel'>Duration</label>
+            type="number"
+            min="0"
+            name="price"
+            placeholder="Price"
+            required
+          ></input>
+          <label className="createLabel">Duration</label>
           <input
-            type='number'
-            min='0'
-            className='numberInput'
-            name='duration'
-            placeholder='Duration'
-            required></input>
+            type="number"
+            min="0"
+            name="duration"
+            placeholder="Duration"
+            required
+          ></input>
           <br />
-          <label className='createLabel'>Category</label>
+          <label className="createLabel">Category</label>
           <input
-            type='text'
-            className='formInput'
-            name='category'
-            placeholder='Category'
-            required></input>
+            type="text"
+            className="formInput"
+            name="category"
+            placeholder="Category"
+            required
+          ></input>
           <br />
-          <label className='createLabel'>Image</label>
+          <label className="createLabel">Image</label>
           <input
-            type='text'
-            className='formInput'
-            name='image'
-            placeholder='Image URL'
-            required></input>
+            type="text"
+            className="formInput"
+            name="image"
+            placeholder="Image URL"
+            required
+          ></input>
           <br />
           <input
-            type='checkbox'
-            className='formCheck'
-            name='specialOffer'
+            type="checkbox"
+            className="formCheck"
+            name="specialOffer"
             required
             value={checkBox}
-            onChange={checkBoxHandeler}></input>
-          <label className='checkLabel'>Special Offer</label>
+            onChange={checkBoxHandeler}
+          ></input>
+          <label className="checkLabel">Special Offer</label>
           <br />
           <input
-            type='Submit'
-            value='Create Package'
-            className='formSubmit'></input>
+            type="Submit"
+            value="Create Package"
+            className="formSubmit"
+          ></input>
         </form>
       </div>
     </div>

@@ -12,7 +12,7 @@
   border-right: 3px solid lightgray;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  /* gap: 30px; */
   align-items: center;
   /* background-color: rgb(92, 84, 112); */
 }
@@ -30,21 +30,23 @@
   min-height: fit-content;
   min-width: fit-content;
   border-radius: 10px;
-  border: none;
-  background-color: rgba(19, 19, 19);
-  color: white;
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 3px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: larger;
   /* font-weight: bold; */
 }
 
 .filterButton:hover {
-  background-color: rgb(219, 216, 227);
-  color: rgb(53, 47, 68);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .rightSide {
-  padding-top: 7%;
-  padding-bottom: 2%;
+  padding-top: 10%;
+  padding-bottom: 5%;
   min-width: fit-content;
 }
 
@@ -86,13 +88,19 @@
 
 .Card:hover > .Data > .DeletePackage {
   display: block;
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-  border-bottom: solid;
-  border-color: rgb(252, 2, 2);
+  border: solid;
+  border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
   margin-left: 125px;
   margin-top: 120px;
+}
+
+.Card:hover > .Data > .DeletePackage:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 /* .companyPackageButton {

@@ -26,14 +26,14 @@
 
 .link {
   all: unset;
-  color: black;
+  color: rgb(255, 255, 255);
   text-decoration: none;
-  background: #fff;
+  /* background: #fff; */
 }
 
 .link:hover {
   background: none;
-  color: rgb(8, 79, 187);
+  color: rgb(255, 0, 0);
   cursor: pointer;
 }
 
@@ -45,7 +45,7 @@
 .link i {
   margin-right: 10px;
   margin-left: 5px;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   text-decoration: none;
 }
@@ -53,9 +53,15 @@
 .websiteName {
   margin-right: 20px;
   margin-left: 20px;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   text-decoration: none;
+}
+
+.websiteName:hover {
+  background: none;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
 }
 /* 
 .link:focus {

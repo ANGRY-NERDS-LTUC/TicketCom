@@ -10,5 +10,6 @@
   border-color: rgb(96, 97, 97);
 }
 
-.footerButtons {
+.text-white {
+  text-decoration: none;
 }

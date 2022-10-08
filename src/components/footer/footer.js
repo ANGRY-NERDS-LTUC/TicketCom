@@ -119,7 +119,7 @@ export default function Footer() {
         style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
       >
         © 2022 Copyright:
-        <a className="text-white" href="">
+        <a className="text-white p-2" href="">
           Ticket.Com
         </a>
       </div>

@@ -273,15 +273,15 @@ function Home() {
                     <h3 className="Duration">{item.duration} days</h3>
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
-                    <p
+                    <button
                       className="Wishlist"
                       onClick={() => addToWishlist(item.id)}
                     >
                       Add to Wishlist
-                    </p>
-                    <p className="Cart" onClick={() => addToCart(item.id)}>
+                    </button>
+                    <button className="Cart" onClick={() => addToCart(item.id)}>
                       Add to Cart
-                    </p>
+                    </button>
                   </div>
                 </div>
               );
