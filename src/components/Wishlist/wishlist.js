@@ -26,6 +26,7 @@ function Wishlist() {
 
   const deleteWishlist = async (id) => {
     try {
+      wishlistPackagesHandeler()
       const res = await axios.delete(
         `http://localhost:3001/client/wishlist/${id}?type=client`,
         {
@@ -35,7 +36,6 @@ function Wishlist() {
           },
         }
       );
-      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -57,11 +57,16 @@ function Wishlist() {
         console.log(err);
       });
   };
-
+  
+  // useEffect(() => {
+  //   wishlistPackagesHandeler();
+  //   // eslint-disable-next-line
+  // }, []);
   useEffect(() => {
     wishlistPackagesHandeler();
     // eslint-disable-next-line
-  }, [wishlistPackages]);
+  }, []);
+
 
   function removeFromWishlist(id) {
     Swal.fire({

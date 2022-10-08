@@ -89,8 +89,11 @@ const Login = () => {
         password,
         displayName,
       });
-      console.log('done');
+      // console.log('done');/
       navigate('/');
+      // window
+      // .location
+      // .reload();
       await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
       setErr(true);

@@ -227,7 +227,7 @@ function Home() {
 
   return (
     <div>
-      <Carousel fade>
+      <Carousel fade id="cursol">
         <Carousel.Item>
           <img className="d-block w-100" src={Image1} alt="First slide" />
           <Carousel.Caption>

@@ -33,11 +33,9 @@ function App() {
           <Route
             path="/createPackage"
             element={
-              <Guard>
-                <CompanyGuard>
+
                   <CreatePackage />
-                </CompanyGuard>
-              </Guard>
+
             }
           />
           <Route
