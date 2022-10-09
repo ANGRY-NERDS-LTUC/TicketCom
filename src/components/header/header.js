@@ -16,8 +16,8 @@ function Header() {
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container">
           <span className="nav-brand">
-            <Link to="/" className="websiteName">
-              TICKET.COM
+            <Link to="/" className=" header-title">
+              TICKET<span id='dotcom'>.COM</span>
             </Link>
           </span>
           {/* <button

@@ -33,7 +33,7 @@
 
 .link:hover {
   background: none;
-  color: rgb(255, 0, 0);
+  color: lightseagreen;
   cursor: pointer;
 }
 
@@ -60,23 +60,21 @@
 
 .websiteName:hover {
   background: none;
-  color: rgb(255, 0, 0);
+  color: lightseagreen;
   cursor: pointer;
-}
-/* 
-.link:focus {
-  font-weight: 900;
-  padding: 15px;
-  border-bottom: solid;
-  border-color: rgb(255, 0, 0);
-} */
 
-/* .carousel-item {
-  height: 65vh;
-  min-height: 350px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
+}
+.header-title{
+  text-decoration: none;
+
+  color:  #ffffff;
+  font: normal 36px 'Open Sans', cursive;
+  margin: 0;
+}
+.header-title:hover{
+  color: white;
+}
+#dotcom{
+  color:  lightseagreen;
+}
+

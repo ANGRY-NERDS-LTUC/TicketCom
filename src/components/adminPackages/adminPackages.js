@@ -136,6 +136,9 @@ function AdminPackages() {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
+  useEffect(() => {
     getAllPackages();
     getPublishedPackages();
     getRejectedPackages();

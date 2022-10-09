@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from "axios";
 import "./createPackage.scss";
 import Cookies from "universal-cookie";
@@ -11,6 +11,9 @@ function CreatePackage() {
   const [checkBox, setCheckBox] = useState(false);
 
   // const getToken = () => document.cookie.replace("token=", "");
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
 
   const createCompanyPackage = async (data) => {
     try {
@@ -125,7 +128,6 @@ function CreatePackage() {
             type="checkbox"
             className="formCheck"
             name="specialOffer"
-            required
             value={checkBox}
             onChange={checkBoxHandeler}
           ></input>

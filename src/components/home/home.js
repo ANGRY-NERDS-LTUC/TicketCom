@@ -201,6 +201,7 @@ function Home() {
     // }, 3000);
     // return () => clearTimeout(timer);
     // eslint-disable-next-line
+    window.scrollTo(0, 0)
   }, []);
 
   function addToCart(id) {

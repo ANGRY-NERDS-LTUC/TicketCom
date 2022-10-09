@@ -8,7 +8,7 @@ export default function Footer() {
 
       <div className="footer-left">
 
-        <h3>TICKET<span>.COM</span></h3>
+        <h3>TICKET<span id='dotcom'>.COM</span></h3>
 
         <p className="footer-links">
           <Link to='/'>Home</Link>

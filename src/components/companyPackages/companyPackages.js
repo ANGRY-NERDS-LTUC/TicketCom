@@ -74,6 +74,9 @@ function CompanyPackages() {
     ).data;
     setRejectedCompanyPackages(data);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
 
   useEffect(() => {
     getCompanyPackages();

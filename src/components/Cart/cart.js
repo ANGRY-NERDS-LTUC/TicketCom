@@ -52,7 +52,9 @@ function Cart() {
   //     setPrice(price+e.price)
   //   })
   // }
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
   // console.log(price);
   useEffect(() => {
     cartPackagesHandeler();

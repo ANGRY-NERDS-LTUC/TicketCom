@@ -16,9 +16,6 @@ const Navbar = () => {
           alt=''
         />
         <span>{currentUser.displayName}</span>
-        <button onClick={() => signOut(auth)}>
-          <Link to='/'>Home</Link>
-        </button>
       </div>
     </div>
   );
