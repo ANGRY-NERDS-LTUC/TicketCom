@@ -10,6 +10,7 @@ import Add from '../Chat/img/addAvatar.png';
 import { auth, db, storage } from '../../firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { doc, setDoc } from 'firebase/firestore';
+import video2 from '../assets/v2.mp4';
 
 import './styles.css';
 
@@ -101,6 +102,14 @@ const Login = () => {
   };
   return (
     <div className='body'>
+      <div className='videoDiv-v2'>
+        <video
+          src={video2}
+          className='video'
+          autoPlay
+          muted
+          loop></video>
+      </div>
       <div className='main'>
         <input
           type='checkbox'
