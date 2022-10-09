@@ -107,10 +107,21 @@ function BookingList() {
     }
   }
 
+  function resetHandeler(e) {
+    homePackagesHandeler();
+    // e.target.minDuration.reset();
+    // e.target.maxDuration.reset();
+    // e.target.minPrice.reset();
+    // e.target.maxPrice.reset();
+  }
+
   return (
     <div className="bookingList">
       <div className="leftSide">
         <h1>Categories</h1>
+        <button className="filterInput" onClick={resetHandeler}>
+          Reset
+        </button>
         <form className="filterForm" onSubmit={durationFilterHandeler}>
           <label className="filterLabel">Duration</label>
           <br />

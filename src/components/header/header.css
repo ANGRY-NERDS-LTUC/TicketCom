@@ -33,7 +33,7 @@
 
 .link:hover {
   background: none;
-  color: rgb(255, 0, 0);
+  color: lightseagreen;
   cursor: pointer;
 }
 
@@ -60,7 +60,7 @@
 
 .websiteName:hover {
   background: none;
-  color: rgb(255, 0, 0);
+  color: lightseagreen;
   cursor: pointer;
 }
 /* 

@@ -72,11 +72,11 @@
   column-gap: 40px;
 } */
 
-.purchase {
+.RemoveCart {
   display: none;
 }
 
-.Card:hover > .Data > .purchase {
+.Card:hover > .Data > .RemoveCart {
   display: block;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
@@ -84,16 +84,16 @@
   border-color: rgb(255, 255, 255);
   border-width: 2px;
   width: fit-content;
-  margin-left: 65px;
+  margin-left: 110px;
   margin-top: 120px;
 }
 
-.Card:hover > .Data > .purchase:hover {
+.Card:hover > .Data > .RemoveCart:hover {
   background-color: rgb(255, 255, 255);
   color: black;
 }
 
-.RemoveCart {
+/* .RemoveCart {
   display: none;
 }
 
@@ -112,7 +112,7 @@
 .Card:hover > .Data > .RemoveCart:hover {
   background-color: rgb(255, 255, 255);
   color: black;
-}
+} */
 
 .hide {
   display: none;

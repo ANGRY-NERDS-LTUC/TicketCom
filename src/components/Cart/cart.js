@@ -47,6 +47,23 @@ function Cart() {
     }
   };
 
+  const deleteAllCart = async () => {
+    try {
+      const res = await axios.delete(
+        `http://localhost:3001/client/cart?type=client`,
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization: `${user.token}`,
+          },
+        }
+      );
+      console.log(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   // const calculateTotalPrice=()=>{
   //   cartPackages.forEach(e=>{
   //     setPrice(price+e.price)
@@ -71,6 +88,56 @@ function Cart() {
     deleteCart(id);
   }
 
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+
+  function checkoutHandeler() {
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          //true =yes
+          deleteAllCart();
+          swalWithBootstrapButtons.fire(
+            "Deleted!",
+            "Your file has been deleted.",
+            "success"
+          );
+        } else if (
+          //false cancel
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            "Cancelled",
+            "Your imaginary file is safe :)",
+            "error"
+          );
+        }
+      });
+    // Swal.fire({
+    //   position: "center",
+    //   icon: "success",
+    //   title: "Package Removed",
+    //   showConfirmButton: false,
+    //   timer: 1500,
+    // });
+    // deleteAllCart();
+  }
+
   return (
     <div className="cartPage">
       <div className="leftSide">
@@ -89,7 +156,9 @@ function Cart() {
             <h5 className="totalPrice">${price}</h5>
           </div>
         </div>
-        <button className="checkOutButton">Check Out</button>
+        <button className="checkOutButton" onClick={checkoutHandeler}>
+          Check Out
+        </button>
       </div>
       <div className="rightSide">
         <div className="cartPackagesDiv">
@@ -105,7 +174,6 @@ function Cart() {
                   <h3 className="Duration">{item.duration} days</h3>
                   <h3 className="Price">{item.price} $</h3>
                   <p className="Description">{item.description}</p>
-                  <button className="purchase">Purchase</button>
                   <button
                     className="RemoveCart"
                     onClick={() => removeFromCart(item.id)}

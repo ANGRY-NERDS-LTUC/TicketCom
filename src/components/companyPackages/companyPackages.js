@@ -96,7 +96,7 @@ function CompanyPackages() {
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Yes, check out!",
         cancelButtonText: "No, cancel!",
         reverseButtons: true,
       })
@@ -105,8 +105,8 @@ function CompanyPackages() {
           //true =yes
           deleteCompanyPackage(id);
           swalWithBootstrapButtons.fire(
-            "Deleted!",
-            "Your file has been deleted.",
+            "Thank you for your trust!",
+            "Your packages has been checked out.",
             "success"
           );
         } else if (

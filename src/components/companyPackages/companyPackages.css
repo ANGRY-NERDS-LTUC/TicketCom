@@ -30,18 +30,18 @@
   min-height: fit-content;
   min-width: fit-content;
   border-radius: 10px;
-  border: solid;
-  border-color: rgb(0, 0, 0);
-  border-width: 3px;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: larger;
   /* font-weight: bold; */
 }
 
 .filterButton:hover {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 3px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .rightSide {
