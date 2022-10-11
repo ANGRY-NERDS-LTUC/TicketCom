@@ -9,6 +9,8 @@ const user = cookies.get("data");
 
 function BookingList() {
   const [homePackages, setHomePackages] = useState([]);
+  const [minDuration, setMinDuration] = useState("");
+  const [maxDuration, setMaxDuration] = useState("");
 
   const homePackagesHandeler = async () => {
     const data = await (
@@ -56,6 +58,12 @@ function BookingList() {
     homePackagesHandeler();
   }, []);
 
+  const handleChange1 = (event) => {
+    setMinDuration(event.target.value.replace(/\D/, ""));
+  };
+  const handleChange2 = (event) => {
+    setMaxDuration(event.target.value.replace(/\D/, ""));
+  };
   function addToCart(id) {
     Swal.fire({
       position: "top-center",
@@ -127,8 +135,8 @@ function BookingList() {
   function resetHandeler(e) {
     e.preventDefault();
     homePackagesHandeler();
-    e.target.durationFilter.reset();
-    e.target.priceFilter.reset();
+    setMinDuration("");
+    setMaxDuration("");
   }
 
   return (
@@ -146,6 +154,8 @@ function BookingList() {
           <label className="filterLabel">Duration(days)</label>
           <br />
           <input
+            value={minDuration}
+            onChange={handleChange1}
             className="numberInput"
             type="number"
             min="0"
@@ -154,6 +164,8 @@ function BookingList() {
             required
           />
           <input
+            value={maxDuration}
+            onChange={handleChange2}
             className="numberInput"
             type="number"
             min="0"

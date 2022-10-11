@@ -10,7 +10,6 @@ import Add from "../Chat/img/addAvatar.png";
 import { auth, db, storage } from "../../firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
-import video2 from "../assets/v3.mp4";
 
 import "./styles.css";
 
@@ -83,7 +82,6 @@ const Login = () => {
     const displayName = e.target[0].value;
     const email = e.target[1].value;
     const password = e.target[2].value;
-
     try {
       await context.login({
         email,
@@ -96,6 +94,7 @@ const Login = () => {
       // .location
       // .reload();
       await signInWithEmailAndPassword(auth, email, password);
+      window.location.reload();
     } catch (err) {
       setErr(true);
     }
