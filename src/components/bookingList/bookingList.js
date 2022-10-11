@@ -11,6 +11,8 @@ function BookingList() {
   const [homePackages, setHomePackages] = useState([]);
   const [minDuration, setMinDuration] = useState("");
   const [maxDuration, setMaxDuration] = useState("");
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
 
   const homePackagesHandeler = async () => {
     const data = await (
@@ -64,6 +66,13 @@ function BookingList() {
   const handleChange2 = (event) => {
     setMaxDuration(event.target.value.replace(/\D/, ""));
   };
+  const handleChange3 = (event) => {
+    setMinPrice(event.target.value.replace(/\D/, ""));
+  };
+  const handleChange4 = (event) => {
+    setMaxPrice(event.target.value.replace(/\D/, ""));
+  };
+
   function addToCart(id) {
     Swal.fire({
       position: "top-center",
@@ -96,7 +105,8 @@ function BookingList() {
           return item.duration >= minDuration && item.duration <= maxDuration;
         })
       );
-      e.target.reset();
+      setMinDuration("");
+      setMaxDuration("");
     } else {
       Swal.fire({
         position: "top-center",
@@ -105,7 +115,8 @@ function BookingList() {
         showConfirmButton: false,
         timer: 1500,
       });
-      e.target.reset();
+      setMinDuration("");
+      setMaxDuration("");
     }
   }
 
@@ -119,7 +130,8 @@ function BookingList() {
           return item.price >= minPrice && item.price <= maxPrice;
         })
       );
-      e.target.reset();
+      setMinPrice("");
+      setMaxPrice("");
     } else {
       Swal.fire({
         position: "top-center",
@@ -128,7 +140,8 @@ function BookingList() {
         showConfirmButton: false,
         timer: 2000,
       });
-      e.target.reset();
+      setMinPrice("");
+      setMaxPrice("");
     }
   }
 
@@ -137,6 +150,8 @@ function BookingList() {
     homePackagesHandeler();
     setMinDuration("");
     setMaxDuration("");
+    setMinPrice("");
+    setMaxPrice("");
   }
 
   return (
@@ -185,6 +200,8 @@ function BookingList() {
           <label className="filterLabel">Price($)</label>
           <br />
           <input
+            value={minPrice}
+            onChange={handleChange3}
             className="numberInput"
             type="number"
             min="0"
@@ -194,6 +211,8 @@ function BookingList() {
             required
           />
           <input
+            value={maxPrice}
+            onChange={handleChange4}
             className="numberInput"
             type="number"
             min="0"
