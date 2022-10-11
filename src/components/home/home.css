@@ -1,0 +1,351 @@
+.whyusDiv {
+  color: rgb(0, 0, 0);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 86vh;
+  padding-top: 150px;
+}
+
+.whyusDivBranch {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-left: 300px;
+  margin-right: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
+}
+
+.whyusDivBranch:hover {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-left: 250px;
+  margin-right: 250px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  transition-duration: 700ms;
+}
+
+.whyusCards {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.whyusCard {
+  width: 200px;
+  height: 200px;
+}
+
+.whyusCard:hover {
+  color: rgb(155, 16, 16);
+}
+
+.symbol {
+  width: 100px;
+  height: 100px;
+}
+
+.whyusTitle {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.offersDiv {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 90vh;
+  padding-top: 80px;
+}
+
+.offersDivBranch {
+  background-color: rgba(245, 245, 220, 0.1);
+  padding-top: 10px;
+  padding-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  box-shadow: 0 2px 4px 0 rgba(32, 178, 171, 0.8);
+}
+
+.offersTitle {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.specialOfferDiv {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.homePackagesDiv {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.Card {
+  box-sizing: border-box;
+  display: block;
+  flex-direction: column;
+  background-color: rgb(250, 247, 247);
+  border: solid;
+  border-color: rgb(174, 195, 213);
+  border-width: 1px;
+  border-radius: 20px;
+  width: 320px;
+  height: 350px;
+  text-align: center;
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 220px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.Title {
+  text-align: left;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: x-large;
+}
+
+.Card:hover > .Data > .Title {
+  padding-top: 100px;
+  color: rgb(255, 255, 255);
+  transition-duration: 500ms;
+}
+
+.Category {
+  display: none;
+}
+
+.Card:hover > .Data > .Category {
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  font-weight: bold;
+  margin-top: -130px;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  transition-duration: 500ms;
+}
+
+.Duration {
+  text-align: left;
+  padding-left: 10px;
+  font-size: medium;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.Card:hover > .Data > .Duration {
+  display: none;
+}
+
+.Price {
+  text-align: right;
+  margin-top: -60px;
+  margin-right: 10px;
+  font-size: medium;
+  font-weight: 500;
+}
+
+.Card:hover > .Data > .Price {
+  padding-top: 30px;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+  transition-duration: 500ms;
+}
+
+.Description {
+  font-size: medium;
+  font-weight: 300;
+  height: 80px;
+  margin-top: 55px;
+  display: none;
+}
+
+.Card:hover > .Data > .Description {
+  display: flex;
+  padding-top: 80px;
+  color: rgb(255, 255, 255);
+  font-size: large;
+  transition-duration: 500ms;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 600;
+}
+
+.Card:hover > .Data {
+  margin-left: -1px;
+  margin-top: -350px;
+  background-color: rgba(21, 22, 23, 0.7);
+  display: block;
+  width: 100%;
+  height: 350px;
+  transform: translateY(0);
+  transition-duration: 500ms;
+  border-radius: 20px;
+}
+
+.Card:hover > img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  transition-duration: 500ms;
+  border-radius: 20px;
+}
+
+.Wishlist {
+  display: none;
+}
+
+.Card:hover > .Data > .Wishlist {
+  margin-right: 1px;
+  display: block;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+  border-radius: 5px;
+  width: fit-content;
+  height: 40px;
+  margin-left: 45px;
+  margin-top: 120px;
+}
+
+.Card:hover > .Data > .Wishlist:hover {
+  background-color: lightseagreen;
+  color: black;
+}
+
+.Cart {
+  display: none;
+}
+
+.Card:hover > .Data > .Cart {
+  display: block;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
+  width: fit-content;
+  margin-left: 175px;
+  margin-top: -40px;
+}
+
+.Card:hover > .Data > .Cart:hover {
+  background-color: lightseagreen;
+  color: black;
+}
+
+.row {
+  width: 100%;
+  height: 50vh;
+}
+
+.fontAwesome {
+  width: 10rem;
+  height: 10rem;
+}
+
+#flip-card {
+  perspective: 1000px;
+}
+
+#flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+
+#flip-card:focus {
+  outline: 0;
+}
+
+#flip-card:hover #flip-card-inner,
+#flip-card:focus #flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+#flip-card-front,
+#flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#flip-card-front {
+  background: rgb(35, 35, 35);
+  border-radius: 10px;
+  color: rgb(240, 240, 240);
+  border: 10px solid lightseagreen;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#flip-card-back {
+  background: rgb(35, 35, 35);
+  border-radius: 10px;
+  color: rgb(240, 240, 240);
+  border: 10px solid lightseagreen;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+  transform: rotateY(180deg);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cursol {
+  box-shadow: 0px 2px 35px 0px rgba(32, 178, 171, 0.77);
+}
+
+.carousel-caption {
+  top: 390px;
+  position: absolute;
+  right: 15%;
+  left: 35%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 500px;
+  height: 175px;
+  padding-top: 50px;
+}

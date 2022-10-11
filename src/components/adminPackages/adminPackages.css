@@ -1,0 +1,107 @@
+.adminPackages {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.allPackages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+.publishedPackages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+.rejectPackages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+.notPublishedPackages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 40px;
+  column-gap: 40px;
+}
+
+.AcceptThePackage {
+  display: none;
+}
+
+.Card:hover > .Data > .AcceptThePackage {
+  display: block;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
+  width: fit-content;
+  margin-left: 60px;
+  margin-top: 120px;
+}
+
+.Card:hover > .Data > .AcceptThePackage:hover {
+  background-color: lightseagreen;
+  color: rgb(0, 0, 0);
+}
+
+.RejectThePackage {
+  display: none;
+}
+
+.Card:hover > .Data > .RejectThePackage {
+  display: block;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
+  width: fit-content;
+  margin-left: 132px;
+  margin-top: -40px;
+}
+
+.Card:hover > .Data > .RejectThePackage:hover {
+  background-color: lightseagreen;
+  color: black;
+}
+
+.DeleteThePackage {
+  display: none;
+}
+
+.Card:hover > .Data > .DeleteThePackage {
+  display: block;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: rgb(255, 255, 255);
+  border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
+  width: fit-content;
+  margin-left: 200px;
+  margin-top: -40px;
+}
+
+.Card:hover > .Data > .DeleteThePackage:hover {
+  background-color: lightseagreen;
+  color: black;
+}

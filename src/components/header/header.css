@@ -1,0 +1,65 @@
+.link {
+  all: unset;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.link:hover {
+  background: none;
+  color: lightseagreen;
+  cursor: pointer;
+}
+
+.nav-brand {
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.link i {
+  margin-right: 10px;
+  margin-left: 5px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.websiteName {
+  margin-right: 20px;
+  margin-left: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.websiteName:hover {
+  background: none;
+  color: lightseagreen;
+  cursor: pointer;
+}
+.header-title {
+  text-decoration: none;
+
+  color: #ffffff;
+  font: normal 36px "Open Sans", cursive;
+  margin: 0;
+}
+.header-title:hover {
+  color: white;
+}
+#dotcom {
+  color: lightseagreen;
+}
+
+#logButton {
+  background-color: lightseagreen;
+  border: 2px solid white;
+  padding: 1px 5px;
+  border-radius: 5px;
+}
+
+#logButton:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: 2px solid white;
+  padding: 1px 5px;
+}
