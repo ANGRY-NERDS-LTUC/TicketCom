@@ -10,9 +10,6 @@ const user = cookies.get("data");
 function Cart() {
   const [cartPackages, setCartPackages] = useState([]);
   const [price, setPrice] = useState(0);
-  //
-  // const getToken = () => document.cookie.replace("token=", "");
-
   const cartPackagesHandeler = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/client/cart?type=client`, {
@@ -27,7 +24,6 @@ function Cart() {
     }, 0);
     setPrice(total);
     setCartPackages(data);
-    // console.log(cartPackages);
   };
 
   const deleteCart = async (id) => {
@@ -64,22 +60,17 @@ function Cart() {
     }
   };
 
-  // const calculateTotalPrice=()=>{
-  //   cartPackages.forEach(e=>{
-  //     setPrice(price+e.price)
-  //   })
-  // }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-  // console.log(price);
   useEffect(() => {
     cartPackagesHandeler();
-    // calculateTotalPrice()
-    //   eslint-disable-next-line
   }, [cartPackages]);
 
   function removeFromCart(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "error",
       title: "Package Removed",
       showConfirmButton: false,
@@ -103,39 +94,26 @@ function Cart() {
         text: "You won't be able to revert this!",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
+        confirmButtonText: "Yes, check out!",
         cancelButtonText: "No, cancel!",
         reverseButtons: true,
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //true =yes
           deleteAllCart();
           swalWithBootstrapButtons.fire(
-            "Deleted!",
-            "Your file has been deleted.",
+            "Checked out!",
+            "Your payment has been performed, thank you for your trust 😊",
             "success"
           );
-        } else if (
-          //false cancel
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             "Cancelled",
-            "Your imaginary file is safe :)",
+            "Your payment hasn't been performed!",
             "error"
           );
         }
       });
-    // Swal.fire({
-    //   position: "center",
-    //   icon: "success",
-    //   title: "Package Removed",
-    //   showConfirmButton: false,
-    //   timer: 1500,
-    // });
-    // deleteAllCart();
   }
 
   return (
@@ -162,8 +140,6 @@ function Cart() {
       </div>
       <div className="rightSide">
         <div className="cartPackagesDiv">
-          {/* <div className="branchCart">
-        <div className="cardsSection"> */}
           {cartPackages.map((item) => {
             return (
               <div className="Card">

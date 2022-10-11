@@ -21,10 +21,10 @@
 
 .numberInput {
   border: 2px solid black;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 4rem;
   margin: 0.5rem;
-  font-size: x-large;
+  font-size: larger;
 }
 
 .filterInput {
@@ -39,7 +39,7 @@
 }
 
 .filterInput:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
   color: rgb(0, 0, 0);
   border: 3px solid rgb(0, 0, 0);
 }

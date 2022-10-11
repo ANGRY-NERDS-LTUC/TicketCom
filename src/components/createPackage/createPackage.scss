@@ -1,140 +1,3 @@
-/* .createPage {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.formDiv {
-  text-align: center;
-  background-color: rgba(205, 175, 138, 0.3);
-  border: solid;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7);
-  border-width: 1px;
-  border-radius: 5%;
-  width: 500px;
-  height: 610px;
-  font-size: larger;
-  font-weight: bold;
-  cursor: pointer;
-  transform: translateY(25px);
-}
-
-::placeholder {
-  color: rgb(195, 191, 198);
-  display: flex;
-  padding-left: 5px;
-}
-
-.formDiv:hover {
-  width: 600px;
-  height: 630px;
-  background-color: rgba(148, 146, 142, 0.5);
-  color: rgb(255, 255, 255);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  transition-duration: 700ms;
-}
-
-.numberInput {
-  font-size: large;
-  width: 188px;
-  height: 40px;
-  margin: 10px;
-  border-radius: 10px;
-  border: none;
-}
-
-.formDiv:hover > form > .numberInput {
-  width: 240px;
-  transition-duration: 700ms;
-}
-
-.numberInput:focus {
-  background-color: rgb(254, 254, 166);
-  height: 50px;
-}
-
-.descriptionInput {
-  font-size: large;
-  width: 400px;
-  height: 120px;
-  margin: 10px;
-  border-radius: 10px;
-  border: none;
-}
-
-.formDiv:hover > form > .descriptionInput {
-  width: 500px;
-  transition-duration: 700ms;
-}
-
-.descriptionInput:focus {
-  background-color: rgb(254, 254, 166);
-  height: 150px;
-}
-
-.formInput {
-  font-size: large;
-  width: 400px;
-  height: 40px;
-  margin: 10px;
-  border-radius: 10px;
-  border: none;
-}
-
-.formDiv:hover > form > .formInput {
-  width: 500px;
-  transition-duration: 700ms;
-}
-
-.formInput:focus {
-  background-color: rgb(254, 254, 166);
-  height: 50px;
-}
-
-.formDiv:hover > .formInput {
-  font-size: large;
-  width: 300px;
-  height: 25px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  transition-duration: 700ms;
-}
-
-.formCheck {
-  font-size: large;
-  width: 20px;
-  height: 20px;
-  margin-right: 20px;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  cursor: pointer;
-}
-
-.formSubmit {
-  font-size: x-large;
-  width: 50%;
-  outline: none;
-  height: fit-content;
-  border-radius: 15px;
-  font-weight: bold;
-  margin-top: 20px;
-  color: beige;
-  cursor: pointer;
-  border: none;
-  background-color: gray;
-  padding: 10px;
-}
-
-.formSubmit:hover {
-  background-color: rgb(121, 203, 170);
-  color: white;
-} */
-
 .createPage {
   display: grid;
   grid-template-columns: 100%;
@@ -144,11 +7,6 @@
   min-height: 100vh;
   min-width: fit-content;
   font-family: sans-serif;
-  // // background: url("../assets/v1.mp4") no-repeat center center scroll;
-  // -webkit-background-size: cover;
-  // -moz-background-size: cover;
-  // -o-background-size: cover;
-  // background-size: cover;
 }
 
 .videoDiv video {
@@ -161,8 +19,6 @@
 
 .video {
   position: absolute;
-  // max-width: 100%;
-  // max-height: 100%;
 }
 
 .formDiv {
@@ -185,31 +41,20 @@
   height: 2.5rem;
   font-size: 1rem;
   font-weight: bold;
-  color: #fff;
-  border: solid;
-  border-color: rgb(255, 255, 255);
-  border-width: 3px;
-  background: #000000;
+  color: rgb(0, 0, 0);
+  background: lightseagreen;
   cursor: poinrgb(0, 0, 0);
 }
 
 .formSubmit:hover {
-  background-color: rgb(255, 255, 255);
-  color: black;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border: solid;
+  border-color: lightseagreen;
+  border-width: 3px;
 }
 
 form {
-  // div {
-  //   width: inherit;
-  //   margin-bottom: 1rem;
-  // }
-
-  // label {
-  //   display: block;
-  //   color: rgb(0, 0, 0);
-  //   font-size: larger;
-  // }
-
   input {
     margin: 0.5rem 0;
     padding: 0.5rem;
@@ -220,23 +65,6 @@ form {
     box-sizing: border-box;
     background-color: #ffffff;
   }
-
-  // input[type="submit"] {
-  //   height: 2.5rem;
-  //   font-size: 1rem;
-  //   font-weight: bold;
-  //   color: #fff;
-  //   border: solid;
-  //   border-color: rgb(255, 255, 255);
-  //   border-width: 3px;
-  //   background: #000000;
-  //   cursor: poinrgb(0, 0, 0);
-  // }
-
-  // input[type="submit"]:hover {
-  //   background-color: rgb(255, 255, 255);
-  //   color: black;
-  // }
 
   input[type="checkbox"] {
     height: 1.5rem;

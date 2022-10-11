@@ -14,8 +14,6 @@ function CompanyPackages() {
   const [accepted, setAccepted] = useState(false);
   const [rejected, setRejected] = useState(false);
 
-  // const getToken = () => document.cookie.replace("token=", "");
-
   const getCompanyPackages = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/company/packages?type=company`, {
@@ -74,6 +72,9 @@ function CompanyPackages() {
     ).data;
     setRejectedCompanyPackages(data);
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
     getCompanyPackages();
@@ -102,18 +103,13 @@ function CompanyPackages() {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //true =yes
           deleteCompanyPackage(id);
           swalWithBootstrapButtons.fire(
             "Thank you for your trust!",
             "Your packages has been checked out.",
             "success"
           );
-        } else if (
-          //false cancel
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             "Cancelled",
             "Your imaginary file is safe :)",
@@ -156,7 +152,6 @@ function CompanyPackages() {
         </button>
       </div>
       <div className="rightSide">
-        {/* <h2>All Packages</h2> */}
         {all && (
           <div className="allCompanyPackages">
             {companyPackages.map((item) => {
@@ -181,7 +176,6 @@ function CompanyPackages() {
             })}
           </div>
         )}
-        {/* <h2>Accepted Packages</h2> */}
         {accepted && (
           <div className="acceptedPackages">
             {acceptedCompanyPackages.map((item) => {
@@ -206,7 +200,6 @@ function CompanyPackages() {
             })}
           </div>
         )}
-        {/* <h2>Rejected Packages</h2> */}
         {rejected && (
           <div className="rejectPackages">
             {rejectedCompanyPackages.map((item) => {

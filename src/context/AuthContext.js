@@ -3,15 +3,12 @@ import { auth } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import axios from "axios";
 import { encode } from "js-base64";
-import { useCookies } from "react-cookie";
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 export const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState({});
-  // // eslint-disable-next-line
-  // const [cookies, setCookie, removeCookie] = useCookies(["token"]);
 
   const signUp = ({ displayName, email, password, file }, company = false) => {
     let route = "/auth/user/signup";
@@ -42,26 +39,20 @@ export const AuthContextProvider = ({ children }) => {
       setUserInfo({ user: { displayName, password } });
       throw new Error("verified");
     }
-    cookies.set('data', user.data.user, {path: '/'});
-    // setCookie("token", user.data.user.token, { path: "/" });
+    cookies.set("data", user.data.user, { path: "/" });
     setUserInfo(user.data);
   };
   const logout = () => {
-    // removeCookie("token");
-    cookies.remove('data', {path: '/'})
+    cookies.remove("data", { path: "/" });
     setCurrentUser({});
-    window
-    .location
-    .reload();
+    window.location.reload();
   };
-  const userToken=()=>{
+  const userToken = () => {
     return cookies.get("data");
-  }
+  };
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
-      // console.log('user',user);
       setUserInfo(user);
-      // console.log(user);
     });
 
     return () => {
@@ -72,7 +63,7 @@ export const AuthContextProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ currentUser, signUp, setUserInfo, login, logout,userToken }}
+      value={{ currentUser, signUp, setUserInfo, login, logout, userToken }}
     >
       {children}
     </AuthContext.Provider>

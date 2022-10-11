@@ -22,22 +22,13 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
-        <AboutUs path='/aboutUs'/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/bookingList" element={<BookingList />} />
-          {/* <Route path="/sign-up" element={<SignUp />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
-          <Route
-            path="/createPackage"
-            element={
-
-                  <CreatePackage />
-
-            }
-          />
+          <Route path="/createPackage" element={<CreatePackage />} />
           <Route
             path="/companyPackages"
             element={

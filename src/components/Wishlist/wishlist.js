@@ -9,8 +9,6 @@ const user = cookies.get("data");
 function Wishlist() {
   const [wishlistPackages, setWishlistPackages] = useState([]);
 
-  const getToken = () => document.cookie.replace("token=", "");
-
   const wishlistPackagesHandeler = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/client/wishlist?type=client`, {
@@ -21,12 +19,11 @@ function Wishlist() {
       })
     ).data.wishLists;
     setWishlistPackages(data);
-    // console.log(wishlistPackages);
   };
 
   const deleteWishlist = async (id) => {
     try {
-      wishlistPackagesHandeler()
+      wishlistPackagesHandeler();
       const res = await axios.delete(
         `http://localhost:3001/client/wishlist/${id}?type=client`,
         {
@@ -57,20 +54,18 @@ function Wishlist() {
         console.log(err);
       });
   };
-  
-  // useEffect(() => {
-  //   wishlistPackagesHandeler();
-  //   // eslint-disable-next-line
-  // }, []);
+
   useEffect(() => {
-    wishlistPackagesHandeler();
-    // eslint-disable-next-line
+    window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    wishlistPackagesHandeler();
+  }, [wishlistPackages]);
 
   function removeFromWishlist(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "error",
       title: "Package removed",
       showConfirmButton: false,
@@ -81,7 +76,7 @@ function Wishlist() {
 
   function addToCart(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "success",
       title: "Your package added to cart",
       showConfirmButton: false,
@@ -92,6 +87,7 @@ function Wishlist() {
 
   return (
     <div className="wishlist">
+      <h1 className="titleWishlist">Wishlist</h1>
       <div className="branchWishlist">
         <div className="wishlistSection">
           {wishlistPackages.map((item) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "./adminPackages.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
@@ -15,8 +15,6 @@ function AdminPackages() {
   const [puplished, setPuplished] = useState(false);
   const [rejected, setRejected] = useState(false);
   const [notPuplished, setNotPuplished] = useState(false);
-
-  // const getToken = () => document.cookie.replace("token=", "");
   const getAllPackages = async () => {
     const data = await (
       await axios.get(`http://localhost:3001/admin/package?type=client`, {
@@ -136,6 +134,10 @@ function AdminPackages() {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     getAllPackages();
     getPublishedPackages();
     getRejectedPackages();
@@ -155,18 +157,13 @@ function AdminPackages() {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          //true =yes
           deletePackage(id);
           swalWithBootstrapButtons.fire(
             "Deleted!",
             "Your file has been deleted.",
             "success"
           );
-        } else if (
-          //false cancel
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             "Cancelled",
             "Your imaginary file is safe :)",
@@ -178,7 +175,7 @@ function AdminPackages() {
 
   function acceptThePackage(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "success",
       title: "Package Accepted",
       showConfirmButton: false,
@@ -189,7 +186,7 @@ function AdminPackages() {
 
   function rejectThePackage(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "error",
       title: "Package Rejected",
       showConfirmButton: false,
@@ -244,7 +241,6 @@ function AdminPackages() {
         </button>
       </div>
       <div className="rightSide">
-        {/* <h2>All Packages</h2> */}
         {all && (
           <div className="allPackages">
             {allPackages.map((item) => {
@@ -281,7 +277,6 @@ function AdminPackages() {
             })}
           </div>
         )}
-        {/* <h2>Published Packages</h2> */}
         {puplished && (
           <div className="publishedPackages">
             {publishedPackages.map((item) => {
@@ -306,7 +301,6 @@ function AdminPackages() {
             })}
           </div>
         )}
-        {/* <h2>Rejected Packages</h2> */}
         {rejected && (
           <div className="rejectPackages">
             {rejectedPackages.map((item) => {
@@ -331,7 +325,6 @@ function AdminPackages() {
             })}
           </div>
         )}
-        {/* <h2>Not Published Packages</h2> */}
         {notPuplished && (
           <div className="notPublishedPackages">
             {notPublishedPackages.map((item) => {

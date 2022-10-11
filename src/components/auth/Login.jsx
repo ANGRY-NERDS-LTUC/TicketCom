@@ -1,18 +1,18 @@
-import React, { useContext, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   updateProfile,
-} from 'firebase/auth';
-import { AuthContext } from '../../context/AuthContext';
-import Add from '../Chat/img/addAvatar.png';
-import { auth, db, storage } from '../../firebase';
-import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
-import { doc, setDoc } from 'firebase/firestore';
-import video2 from '../assets/v2.mp4';
+} from "firebase/auth";
+import { AuthContext } from "../../context/AuthContext";
+import Add from "../Chat/img/addAvatar.png";
+import { auth, db, storage } from "../../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
+import video2 from "../assets/v3.mp4";
 
-import './styles.css';
+import "./styles.css";
 
 const Login = () => {
   const [err, setErr] = useState(false);
@@ -34,7 +34,7 @@ const Login = () => {
       // todo handle sign up type
       const user = await context.signUp(
         { displayName, email, password },
-        company,
+        company
       );
       context.setUserInfo(user.data);
       //Create user
@@ -53,7 +53,7 @@ const Login = () => {
               photoURL: downloadURL,
             });
             //create user on firestore
-            await setDoc(doc(db, 'users', res.user.uid), {
+            await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
               displayName,
               email,
@@ -61,7 +61,7 @@ const Login = () => {
             });
 
             //create empty user chats on firestore
-            await setDoc(doc(db, 'userChats', res.user.uid), {});
+            await setDoc(doc(db, "userChats", res.user.uid), {});
           } catch (err) {
             console.log(err);
             setErrSign(true);
@@ -91,7 +91,7 @@ const Login = () => {
         displayName,
       });
       // console.log('done');/
-      navigate('/');
+      navigate("/");
       // window
       // .location
       // .reload();
@@ -100,111 +100,84 @@ const Login = () => {
       setErr(true);
     }
   };
-  return (
-    <div className='body'>
-      <div className='videoDiv-v2'>
-        <video
-          src={video2}
-          className='video'
-          autoPlay
-          muted
-          loop></video>
-      </div>
-      <div className='main'>
-        <input
-          type='checkbox'
-          id='chk'
-          aria-hidden='true'
-        />
 
-        <div className='signup'>
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className="body">
+      {/* <div className="videoDiv-v2">
+        <video src={video2} className="video" autoPlay muted loop></video>
+      </div> */}
+      <div className="main">
+        <input type="checkbox" id="chk" aria-hidden="true" />
+
+        <div className="signup">
           <form onSubmit={handleSubmitSignup}>
-            <label
-              className='label-primary'
-              for='chk'
-              aria-hidden='true'>
+            <label className="label-primary" for="chk" aria-hidden="true">
               Sign up
             </label>
+            <input type="text" name="txt" placeholder="Display Name" required />
+            <input type="email" name="email" placeholder="Email" required />
             <input
-              type='text'
-              name='txt'
-              placeholder='Display Name'
+              type="password"
+              name="pswd"
+              placeholder="Password"
               required
             />
-            <input
-              type='email'
-              name='email'
-              placeholder='Email'
-              required
-            />
-            <input
-              type='password'
-              name='pswd'
-              placeholder='Password'
-              required
-            />
-            <div className='file'>
+            <div className="file">
               <input
                 required
-                style={{ display: 'none' }}
-                type='file'
-                id='file'
+                style={{ display: "none" }}
+                type="file"
+                id="file"
               />
-              <label htmlFor='file'>
-                <img
-                  src={Add}
-                  alt=''
-                />
+              <label htmlFor="file">
+                <img src={Add} alt="" />
                 <span>Add an avatar</span>
               </label>
             </div>
-            <div className='checkbox'>
-              <input
-                type='checkbox'
-                id='company'
-              />
-              <label htmlFor='company'>Sign up as company</label>
+            <div className="checkbox">
+              <input type="checkbox" id="company" />
+              <label htmlFor="company">Sign up as company</label>
             </div>
             {loading && (
-              <span style={{ color: '#eee' }}>
+              <span style={{ color: "#eee" }}>
                 Uploading and compressing the image please wait...
               </span>
             )}
             {errSign && (
-              <span style={{ color: '#eee' }}>Something went wrong</span>
+              <span style={{ color: "#eee" }}>Something went wrong</span>
             )}
-            <button disabled={loading}>Sign up</button>
+            <button disabled={loading} className="signUpButton">
+              Sign up
+            </button>
           </form>
         </div>
 
-        <div className='login'>
+        <div className="login">
           <form onSubmit={handleSubmit}>
-            <label
-              ref={loginBtn}
-              for='chk'
-              aria-hidden='true'>
+            <label ref={loginBtn} for="chk" aria-hidden="true">
               Login
             </label>
-            <input
-              type='text'
-              name='name'
-              placeholder='Display Name'
-              required
-            />
-            <input
-              type='email'
-              name='email'
-              placeholder='Email'
-              required
-            />
-            <input
-              type='password'
-              name='pswd'
-              placeholder='Password'
-              required
-            />
-            <button>Login</button>
-            {err && <span>Something went wrong</span>}
+            <div className="loginForm">
+              <input
+                type="text"
+                name="name"
+                placeholder="Display Name"
+                required
+              />
+              <input type="email" name="email" placeholder="Email" required />
+              <input
+                type="password"
+                name="pswd"
+                placeholder="Password"
+                required
+              />
+              <button className="signUpButton">Login</button>
+              {err && <span>Something went wrong</span>}
+            </div>
           </form>
         </div>
       </div>

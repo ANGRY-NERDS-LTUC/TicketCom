@@ -52,12 +52,13 @@ function BookingList() {
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     homePackagesHandeler();
   }, []);
 
   function addToCart(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "success",
       title: "Your package Added to Cart",
       showConfirmButton: false,
@@ -68,7 +69,7 @@ function BookingList() {
 
   function addToWishlist(id) {
     Swal.fire({
-      position: "top-end",
+      position: "top-center",
       icon: "success",
       title: "Your package Added to Wishlist",
       showConfirmButton: false,
@@ -79,51 +80,70 @@ function BookingList() {
 
   function durationFilterHandeler(e) {
     e.preventDefault();
-    let minDuration = e.target.minDuration.value;
-    let maxDuration = e.target.maxDuration.value;
-    if (minDuration && maxDuration !== undefined) {
+    let minDuration = parseInt(e.target.minDuration.value);
+    let maxDuration = parseInt(e.target.maxDuration.value);
+    if (minDuration <= maxDuration) {
       setHomePackages(
         homePackages.filter((item) => {
           return item.duration >= minDuration && item.duration <= maxDuration;
         })
       );
+      e.target.reset();
     } else {
-      homePackagesHandeler();
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "The min value should be smaller than max value",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      e.target.reset();
     }
   }
 
   function priceFilterHandeler(e) {
     e.preventDefault();
-    let minPrice = e.target.minPrice.value;
-    let maxPrice = e.target.maxPrice.value;
-    if (minPrice && maxPrice !== undefined) {
+    let minPrice = parseInt(e.target.minPrice.value);
+    let maxPrice = parseInt(e.target.maxPrice.value);
+    if (minPrice <= maxPrice) {
       setHomePackages(
         homePackages.filter((item) => {
           return item.price >= minPrice && item.price <= maxPrice;
         })
       );
+      e.target.reset();
     } else {
-      homePackagesHandeler();
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "The min value should be smaller than max value",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      e.target.reset();
     }
   }
 
   function resetHandeler(e) {
+    e.preventDefault();
     homePackagesHandeler();
-    // e.target.minDuration.reset();
-    // e.target.maxDuration.reset();
-    // e.target.minPrice.reset();
-    // e.target.maxPrice.reset();
+    e.target.durationFilter.reset();
+    e.target.priceFilter.reset();
   }
 
   return (
     <div className="bookingList">
       <div className="leftSide">
         <h1>Categories</h1>
-        <button className="filterInput" onClick={resetHandeler}>
-          Reset
-        </button>
-        <form className="filterForm" onSubmit={durationFilterHandeler}>
-          <label className="filterLabel">Duration</label>
+        <form>
+          <input type="reset" className="filterInput" onClick={resetHandeler} />
+        </form>
+        <form
+          name="durationFilter"
+          className="filterForm"
+          onSubmit={durationFilterHandeler}
+        >
+          <label className="filterLabel">Duration(days)</label>
           <br />
           <input
             className="numberInput"
@@ -131,20 +151,26 @@ function BookingList() {
             min="0"
             placeholder="min"
             name="minDuration"
-          ></input>
+            required
+          />
           <input
             className="numberInput"
             type="number"
             min="0"
             placeholder="max"
             name="maxDuration"
-          ></input>
+            required
+          />
           <br />
-          <input type="submit" className="filterInput"></input>
+          <input type="submit" className="filterInput" />
         </form>
         <br />
-        <form className="filterForm" onSubmit={priceFilterHandeler}>
-          <label className="filterLabel">Price</label>
+        <form
+          name="priceFilter"
+          className="filterForm"
+          onSubmit={priceFilterHandeler}
+        >
+          <label className="filterLabel">Price($)</label>
           <br />
           <input
             className="numberInput"
@@ -153,7 +179,8 @@ function BookingList() {
             step="10"
             placeholder="min"
             name="minPrice"
-          ></input>
+            required
+          />
           <input
             className="numberInput"
             type="number"
@@ -161,9 +188,10 @@ function BookingList() {
             step="10"
             placeholder="max"
             name="maxPrice"
-          ></input>
+            required
+          />
           <br />
-          <input type="submit" className="filterInput"></input>
+          <input type="submit" className="filterInput" />
         </form>
       </div>
       <div className="rightSide">

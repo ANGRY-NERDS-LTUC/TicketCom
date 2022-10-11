@@ -1,7 +1,11 @@
+.titleWishlist {
+  padding-top: 6%;
+  padding-bottom: 3%;
+}
+
 .branchWishlist {
   display: grid;
   grid-template-columns: 100%;
-  padding-top: 7%;
   padding-bottom: 5%;
   width: 100%;
   min-height: 100vh;
@@ -26,13 +30,15 @@
   border: solid;
   border-color: rgb(255, 255, 255);
   border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
   width: fit-content;
-  margin-left: 55px;
+  margin-left: 70px;
   margin-top: 120px;
 }
 
 .Card:hover > .Data > .AddCart:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
   color: black;
 }
 
@@ -47,12 +53,14 @@
   border: solid;
   border-color: rgb(255, 255, 255);
   border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
   width: fit-content;
-  margin-left: 170px;
-  margin-top: -50px;
+  margin-left: 175px;
+  margin-top: -40px;
 }
 
 .Card:hover > .Data > .RemoveWishlist:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
   color: black;
 }

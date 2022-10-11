@@ -36,10 +36,13 @@
 .checkOutButton {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
 }
 
 .checkOutButton:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
   color: rgb(0, 0, 0);
   border: 3px solid rgb(0, 0, 0);
 }
@@ -54,24 +57,6 @@
   font-weight: bold;
 }
 
-/* .branchCart {
-  display: grid;
-  grid-template-columns: 100%;
-  padding-top: 7%;
-  padding-bottom: 5%;
-  width: 100%;
-  min-height: 100vh;
-  min-width: fit-content;
-}
-
-.cardsSection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  row-gap: 40px;
-  column-gap: 40px;
-} */
-
 .RemoveCart {
   display: none;
 }
@@ -83,36 +68,17 @@
   border: solid;
   border-color: rgb(255, 255, 255);
   border-width: 2px;
+  border-radius: 5px;
+  height: 40px;
   width: fit-content;
-  margin-left: 110px;
+  margin-left: 125px;
   margin-top: 120px;
 }
 
 .Card:hover > .Data > .RemoveCart:hover {
-  background-color: rgb(255, 255, 255);
+  background-color: lightseagreen;
   color: black;
 }
-
-/* .RemoveCart {
-  display: none;
-}
-
-.Card:hover > .Data > .RemoveCart {
-  display: block;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  border: solid;
-  border-color: rgb(255, 255, 255);
-  border-width: 2px;
-  width: fit-content;
-  margin-left: 160px;
-  margin-top: -50px;
-}
-
-.Card:hover > .Data > .RemoveCart:hover {
-  background-color: rgb(255, 255, 255);
-  color: black;
-} */
 
 .hide {
   display: none;
