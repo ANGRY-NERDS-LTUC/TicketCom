@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://swall.teahub.io/photos/small/70-707627_whats-app-background.jpg');
+  background-image: url("https://swall.teahub.io/photos/small/70-707627_whats-app-background.jpg");
 
   .container {
     // border: 1px solid white;
@@ -37,13 +37,13 @@
     .sidebar {
       height: 92%;
       flex: 1;
-      background-color: rgb(33,37,41);
+      background-color: rgb(33, 37, 41);
       position: relative;
 
       .navbar {
         display: flex;
         align-items: center;
-        background-color: rgb(33,37,41);
+        background-color: rgb(33, 37, 41);
         height: 50px;
         padding: 10px;
         justify-content: space-between;
@@ -189,10 +189,11 @@
             gap: 10px;
 
             p {
-              background-color: white;
+              background-color: rgb(39, 76, 170);
               padding: 10px 20px;
               border-radius: 0px 10px 10px 10px;
               max-width: max-content;
+              color: #eee;
             }
 
             img {
@@ -258,4 +259,3 @@
     }
   }
 }
-
