@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./adminPackages.css";
+import "./adminDashboard.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import Swal from "sweetalert2";
 
 const cookies = new Cookies();
 const user = cookies.get("data");
-function AdminPackages() {
+function AdminDashboard() {
   const [allPackages, setAllPackages] = useState([]);
   const [publishedPackages, setPublishedPackages] = useState([]);
   const [rejectedPackages, setRejectedPackages] = useState([]);
@@ -314,7 +314,13 @@ function AdminPackages() {
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
                     <button
-                      className="DeletePackage"
+                      className="AcceptThePackage"
+                      onClick={() => acceptThePackage(item.id)}
+                    >
+                      Accept
+                    </button>
+                    <button
+                      className="DeleteThePackage"
                       onClick={() => deleteThePackage(item.id)}
                     >
                       Delete
@@ -338,7 +344,19 @@ function AdminPackages() {
                     <h3 className="Price">{item.price} $</h3>
                     <p className="Description">{item.description}</p>
                     <button
-                      className="DeletePackage"
+                      className="AcceptThePackage"
+                      onClick={() => acceptThePackage(item.id)}
+                    >
+                      Accept
+                    </button>
+                    <button
+                      className="RejectThePackage"
+                      onClick={() => rejectThePackage(item.id)}
+                    >
+                      Reject
+                    </button>
+                    <button
+                      className="DeleteThePackage"
                       onClick={() => deleteThePackage(item.id)}
                     >
                       Delete
@@ -354,4 +372,4 @@ function AdminPackages() {
   );
 }
 
-export default AdminPackages;
+export default AdminDashboard;
