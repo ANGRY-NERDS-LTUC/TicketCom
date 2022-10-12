@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./adminPackages.css";
+import "./adminDashboard.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import Swal from "sweetalert2";
 
 const cookies = new Cookies();
 const user = cookies.get("data");
-function AdminPackages() {
+function AdminDashboard() {
   const [allPackages, setAllPackages] = useState([]);
   const [publishedPackages, setPublishedPackages] = useState([]);
   const [rejectedPackages, setRejectedPackages] = useState([]);
@@ -372,4 +372,4 @@ function AdminPackages() {
   );
 }
 
-export default AdminPackages;
+export default AdminDashboard;

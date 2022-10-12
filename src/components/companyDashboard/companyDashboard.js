@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./companyPackages.css";
+import "./companyDashboard.css";
 import axios from "axios";
 import Cookies from "universal-cookie";
 import Swal from "sweetalert2";
 const cookies = new Cookies();
 const user = cookies.get("data");
 
-function CompanyPackages() {
+function CompanyDashboard() {
   const [companyPackages, setCompanyPackages] = useState([]);
   const [acceptedCompanyPackages, setAcceptedCompanyPackages] = useState([]);
   const [rejectedCompanyPackages, setRejectedCompanyPackages] = useState([]);
@@ -229,4 +229,4 @@ function CompanyPackages() {
   );
 }
 
-export default CompanyPackages;
+export default CompanyDashboard;

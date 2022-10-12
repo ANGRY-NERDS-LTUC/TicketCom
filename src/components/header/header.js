@@ -64,9 +64,9 @@ function Header() {
                 <span className="nav-link">
                   {user?.type === "company" && (
                     <>
-                      <Link to="/companyPackages" className="link">
+                      <Link to="/companyDashboard" className="link">
                         <i class="fa-solid fa-suitcase-rolling"></i>
-                        Company Packages
+                        Company Dashboard
                       </Link>
                     </>
                   )}
@@ -76,9 +76,9 @@ function Header() {
                 <span className="nav-link">
                   {user?.role === "admin" && (
                     <>
-                      <Link to="/adminPackages" className="link">
+                      <Link to="/adminDashboard" className="link">
                         <i class="fa-solid fa-suitcase-rolling"></i>
-                        Admin Packages
+                        Admin Dashboard
                       </Link>
                     </>
                   )}

@@ -145,7 +145,7 @@ function Home() {
       <div className="offersDiv">
         <div className="offersDivBranch">
           <h1 className="offersTitle">BEST TOURS</h1>
-          <h3 className="offersTitle">Check out our top-rated tours</h3>
+          <h3 className="offersTitle">Check out our top offers tours</h3>
           <br />
           <div className="specialOfferDiv">
             {specialOfferPackages.map((item) => {

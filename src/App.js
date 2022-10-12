@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminPackages from "./components/adminPackages/adminPackages";
+import AdminDashboard from "./components/adminDashboard/adminDashboard";
 import Cart from "./components/Cart/cart";
-import CompanyPackages from "./components/companyPackages/companyPackages";
+import CompanyDashboard from "./components/companyDashboard/companyDashboard";
 import CreatePackage from "./components/createPackage/createPackage";
 import Header from "./components/header/header";
 import Home from "./components/home/home";
@@ -30,16 +30,16 @@ function App() {
           <Route path="/bookingList" element={<BookingList />} />
           <Route path="/createPackage" element={<CreatePackage />} />
           <Route
-            path="/companyPackages"
+            path="/companyDashboard"
             element={
               <Guard>
                 <CompanyGuard>
-                  <CompanyPackages />
+                  <CompanyDashboard />
                 </CompanyGuard>
               </Guard>
             }
           />
-          <Route path="/adminPackages" element={<AdminPackages />} />
+          <Route path="/adminDashboard" element={<AdminDashboard />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/chathome">
